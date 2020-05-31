@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #F9F9F9;
+  margin: auto;
+  width: 75%;
+}
+
+.body-header {
+  text-align: center;
+  /* font-size: 2em; */
+  /* border: 1px black solid; */
+}
+
+.body-header h1 {
+  /* border: 1px black solid; */
+  font-size: 2em;
+}
+
+.body-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 5px black solid; */
+}
+
+section .title {
+  width: 100%;
+  text-align: center;
+  /* border: 3px red solid; */
+}
+
+section .title h1 {
+  font-size: 5em;
+  /* border: 3px red solid; */
+}
+
+section .content {
+  width: 100%;
+  /* border: 3px red solid; */
+}
+
+/* INTOR CONTENT */
+.intro .content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.intro .content h1 {
+  font-size: 3.5em;
+  width: 100%;
+  flex-basis: 35%;
+}
+
+.intro .content img {
+  width: 100%;
+  flex-basis: 35%;
+  border-radius: 1000px;
+}
+
+/* PROJECTS CONTENT */
+.projects .content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  /* border: 1px black solid; */
+}
+
+.project {
+  width: 100%;
+  box-sizing: border-box;
+  /* border: 1px black solid; */
+}
+
+.project header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border: 1px black solid; */
+}
+
+.project header h3 {
+  align-self: center;
+  font-size: 4em;
+  color: purple;
+  width: 100%;
+  margin: 1em;
+  flex-basis: 35%;
+  /* border: 1px black solid; */
+}
+
+.project header img {
+  width: 100%;
+  margin: 1em;
+  flex-basis: 10%;
+  /* border: 1px black solid; */
+}
+
+.project main {
+  /* border: 1px black solid; */
+}
+
+.project main img {
+  width: 100%;
+  border-radius: 50px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.stack .content {
+  margin: 2em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  /* border: 1px black solid; */
+}
+
+.stack .content div {
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  flex-basis: 20%;
+  /* border: 1px black solid */
+}
+
+.stack .content img {
+  margin: 1em;
+}
+
+.stack .content h4 {
+  margin: 1em;
+  font-size: 2.5em;
+}
+
+.body-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.body-footer .title {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+}
+
+.body-footer .content {
+  display: flex;
+  width: 100%;
+  margin: 50px 0px 150px 0px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* border: 1px black solid; */
+}
+
+.body-footer .content a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-basis: 25%;
+  color: black;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 15px;
+  /* border: 1px black solid; */
+}
+
+.body-footer .content img {
+  margin: 1em;
+}
+
+.body-footer .content h5 {
+  font-size: 2.5em;
+  margin: 1em;
+}
+
+.body-footer .content a:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10), 0 6px 6px rgba(0, 0, 0, 0.10);
+  transition: box-shadow 750ms;
+  background-color: #FFF;
+}
