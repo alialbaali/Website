@@ -1,0 +1,39 @@
+@media(max-width:1280px)  {
+  body {
+    width: 90%;
+  }
+  /* INTOR CONTENT */
+  /* .intro .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    /* border: 1px black solid; */
+  /* } */
+
+  .intro .content h1 {
+    font-size: 3.5em;
+    flex-basis: 75%;
+    width: 100%;
+    /* border: 3px red solid; */
+  }
+
+  .intro .content img {
+    width: 100%;
+    flex-basis: 75%;
+    border-radius: 1000px;
+    /* border: 3px red solid; */
+  }
+
+  .stack .content h4 {
+    margin: 1em;
+    font-size:3.0em;
+  }
+
+  .body-footer .content h5 {
+    font-size: 3.0em;
+    margin: 1em;
+  }
+}

@@ -9,6 +9,12 @@ body {
 
 .body-header {
   text-align: center;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: #F9F9F9;
+  margin: auto;
   /* font-size: 2em; */
   /* border: 1px black solid; */
 }
@@ -22,6 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 body section {
@@ -53,19 +60,21 @@ section .content {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%;
+  /* border: 3px red solid; */
 }
 
 .intro .content h1 {
   font-size: 3.5em;
+  flex-basis: 50%;
   width: 100%;
-  flex-basis: 35%;
+  /* border: 3px red solid; */
 }
 
 .intro .content img {
   width: 100%;
   flex-basis: 35%;
   border-radius: 1000px;
+  /* border: 3px red solid; */
 }
 
 /* PROJECTS CONTENT */
@@ -93,7 +102,6 @@ section .content {
 .project header h3 {
   align-self: center;
   font-size: 4em;
-  color: purple;
   width: 100%;
   margin: 1em;
   flex-basis: 35%;
@@ -151,6 +159,55 @@ section .content {
   font-size: 2.5em;
 }
 
+/*
+.certificates .content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  /* border: 1px black solid; */
+}
+
+.certificate {
+  width: 100%;
+  box-sizing: border-box;
+  /* border: 1px black solid; */
+}
+
+.certificate header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border: 1px black solid; */
+}
+
+.certificate header h3 {
+  align-self: center;
+  font-size: 4em;
+  width: 100%;
+  margin: 1em;
+  flex-basis: 50%;
+  /* border: 1px black solid; */
+}
+
+.certificate header img {
+  width: 100%;
+  margin: 1em;
+  flex-basis: 10%;
+  /* border: 1px black solid; */
+}
+
+
+.certificate main {
+  /* border: 1px black solid; */
+}
+
+.certificate main embed {
+  width: 100%;
+  border-radius: 50px;
+    border: 1px black solid;
+} */
+
 .body-footer {
   display: flex;
   flex-direction: column;
@@ -199,4 +256,9 @@ section .content {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10), 0 6px 6px rgba(0, 0, 0, 0.10);
   transition: box-shadow 750ms;
   background-color: #FFF;
+}
+.body-footer .content a:focus {
+  box-shadow: none;
+  transition: box-shadow 750ms;
+  background-color: #F9F9F9;
 }
