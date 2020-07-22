@@ -77,6 +77,7 @@ section .content {
     font-size: 3.0em;
     font-weight: 500;
 }
+
 .intro .content .text h3 {
     font-size: 2.0em;
     line-height: 125%;
@@ -87,7 +88,8 @@ section .content {
     width: 100%;
     flex-basis: 35%;
     border-radius: 1000px;
-    /* border: 3px red solid; */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.10);
+    border: 25px white solid;
 }
 
 /* PROJECTS CONTENT */
@@ -95,6 +97,7 @@ section .content {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    box-sizing: border-box;
     /* border: 1px black solid; */
 }
 
@@ -105,19 +108,23 @@ section .content {
     margin-bottom: 5%;
     flex-wrap: wrap;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    border-radius: 24px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.10)
     /* border: 1px black solid; */
 }
 
 .project img {
-    width: 68.5%;
+    width: 100%;
+    flex-basis: 68.5%;
+    border-radius: 0 24px 24px 0;
 }
 
 .project header {
-    margin-bottom: 2%;
+    box-sizing: border-box;
     display: flex;
-    width: 27.5%;
+    flex-basis: 27.5%;
+    margin: 2%;
+    width: 100%;
     flex-direction: column;
     flex-wrap: wrap;
     /* border: 1px black solid; */
@@ -269,13 +276,10 @@ section .content {
     transition: box-shadow 750ms;
     background-color: #FFF;
 }
+
 .body-footer h3 {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     margin-bottom: 2em;
     align-self: center;
-}
-
-.chatychaty {
-    order: 1;
 }
