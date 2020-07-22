@@ -86,8 +86,9 @@ section .content {
 
 .intro .content img {
     width: 100%;
-    flex-basis: 35%;
-    border-radius: 1000px;
+    box-sizing: border-box;
+    flex-basis: 30%;
+    border-radius: 100%;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.10);
     border: 25px white solid;
 }
@@ -107,6 +108,7 @@ section .content {
     margin-top: 5%;
     margin-bottom: 5%;
     flex-wrap: wrap;
+    justify-content: space-around;
     display: flex;
     border-radius: 24px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.10)
@@ -121,9 +123,9 @@ section .content {
 
 .project header {
     box-sizing: border-box;
+    margin: 2%;
     display: flex;
     flex-basis: 27.5%;
-    margin: 2%;
     width: 100%;
     flex-direction: column;
     flex-wrap: wrap;
@@ -140,7 +142,7 @@ section .content {
 }
 
 .project header h5 {
-    font-size: 1.50em;
+    font-size: 1.5em;
     font-weight: 500;
     /* border: 1px black solid; */
 }
@@ -203,11 +205,8 @@ section .content {
     margin-top: 2em;
     margin-bottom: 2em;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     box-sizing: border-box;
-    /* border: 1px black solid; */
 }
 
 .stack .content div {
