@@ -1,7 +1,13 @@
-@media(max-width:1280px)  {
+@media(max-width:1280px) {
   body {
     width: 90%;
   }
+
+  .body-header h1 {
+    /* border: 1px black solid; */
+    /*   font-size: 4em; */
+  }
+
   /* INTOR CONTENT */
   /* .intro .content {
     display: flex;
@@ -13,11 +19,16 @@
     /* border: 1px black solid; */
   /* } */
 
-  .intro .content h1 {
-    font-size: 3.5em;
-    flex-basis: 75%;
+  .intro .content .text {
+    flex-basis: 85%;
     width: 100%;
-    /* border: 3px red solid; */
+  }
+
+  .intro .content .text h1 {
+    font-size: 3.5em;
+  }
+  .intro .content .text h3 {
+    font-size: 2.5em;
   }
 
   .intro .content img {
@@ -29,11 +40,36 @@
 
   .stack .content h4 {
     margin: 1em;
-    font-size:3.0em;
+    font-size: 3.0em;
   }
 
   .body-footer .content h5 {
     font-size: 3.0em;
     margin: 1em;
+  }
+
+  .stack .content div {
+    flex-basis: 50%;
+  }
+
+  .body-footer .content a {
+    flex-basis: 20%;
+  }
+
+  .project {
+    flex-direction: column;
+  }
+  .project header {
+    width: 100%;
+  }
+  .project img {
+    width: 100%;
+  }
+  .chatychaty{
+    order: 0;
+  }
+  .project header .button {
+    width: 25%;
+    align-self: flex-end;
   }
 }
