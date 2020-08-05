@@ -220,6 +220,7 @@ section .content {
 }
 
 .stack .content img {
+  margin-left:4em;
 }
 
 .stack .content h4 {
