@@ -206,6 +206,7 @@ section .content {
     margin-bottom: 2em;
     display: flex;
     flex-wrap: wrap;
+    justify-content:center;
     box-sizing: border-box;
 }
 
