@@ -219,7 +219,12 @@ section .content {
     flex-basis: 25%;
 }
 
+.stack .content img {
+}
+
 .stack .content h4 {
+margin-left:auto;
+margin-right:auto;
     font-size: 3.0em;
     font-weight: 400;
 }

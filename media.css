@@ -48,6 +48,16 @@
   .stack .content div {
     flex-basis: 50%;
   }
+  
+  .stack .content img {
+  margin-left:3em;
+  }
+  
+  .stack .content h4 {
+margin-left:auto;
+margin-right:auto;
+
+}
 
   .body-footer .content a {
     flex-basis: 20%;
