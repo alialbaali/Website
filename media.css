@@ -1,44 +1,16 @@
 @media(max-width:1280px) {
 
-  .body-header h1 {
-    /* border: 1px black solid; */
-    /*   font-size: 4em; */
-  }
-
-  .intro .content {
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  /* INTOR CONTENT */
-  /* .intro .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    /* border: 1px black solid; */
-  /* } */
-
   .intro .content .text {
     margin-top: 32px;
     margin-bottom: 32px;
-    flex-basis: 85%;
+    flex-basis: 80%;
     width: 100%;
-  }
-
-  .intro .content .text h1 {
-    font-size: 4em;
-  }
-  .intro .content .text h3 {
-    font-size: 3em;
   }
 
   .intro .content img {
     margin-top: 32px;
     margin-bottom: 32px;
-    flex-basis: 75%;
+    flex-basis: 80%;
   }
 
   .stack .content h4 {

@@ -59,7 +59,6 @@ section .content {
     /* border: 3px red solid; */
 }
 
-/* INTOR CONTENT */
 .intro .content {
     display: flex;
     justify-content: space-around;
@@ -69,17 +68,17 @@ section .content {
 }
 
 .intro .content .text {
-    flex-basis: 50%;
+    flex-basis: 60%;
     width: 100%;
 }
 
 .intro .content .text h1 {
-    font-size: 3.0em;
+    font-size: 3.5em;
     font-weight: 500;
 }
 
 .intro .content .text h3 {
-    font-size: 2.0em;
+    font-size: 2.5em;
     line-height: 125%;
     font-weight: 400;
 }
@@ -93,7 +92,6 @@ section .content {
     border: 15px white solid;
 }
 
-/* PROJECTS CONTENT */
 .projects .content {
     display: flex;
     align-items: flex-start;
@@ -144,7 +142,7 @@ section .content {
 
 .project header h5 {
     font-size: 1.8em;
-    font-weight: 500;
+    font-weight: 400;
     /* border: 1px black solid; */
 }
 
@@ -174,7 +172,7 @@ section .content {
     text-decoration: none;
     /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10), 0 6px 6px rgba(0, 0, 0, 0.10);*/
     font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     border: 2px solid black;
     align-self: end;
     font-size: 1.5em;
