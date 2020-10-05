@@ -17,6 +17,8 @@
   /* } */
 
   .intro .content .text {
+    margin-top: 16px;
+    margin-bottom: 16px;
     flex-basis: 85%;
     width: 100%;
   }
@@ -29,6 +31,8 @@
   }
 
   .intro .content img {
+    margin-top: 16px;
+    margin-bottom: 16px;
     flex-basis: 75%;
   }
 
