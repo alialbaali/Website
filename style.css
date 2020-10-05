@@ -147,12 +147,13 @@ section .content {
 }
 
 .project header h3 {
-    font-size: 1.25em;
-    font-weight: 500;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0;
 }
 
 .project header ul a {
-    font-size: 1.10em;
+    font-size: 1em;
     color: black;
     text-decoration: none;
     margin: 0;
@@ -161,8 +162,9 @@ section .content {
 }
 
 .project header li {
-    font-size: 1.10em;
+    font-size: 1.2em;
     font-weight: 300;
+    margin: 16px 0 16px;
 }
 
 .project header .button {
@@ -205,7 +207,7 @@ section .content {
     margin-bottom: 2em;
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     box-sizing: border-box;
 }
 
@@ -219,12 +221,12 @@ section .content {
 }
 
 .stack .content img {
-  margin-left:4em;
+    margin-left: 4em;
 }
 
 .stack .content h4 {
-margin-left:auto;
-margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 3.0em;
     font-weight: 400;
 }
