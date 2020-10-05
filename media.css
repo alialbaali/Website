@@ -5,6 +5,11 @@
     /*   font-size: 4em; */
   }
 
+  .intro .content {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
   /* INTOR CONTENT */
   /* .intro .content {
     display: flex;
@@ -17,22 +22,22 @@
   /* } */
 
   .intro .content .text {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 32px;
+    margin-bottom: 32px;
     flex-basis: 85%;
     width: 100%;
   }
 
   .intro .content .text h1 {
-    font-size: 3.5em;
+    font-size: 4em;
   }
   .intro .content .text h3 {
-    font-size: 2.5em;
+    font-size: 3em;
   }
 
   .intro .content img {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 32px;
+    margin-bottom: 32px;
     flex-basis: 75%;
   }
 
