@@ -88,7 +88,7 @@ section .content {
     width: 100%;
     box-sizing: border-box;
     flex-basis: 30%;
-    border-radius: 100%;
+    border-radius: 20%;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.10);
     border: 15px white solid;
 }
@@ -129,6 +129,7 @@ section .content {
     width: 100%;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: space-between;
     /* border: 1px black solid; */
 }
 
