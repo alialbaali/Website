@@ -116,6 +116,7 @@ section .content {
 .project img {
     width: 100%;
     flex-basis: 68.5%;
+    object-fit: contain;
     border-radius: 0 24px 24px 0;
 }
 
