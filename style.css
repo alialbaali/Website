@@ -68,8 +68,8 @@ section .content {
 }
 
 .intro .content .text {
-    flex-basis: 60%;
-    width: 100%;
+    /*flex-basis: 60%;*/
+    width: 60%;
 }
 
 .intro .content .text h1 {
@@ -84,9 +84,9 @@ section .content {
 }
 
 .intro .content img {
-    width: 100%;
+    width: 30%;
     box-sizing: border-box;
-    flex-basis: 30%;
+    /*flex-basis: 30%;*/
     border-radius: 20%;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.10);
     border: 15px white solid;
@@ -114,8 +114,8 @@ section .content {
 }
 
 .project img {
-    width: 100%;
-    flex-basis: 68.5%;
+    width: 68.5%;
+    /*flex-basis: 68.5%;*/
     object-fit: contain;
     border-radius: 0 24px 24px 0;
 }
@@ -124,8 +124,8 @@ section .content {
     box-sizing: border-box;
     margin: 2%;
     display: flex;
-    flex-basis: 27.5%;
-    width: 100%;
+    /*flex-basis: 27.5%;*/
+    width: 27.5%;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
