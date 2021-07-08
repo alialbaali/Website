@@ -1,15 +1,12 @@
 package sections
 
-import WebsiteTheme
 import dev.fritz2.components.box
 import dev.fritz2.components.flexBox
 import dev.fritz2.dom.html.RenderContext
-import dev.fritz2.styling.a
 import dev.fritz2.styling.img
-import dev.fritz2.styling.params.rgba
+import utils.inlineLink
 import utils.per
 import utils.rem
-import utils.transition
 import utils.vh
 
 fun RenderContext.about() {
@@ -82,22 +79,5 @@ private fun RenderContext.text() {
         br {}
         br {}
         +("Currently, I'm learning and exploring Rust, Compose and Inkscape.")
-    }
-}
-
-private fun RenderContext.inlineLink(text: String, url: String) {
-    a({
-        hover {
-            css("text-decoration: underline 0.1rem")
-            css("text-underline-offset: 0.5rem")
-            css("text-decoration-color:${WebsiteTheme.colors.info.main}")
-        }
-        css("text-decoration-color:${rgba(255, 221, 210, 0.0)}")
-        transition(property = { "text-decoration-color" })
-        color { info.main }
-    }) {
-        target("_blank")
-        href(url)
-        +text
     }
 }

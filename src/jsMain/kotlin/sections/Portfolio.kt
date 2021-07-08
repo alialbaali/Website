@@ -7,7 +7,10 @@ import dev.fritz2.components.icon
 import dev.fritz2.dom.html.RenderContext
 import dev.fritz2.styling.params.rgba
 import models.Project
-import utils.*
+import utils.WebsiteLinks
+import utils.rem
+import utils.transition
+import utils.vh
 
 fun RenderContext.portfolio() {
     flexBox({
@@ -26,9 +29,9 @@ fun RenderContext.portfolio() {
         project(Project.Kamel)
         project(Project.Minigrep)
         project(Project.ShoppingAPI)
-        project(Project.Website)
+        website()
         project(Project.CastingAgency)
-        project(Project.ChatyChaty)
+        chatychaty()
         viewMoreButton()
     }
 }

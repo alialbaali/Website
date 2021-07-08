@@ -3,54 +3,18 @@ package sections
 import dev.fritz2.components.box
 import dev.fritz2.components.flexBox
 import dev.fritz2.dom.html.RenderContext
-import dev.fritz2.styling.params.ColorProperty
-import dev.fritz2.styling.theme.Theme
+import dev.fritz2.styling.params.FlexParams
 import models.Project
+import models.Technology
 import surface
-import utils.linkIcon
-import utils.per
-import utils.px
-import utils.transition
+import utils.*
 
 fun RenderContext.project(project: Project) {
-    flexBox(
-        {
-            margins(
-                sm = {
-                    bottom { normal }
-                },
-                md = {
-                    right { normal }
-                    bottom { normal }
-                }
-            )
-            padding(sm = { small }, md = { normal })
-            direction { column }
-            justifyContent { flexStart }
-            alignItems { flexStart }
-            boxShadow { raised }
-            radius { giant }
-            background {
-                color { surface }
-            }
-            width(sm = { 100.per }, md = { 50.per })
-            flex {
-                basis { 30.per }
-            }
-            hover {
-                boxShadow { raisedFurther }
-                css("transform: translateY(-5px)")
-                transition()
-            }
-            alignContent { center }
-            minHeight { 300.px }
-        }
-    ) {
+    flexBox({ projectparams() }) {
         info(project)
         stack(project.stack)
         description(project.description)
     }
-
 }
 
 private fun RenderContext.info(project: Project) {
@@ -117,36 +81,23 @@ private fun RenderContext.year(year: String) {
     }
 }
 
-private fun RenderContext.stack(technologies: List<String>) {
-    val colors = mutableMapOf<String, ColorProperty>().apply {
-        put("Kotlin", "#E040FB")
-        put("Python", "#536DFE")
-        put("Android", "#69F0AE")
-        put("Flask", "#18FFFF")
-        put("HTML", "#EEFF41")
-        put("CSS", "#FFAB40")
-        put("Ktor", "#FF5252")
-        put("Compose", "#64FFDA")
-        put("Rust", "#B2FF59")
-    }
-
+private fun RenderContext.stack(technologies: List<Technology>) {
     flexBox({
         direction { row }
         width { 100.per }
         wrap { wrap }
     }) {
         technologies.forEach { tech ->
-            val techColor = colors[tech] ?: Theme().colors.primary.main
-            tech(tech, techColor)
+            tech(tech)
         }
     }
 }
 
-private fun RenderContext.tech(tech: String, color: String) {
+private fun RenderContext.tech(technology: Technology) {
     box({
         border {
             width { 2.px }
-            color { color }
+            color { technology.color }
         }
         paddings {
             horizontal { normal }
@@ -157,23 +108,109 @@ private fun RenderContext.tech(tech: String, color: String) {
             right { smaller }
             bottom { smaller }
         }
-        color { color }
+        color { technology.color }
         radius { giant }
         fontWeight { semiBold }
         fontSize { smaller }
     }) {
-        +tech
+        +technology.name
     }
 }
 
 private fun RenderContext.description(description: String) {
-
     box({
         margins {
             top { normal }
         }
         fontSize(sm = { normal }, md = { normal })
     }) {
+//        val text = storeOf(description)
+//        links.forEach {
+//            text.update(text.current.replaceAfter(it.key, ""))
+//            inlineLink(it.key, it.value)
+//            text.update(text.current + description)
+//        }
+//        +text.current
         +description
+    }
+}
+
+private fun FlexParams.projectparams() {
+    margins(
+        sm = {
+            bottom { normal }
+        },
+        md = {
+            right { normal }
+            bottom { normal }
+        }
+    )
+    padding(sm = { small }, md = { normal })
+    direction { column }
+    justifyContent { flexStart }
+    alignItems { flexStart }
+    boxShadow { raised }
+    radius { giant }
+    background {
+        color { surface }
+    }
+    width(sm = { 100.per }, md = { 50.per })
+    flex {
+        basis { 30.per }
+    }
+    hover {
+        boxShadow { raisedFurther }
+        css("transform: translateY(-5px)")
+        transition()
+    }
+    alignContent { center }
+    minHeight { 300.px }
+}
+
+fun RenderContext.chatychaty() {
+    val project = Project.ChatyChaty
+    flexBox({ projectparams() }) {
+        info(project)
+        stack(project.stack)
+        chatychatyDescription()
+    }
+}
+
+private fun RenderContext.chatychatyDescription() {
+    box({
+        margins {
+            top { normal }
+        }
+        fontSize(sm = { normal }, md = { normal })
+    }) {
+        +"Chats application developed using Kotlin, and the "
+        inlineLink("backend", "https://github.com/Yousif-FJ/ChatyChaty")
+        +" is implemented using C# by my friend "
+        inlineLink("Yousif", "https://github.com/Yousif-FJ")
+        +". It features dark mode, archived and pinned chats, websockets implementation and more."
+    }
+}
+
+fun RenderContext.website() {
+    val project = Project.Website
+    flexBox({ projectparams() }) {
+        info(project)
+        stack(project.stack)
+        websiteDescription()
+    }
+}
+
+private fun RenderContext.websiteDescription() {
+    box({
+        margins {
+            top { normal }
+        }
+        fontSize(sm = { normal }, md = { normal })
+    }) {
+        +"My personal website built using "
+        inlineLink("Kotlin/JS", "https://kotlinlang.org/docs/js-overview.html")
+        +" by leveraging "
+        inlineLink("fritz2", "https://www.fritz2.dev/")
+        +" framework in this version and HTML and CSS in the older one."
     }
 }
