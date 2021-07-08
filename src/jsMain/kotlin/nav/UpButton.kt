@@ -59,7 +59,7 @@ fun RenderContext.upButton() {
                 fromTheme { chevronUp }
             }
 
-            clicks handledBy SimpleHandler { flow, job ->
+            clicks handledBy SimpleHandler { flow, _ ->
                 flow
                     .onEach { window.scroll(ScrollToOptions(0.0, 0.0, ScrollBehavior.SMOOTH)) }
                     .launchIn(GlobalScope)

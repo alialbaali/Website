@@ -57,6 +57,7 @@ private fun RenderContext.menu() {
     }
 }
 
+@OptIn(DelicateCoroutinesApi::class)
 private fun MenuComponent.entries() {
     Page.values().forEach { page ->
         entry({
@@ -72,7 +73,7 @@ private fun MenuComponent.entries() {
                             Page.About -> window.scroll(ScrollToOptions(top = 850.0, behavior = ScrollBehavior.SMOOTH))
                             Page.Skills -> window.scroll(
                                 ScrollToOptions(
-                                    top = 1950.0,
+                                    top = 1850.0,
                                     behavior = ScrollBehavior.SMOOTH
                                 )
                             )

@@ -110,7 +110,7 @@ private fun RenderContext.buttons() {
             variant { outline }
             size { large }
             text("View portfolio")
-        } handledBy SimpleHandler { flow, job ->
+        } handledBy SimpleHandler { flow, _ ->
             flow
                 .onEach { window.scroll(ScrollToOptions(top = 3000.0, behavior = ScrollBehavior.SMOOTH)) }
                 .launchIn(GlobalScope)

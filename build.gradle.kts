@@ -19,16 +19,12 @@ kotlin {
                 implementation("dev.fritz2:components:0.11")
             }
         }
-        val jvmMain by getting {
-            dependencies {
-            }
-        }
         val jsMain by getting {
-            dependencies {
-            }
+
         }
         all {
             languageSettings.useExperimentalAnnotation("kotlinx.coroutines.ExperimentalCoroutinesApi")
+            languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
         }
     }
 }

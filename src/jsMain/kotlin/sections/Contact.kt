@@ -12,7 +12,6 @@ import dev.fritz2.components.validation.errorMessage
 import dev.fritz2.dom.html.RenderContext
 import dev.fritz2.identification.inspect
 import dev.fritz2.lenses.buildLens
-import dev.fritz2.styling.params.FontWeights
 import models.Mail
 import utils.per
 import utils.vh
@@ -25,10 +24,10 @@ fun RenderContext.contact() {
             validate(Unit)
         }
 
-        val send = handle<Unit> { mail, handler ->
-            if (validator.isValid(mail, Unit)) {
-                Unit
-            }
+        val send = handle<Unit> { mail, _ ->
+//            if (validator.isValid(mail, Unit)) {
+//
+//            }
             mail
         }
     }
@@ -82,7 +81,7 @@ fun RenderContext.contact() {
             }) {
                 inputField(
                     {
-                        fontWeight { FontWeights.semiBold }
+                        fontWeight { semiBold }
                     },
                     value = email
                 ) {
