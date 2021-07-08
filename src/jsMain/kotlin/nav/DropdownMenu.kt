@@ -36,7 +36,9 @@ fun RenderContext.dropdownMenu() {
         }
         zIndex { "1" }
     }) {
-        dropdown {
+        dropdown({
+            width { 90.per }
+        }) {
             content { menu() }
         }
     }
@@ -44,7 +46,6 @@ fun RenderContext.dropdownMenu() {
 
 private fun RenderContext.menu() {
     menu({
-        padding { tiny }
         height { 100.per }
     }) {
         entries()
