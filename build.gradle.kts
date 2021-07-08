@@ -7,10 +7,8 @@ repositories {
 }
 
 kotlin {
-    jvm()
-    js(IR) {
-        browser()
-    }.binaries.executable()
+    js(IR) { browser() }
+        .binaries.executable()
 
     sourceSets {
         val commonMain by getting {
@@ -19,9 +17,7 @@ kotlin {
                 implementation("dev.fritz2:components:0.11")
             }
         }
-        val jsMain by getting {
-
-        }
+        val jsMain by getting
         all {
             languageSettings.useExperimentalAnnotation("kotlinx.coroutines.ExperimentalCoroutinesApi")
             languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
