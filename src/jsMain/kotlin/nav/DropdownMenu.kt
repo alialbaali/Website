@@ -71,19 +71,9 @@ private fun MenuComponent.entries() {
                 clicks.map { page } handledBy SimpleHandler { flow, _ ->
                     flow.onEach { page ->
                         when (page) {
-                            Page.About -> window.scroll(ScrollToOptions(top = 850.0, behavior = ScrollBehavior.SMOOTH))
-                            Page.Skills -> window.scroll(
-                                ScrollToOptions(
-                                    top = 1850.0,
-                                    behavior = ScrollBehavior.SMOOTH
-                                )
-                            )
-                            Page.Portfolio -> window.scroll(
-                                ScrollToOptions(
-                                    top = 3000.0,
-                                    behavior = ScrollBehavior.SMOOTH
-                                )
-                            )
+                            Page.About -> window.scroll(ScrollToOptions(top = 800.0, behavior = ScrollBehavior.SMOOTH))
+                            Page.Skills -> window.scroll(ScrollToOptions(top = 2100.0, behavior = ScrollBehavior.SMOOTH))
+                            Page.Portfolio -> window.scroll(ScrollToOptions(top = 2900.0, behavior = ScrollBehavior.SMOOTH))
                         }
                     }.launchIn(GlobalScope)
                 }
