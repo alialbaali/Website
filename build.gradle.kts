@@ -7,8 +7,10 @@ repositories {
 }
 
 kotlin {
-    js(IR) { browser() }
-        .binaries.executable()
+    js(IR) {
+        browser()
+        binaries.executable()
+    }
 
     sourceSets {
         val commonMain by getting {
