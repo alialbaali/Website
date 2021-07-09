@@ -211,6 +211,6 @@ private fun RenderContext.websiteDescription() {
         inlineLink("Kotlin/JS", "https://kotlinlang.org/docs/js-overview.html")
         +" by leveraging "
         inlineLink("fritz2", "https://www.fritz2.dev/")
-        +" framework in this version and HTML and CSS in the older one."
+        +" framework in this version and HTML and CSS in the previous one."
     }
 }
