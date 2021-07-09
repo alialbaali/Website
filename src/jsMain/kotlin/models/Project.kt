@@ -47,9 +47,9 @@ data class Project(
             link = "http://chatychaty0.herokuapp.com/",
             year = 2020U,
         )
-        val ShoppingAPI = Project(
-            name = "Shopping-API",
-            description = "An e-commerce API built entirely in Ktor. integrated with Stripe and Cloudinary services.",
+        val Shopally = Project(
+            name = "Shopally",
+            description = "An e-commerce API built entirely in Ktor, integrated with Stripe and Cloudinary services, and follows domain driven design.",
             stack = listOf(Kotlin, Ktor),
             githubLink = "https://github.com/alialbaali/Shopping-API",
             link = "https://shopally.herokuapp.com/",
@@ -70,6 +70,6 @@ data class Project(
             year = 2021U,
         )
 
-        val All = listOf(Kamel, Noto, ChatyChaty, ShoppingAPI, Website, CastingAgency, Minigrep)
+        val All = listOf(Kamel, Noto, ChatyChaty, Shopally, Website, CastingAgency, Minigrep)
     }
 }

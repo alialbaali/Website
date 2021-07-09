@@ -28,7 +28,7 @@ fun RenderContext.portfolio() {
     }) {
         project(Project.Kamel)
         project(Project.Minigrep)
-        project(Project.ShoppingAPI)
+        project(Project.Shopally)
         website()
         project(Project.CastingAgency)
         chatychaty()
