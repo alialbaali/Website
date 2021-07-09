@@ -49,7 +49,7 @@ data class Project(
         )
         val Shopally = Project(
             name = "Shopally",
-            description = "An e-commerce API built entirely in Ktor, integrated with Stripe and Cloudinary services, and follows domain driven design.",
+            description = "An e-commerce API built entirely in Ktor, integrated with Stripe and Cloudinary services, and follows domain driven design structure and development.",
             stack = listOf(Kotlin, Ktor),
             githubLink = "https://github.com/alialbaali/Shopping-API",
             link = "https://shopally.herokuapp.com/",
