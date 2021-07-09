@@ -35,7 +35,7 @@ fun RenderContext.skills() {
             width { 100.per }
             wrap { wrap }
         }) {
-            Skill.All.forEach { skill ->
+            Skill.values().forEach { skill ->
                 skill(skill)
             }
         }
@@ -64,7 +64,7 @@ private fun RenderContext.skill(skill: Skill) {
             )
         }
     }) {
-        src(skill.value)
+        src(skill.path)
         alt(skill.name)
     }
 }
