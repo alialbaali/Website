@@ -37,7 +37,7 @@ fun RenderContext.contact() {
     val message = mail.sub(Lens.Message)
 
     box({
-        height { 100.vh }
+        minHeight { 100.vh }
         width { 100.per }
         justifyContent { center }
         alignItems { center }

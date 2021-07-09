@@ -14,7 +14,7 @@ import utils.vh
 
 fun RenderContext.portfolio() {
     flexBox({
-        height(md = { 85.vh })
+        minHeight(md = { 85.vh })
         direction(sm = { column }, md = { row })
         justifyContent { center }
         alignItems { center }

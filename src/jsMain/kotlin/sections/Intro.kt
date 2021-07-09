@@ -23,7 +23,7 @@ import utils.vh
 
 fun RenderContext.intro() {
     flexBox({
-        height { 100.vh }
+        minHeight { 100.vh }
         justifyContent { center }
         alignItems { center }
         alignContent { flexStart }

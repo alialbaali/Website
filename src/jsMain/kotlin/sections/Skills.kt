@@ -12,7 +12,7 @@ import utils.vh
 
 fun RenderContext.skills() {
     flexBox({
-        height(md = { 85.vh })
+        minHeight(md = { 85.vh })
         justifyContent { center }
         alignItems { flexStart }
         alignContent { center }
@@ -21,7 +21,6 @@ fun RenderContext.skills() {
                 bottom { 8.rem }
             }
         )
-
     }) {
         flexBox({
             padding { normal }
@@ -45,16 +44,17 @@ fun RenderContext.skills() {
 private fun RenderContext.skill(skill: Skill) {
     img({
         tooltip(skill.name)()
-        width(sm = { 30.per }, md = { 12.per })
+        width(sm = { 30.per }, md = { 13.per })
+        padding { normal }
         margins(
             sm = {
-                horizontal { 1.per }
+                vertical { small }
             },
             md = {
-                horizontal { 3.per }
+                vertical { large }
+                horizontal { huge }
             }
         )
-        padding { normal }
         hover {
             css(
                 """

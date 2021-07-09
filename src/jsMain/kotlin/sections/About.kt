@@ -11,7 +11,7 @@ import utils.vh
 
 fun RenderContext.about() {
     flexBox({
-        height(md = { 65.vh })
+        minHeight(md = { 65.vh })
         justifyContent { center }
         alignItems { flexStart }
         alignContent { center }

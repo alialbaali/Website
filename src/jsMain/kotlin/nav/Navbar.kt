@@ -47,7 +47,7 @@ fun RenderContext.navbar() {
                 flow.onEach {
                     when (it) {
                         Section.About -> window.scroll(ScrollToOptions(top = 750.0, behavior = ScrollBehavior.SMOOTH))
-                        Section.Skills -> window.scroll(ScrollToOptions(top = 1700.0, behavior = ScrollBehavior.SMOOTH))
+                        Section.Skills -> window.scroll(ScrollToOptions(top = 1750.0, behavior = ScrollBehavior.SMOOTH))
                         Section.Portfolio -> window.scroll(ScrollToOptions(top = 2780.0, behavior = ScrollBehavior.SMOOTH))
                     }
                 }.launchIn(GlobalScope)
