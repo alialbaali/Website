@@ -1,5 +1,5 @@
 package nav
 
-enum class Page {
+enum class Section {
     About, Skills, Portfolio,
 }

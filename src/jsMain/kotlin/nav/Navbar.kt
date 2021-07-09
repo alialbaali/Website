@@ -34,21 +34,21 @@ fun RenderContext.navbar() {
         }
         zIndex { "1" }
     }) {
-        Page.values().forEach { page ->
+        Section.values().forEach { section ->
             clickButton({
                 margins {
                     horizontal { normal }
                 }
             }) {
-                text(page.name)
+                text(section.name)
                 variant { ghost }
                 size { small }
-            }.map { page } handledBy SimpleHandler { flow, _ ->
-                flow.onEach { page ->
-                    when (page) {
-                        Page.About -> window.scroll(ScrollToOptions(top = 750.0, behavior = ScrollBehavior.SMOOTH))
-                        Page.Skills -> window.scroll(ScrollToOptions(top = 1700.0, behavior = ScrollBehavior.SMOOTH))
-                        Page.Portfolio -> window.scroll(ScrollToOptions(top = 2780.0, behavior = ScrollBehavior.SMOOTH))
+            }.map { section } handledBy SimpleHandler { flow, _ ->
+                flow.onEach {
+                    when (it) {
+                        Section.About -> window.scroll(ScrollToOptions(top = 750.0, behavior = ScrollBehavior.SMOOTH))
+                        Section.Skills -> window.scroll(ScrollToOptions(top = 1700.0, behavior = ScrollBehavior.SMOOTH))
+                        Section.Portfolio -> window.scroll(ScrollToOptions(top = 2780.0, behavior = ScrollBehavior.SMOOTH))
                     }
                 }.launchIn(GlobalScope)
             }

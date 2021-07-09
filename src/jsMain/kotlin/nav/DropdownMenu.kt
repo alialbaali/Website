@@ -60,20 +60,20 @@ private fun RenderContext.menu() {
 
 @OptIn(DelicateCoroutinesApi::class)
 private fun MenuComponent.entries() {
-    Page.values().forEach { page ->
+    Section.values().forEach { section ->
         entry({
             fontSize { normal }
             width { 100.per }
             color { primary.main }
         }) {
-            text(page.name)
+            text(section.name)
             events {
-                clicks.map { page } handledBy SimpleHandler { flow, _ ->
-                    flow.onEach { page ->
-                        when (page) {
-                            Page.About -> window.scroll(ScrollToOptions(top = 800.0, behavior = ScrollBehavior.SMOOTH))
-                            Page.Skills -> window.scroll(ScrollToOptions(top = 2100.0, behavior = ScrollBehavior.SMOOTH))
-                            Page.Portfolio -> window.scroll(ScrollToOptions(top = 2900.0, behavior = ScrollBehavior.SMOOTH))
+                clicks.map { section } handledBy SimpleHandler { flow, _ ->
+                    flow.onEach {
+                        when (it) {
+                            Section.About -> window.scroll(ScrollToOptions(top = 800.0, behavior = ScrollBehavior.SMOOTH))
+                            Section.Skills -> window.scroll(ScrollToOptions(top = 2100.0, behavior = ScrollBehavior.SMOOTH))
+                            Section.Portfolio -> window.scroll(ScrollToOptions(top = 2900.0, behavior = ScrollBehavior.SMOOTH))
                         }
                     }.launchIn(GlobalScope)
                 }
