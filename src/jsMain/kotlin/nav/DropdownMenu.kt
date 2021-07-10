@@ -73,7 +73,7 @@ private fun MenuComponent.entries() {
                         when (it) {
                             Section.About -> window.scroll(ScrollToOptions(top = 800.0, behavior = ScrollBehavior.SMOOTH))
                             Section.Skills -> window.scroll(ScrollToOptions(top = 2100.0, behavior = ScrollBehavior.SMOOTH))
-                            Section.Portfolio -> window.scroll(ScrollToOptions(top = 2900.0, behavior = ScrollBehavior.SMOOTH))
+                            Section.Portfolio -> window.scroll(ScrollToOptions(top = 2980.0, behavior = ScrollBehavior.SMOOTH))
                         }
                     }.launchIn(GlobalScope)
                 }
