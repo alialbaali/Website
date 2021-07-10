@@ -118,4 +118,4 @@ object WebsiteTheme : DefaultTheme() {
 }
 
 val Colors.surface
-    get() = primary.main.plus("50")
+    get() = primary.main.plus("AA")
