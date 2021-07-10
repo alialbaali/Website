@@ -183,11 +183,11 @@ private fun RenderContext.chatychatyDescription() {
         }
         fontSize(sm = { normal }, md = { normal })
     }) {
-        +"Chats application developed using Kotlin, and the "
+        +"Chats application developed using Kotlin, while the "
         inlineLink("backend", "https://github.com/Yousif-FJ/ChatyChaty")
         +" is implemented using C# by my friend "
         inlineLink("Yousif", "https://github.com/Yousif-FJ")
-        +". It features dark mode, archived and pinned chats, websockets implementation and more."
+        +". It features real-time communication, archived and pinned chats, dark mode and more."
     }
 }
 
