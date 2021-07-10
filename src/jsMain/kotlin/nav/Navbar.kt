@@ -39,10 +39,11 @@ fun RenderContext.navbar() {
                 margins {
                     horizontal { normal }
                 }
+//                fontSize { normal }
             }) {
                 text(section.name)
                 variant { ghost }
-                size { small }
+                size { normal }
             }.map { section } handledBy SimpleHandler { flow, _ ->
                 flow.onEach {
                     when (it) {
