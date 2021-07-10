@@ -100,7 +100,7 @@ private fun RenderContext.tech(technology: Technology) {
             color { technology.color }
         }
         paddings {
-            horizontal { normal }
+            horizontal { small }
             vertical { tiny }
         }
         margins {
