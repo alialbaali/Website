@@ -32,7 +32,7 @@ private fun RenderContext.info(project: Project) {
                     }
                 },
                 url = it,
-                definition = utils.WebsiteIcons.Link
+                definition = WebsiteIcons.Link
             )
         }
         project.githubLink?.let {
@@ -43,7 +43,7 @@ private fun RenderContext.info(project: Project) {
                     }
                 },
                 url = it,
-                definition = utils.WebsiteIcons.Github
+                definition = WebsiteIcons.Github
             )
         }
         year(project.year.toString())
@@ -110,8 +110,8 @@ private fun RenderContext.tech(technology: Technology) {
         }
         color { technology.color }
         radius { giant }
-        fontWeight { semiBold }
-        fontSize { smaller }
+        fontWeight { medium }
+        fontSize { small }
     }) {
         +technology.name
     }
