@@ -111,8 +111,16 @@ private fun RenderContext.buttons() {
             size { large }
             text("View portfolio")
         } handledBy SimpleHandler { flow, _ ->
+            val isDesktop = window.screen.width > 800
             flow
-                .onEach { window.scroll(ScrollToOptions(top = 3000.0, behavior = ScrollBehavior.SMOOTH)) }
+                .onEach {
+                    window.scroll(
+                        ScrollToOptions(
+                            top = if (isDesktop) 2780.0 else 2980.0,
+                            behavior = ScrollBehavior.SMOOTH
+                        )
+                    )
+                }
                 .launchIn(GlobalScope)
         }
     }
