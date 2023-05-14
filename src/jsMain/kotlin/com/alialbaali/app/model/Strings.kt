@@ -7,5 +7,6 @@ object Strings {
     const val WhatDoIDo = "I like to build cool things that live on the internet using modern tools and technologies."
     const val Contact = "Contact"
     const val ViewPortfolio = "View Portfolio"
+    const val Username = "alialbaali"
 
 }

@@ -3,8 +3,8 @@ package com.alialbaali.app.theme
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
-private val TransitionDuration = 250.ms
-private val TextDecorationThickness = 0.25.cssRem
+val TransitionDuration = 250.ms
+val TextDecorationThickness = 0.25.cssRem
 
 @OptIn(ExperimentalComposeWebApi::class)
 object AppStyleSheet : StyleSheet() {
@@ -17,8 +17,8 @@ object AppStyleSheet : StyleSheet() {
         }
 
         "html" style {
-            fontFamily("Inter")
-            fontSize(62.5.percent)
+            fontFamily(Fonts.Inter)
+            fontSize(Dimensions.FontScale)
             backgroundColor(Colors.Background)
             color(Colors.OnBackground)
         }
@@ -106,30 +106,10 @@ object AppStyleSheet : StyleSheet() {
         }
     }
 
-    val PageTitle by style {
-        fontWeight("medium")
-        textDecorationLine("underline")
-        textDecorationThickness(TextDecorationThickness)
-        textDecorationColor(rgba(255, 255, 255, 0))
-        property("text-underline-offset", "1rem")
-        color(Colors.OnBackground)
-        fontFamily("Dancing Script")
-        fontSize(Dimensions.Small)
-        cursor("pointer")
-        transitions {
-            all {
-                duration(TransitionDuration)
-            }
-        }
-        self + hover style {
-            textDecorationColor(Colors.OnBackground)
-        }
-    }
-
     val Main by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-        padding(Dimensions.Medium)
+        padding(Dimensions.MainPadding)
         alignItems(AlignItems.Center)
         width(100.percent)
         gap(Dimensions.Medium)

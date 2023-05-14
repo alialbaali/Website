@@ -1,6 +1,7 @@
 package com.alialbaali.app.theme
 
 import org.jetbrains.compose.web.css.cssRem
+import org.jetbrains.compose.web.css.percent
 
 object Dimensions {
 
@@ -15,4 +16,6 @@ object Dimensions {
     val ExtraHuge = 7.2.cssRem
 
     val BorderRadius = ExtraTiny
+    val MainPadding = Medium
+    val FontScale = 62.5.percent
 }
