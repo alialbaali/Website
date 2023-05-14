@@ -132,6 +132,7 @@ object AppStyleSheet : StyleSheet() {
         padding(Dimensions.Medium)
         alignItems(AlignItems.Center)
         width(100.percent)
+        gap(Dimensions.Medium)
     }
 
 }

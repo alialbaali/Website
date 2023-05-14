@@ -1,6 +1,6 @@
 package com.alialbaali.app.model
 
-enum class Skill(val path: String) {
+enum class Skill(val imagePath: String) {
     Android("logos/Android.svg"),
     Compose("logos/Compose.svg"),
     Kotlin("logos/Kotlin.svg"),

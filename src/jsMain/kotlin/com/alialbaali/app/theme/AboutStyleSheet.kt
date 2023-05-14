@@ -1,7 +1,6 @@
 package com.alialbaali.app.theme
 
 import org.jetbrains.compose.web.css.*
-import org.jetbrains.compose.web.css.keywords.auto
 
 object AboutStyleSheet : StyleSheet() {
 
@@ -9,7 +8,8 @@ object AboutStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         gap(Dimensions.ExtraSmall)
-        alignItems(AlignItems.Stretch)
+        alignItems(AlignItems.Start)
+        minHeight(100.vh)
     }
 
     val Image by style {
