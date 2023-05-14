@@ -24,7 +24,7 @@ object AppStyleSheet : StyleSheet() {
         }
     }
 
-    val BaseButtonStyle by style {
+    val BaseButton by style {
         cursor("pointer")
         fontWeight("medium")
         borderRadius(Dimensions.BorderRadius)
@@ -124,6 +124,14 @@ object AppStyleSheet : StyleSheet() {
         self + hover style {
             textDecorationColor(Colors.OnBackground)
         }
+    }
+
+    val Main by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        padding(Dimensions.Medium)
+        alignItems(AlignItems.Center)
+        width(100.percent)
     }
 
 }
