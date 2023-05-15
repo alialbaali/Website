@@ -83,11 +83,12 @@ object AppStyleSheet : StyleSheet() {
             }
         }
 
-        self + hover style {
-            textDecorationColor(Colors.Primary)
-        }
+        self + hover style { TextButtonHoverStyle() }
     }
 
+    fun StyleScope.TextButtonHoverStyle() {
+        textDecorationColor(Colors.Primary)
+    }
 
     val HighlightedText by style {
         fontWeight("medium")
