@@ -7,6 +7,7 @@ object IntroStyleSheet : StyleSheet() {
     val Section by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
+        width(100.percent)
         minHeight(100.vh)
     }
 
