@@ -6,6 +6,7 @@ object SkillsStyleSheet : StyleSheet() {
 
     val Section by style {
         minHeight(100.vh)
+        width(100.percent)
     }
 
     val Container by style {

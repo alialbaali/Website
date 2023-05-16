@@ -10,6 +10,7 @@ object AboutStyleSheet : StyleSheet() {
         gap(Dimensions.ExtraSmall)
         alignItems(AlignItems.Start)
         minHeight(100.vh)
+        width(100.percent)
     }
 
     val Image by style {
