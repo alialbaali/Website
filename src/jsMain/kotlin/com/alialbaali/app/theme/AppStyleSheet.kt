@@ -1,5 +1,6 @@
 package com.alialbaali.app.theme
 
+import com.alialbaali.app.util.FontWeight
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
@@ -26,7 +27,7 @@ object AppStyleSheet : StyleSheet() {
 
     val BaseButton by style {
         cursor("pointer")
-        fontWeight("medium")
+        fontWeight(FontWeight.Medium)
         borderRadius(Dimensions.BorderRadius)
         paddingLeft(Dimensions.ExtraSmall)
         paddingRight(Dimensions.ExtraSmall)
@@ -91,7 +92,7 @@ object AppStyleSheet : StyleSheet() {
     }
 
     val HighlightedText by style {
-        fontWeight("medium")
+        fontWeight(FontWeight.Medium)
         textDecorationLine("underline")
         textDecorationThickness(TextDecorationThickness)
         textDecorationColor(rgba(226, 149, 120, 0))

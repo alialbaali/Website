@@ -1,5 +1,6 @@
 package com.alialbaali.app.theme
 
+import com.alialbaali.app.util.FontWeight
 import org.jetbrains.compose.web.css.*
 
 object IntroStyleSheet : StyleSheet() {
@@ -14,7 +15,7 @@ object IntroStyleSheet : StyleSheet() {
     val Hello by style {
         marginBottom(Dimensions.ExtraTiny)
         color(Colors.PrimaryVariant)
-        fontWeight("light")
+        fontWeight(FontWeight.Light)
         fontSize(Dimensions.ExtraLarge)
     }
 
@@ -22,7 +23,7 @@ object IntroStyleSheet : StyleSheet() {
         marginTop(Dimensions.ExtraTiny)
         marginBottom(Dimensions.ExtraSmall)
         color(Colors.OnBackground)
-        fontWeight("normal")
+        fontWeight(FontWeight.Normal)
         fontSize(Dimensions.ExtraHuge)
     }
 
@@ -30,7 +31,7 @@ object IntroStyleSheet : StyleSheet() {
         marginTop(Dimensions.ExtraSmall)
         marginBottom(Dimensions.Small)
         color(Colors.Secondary)
-        fontWeight("medium")
+        fontWeight(FontWeight.Medium)
         fontSize(Dimensions.Medium)
         width(75.percent)
     }

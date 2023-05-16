@@ -1,5 +1,6 @@
 package com.alialbaali.app.theme
 
+import com.alialbaali.app.util.FontWeight
 import org.jetbrains.compose.web.css.*
 
 object AboutStyleSheet : StyleSheet() {
@@ -22,7 +23,7 @@ object AboutStyleSheet : StyleSheet() {
     val Text by style {
         width(70.percent)
         color(Colors.Primary)
-        fontWeight("normal")
+        fontWeight(FontWeight.Normal)
         fontSize(Dimensions.ExtraSmall)
     }
 

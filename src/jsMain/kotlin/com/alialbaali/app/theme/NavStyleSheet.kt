@@ -1,5 +1,6 @@
 package com.alialbaali.app.theme
 
+import com.alialbaali.app.util.FontWeight
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
@@ -18,7 +19,7 @@ object NavStyleSheet : StyleSheet() {
     }
 
     val PageTitle by style {
-        fontWeight("medium")
+        fontWeight(FontWeight.Medium)
         textDecorationLine("underline")
         textDecorationThickness(TextDecorationThickness)
         textDecorationColor(rgba(255, 255, 255, 0))
