@@ -1,6 +1,7 @@
 package com.alialbaali.app.theme
 
 import com.alialbaali.app.util.FontWeight
+import com.alialbaali.app.util.userSelect
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
@@ -33,6 +34,7 @@ object NavStyleSheet : StyleSheet() {
         fontFamily(Fonts.DancingScript)
         fontSize(Dimensions.Small)
         cursor("pointer")
+        userSelect("none")
         self + hover style {
             textDecorationColor(Colors.OnBackground)
         }

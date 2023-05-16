@@ -1,6 +1,7 @@
 package com.alialbaali.app.theme
 
 import com.alialbaali.app.util.FontWeight
+import com.alialbaali.app.util.userSelect
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
@@ -50,6 +51,7 @@ object AppStyleSheet : StyleSheet() {
         paddingBottom(Dimensions.ExtraTiny)
         fontSize(Dimensions.ExtraSmall)
         border(0.px)
+        userSelect("none")
     }
 
     val FilledButton by style {

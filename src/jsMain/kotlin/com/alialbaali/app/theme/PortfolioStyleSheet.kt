@@ -1,6 +1,7 @@
 package com.alialbaali.app.theme
 
 import com.alialbaali.app.util.FontWeight
+import com.alialbaali.app.util.userSelect
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto
 
@@ -73,6 +74,7 @@ object PortfolioStyleSheet : StyleSheet() {
         padding(Dimensions.ExtraTiny, Dimensions.Tiny)
         fontWeight(FontWeight.SemiBold)
         fontSize(Dimensions.Tiny)
+        userSelect("none")
     }
 
     val TechnologiesContainer by style {
