@@ -7,11 +7,14 @@ import org.jetbrains.compose.web.css.keywords.auto
 object PortfolioStyleSheet : StyleSheet() {
 
     val Section by style {
+        AppStyleSheet.apply { DefaultSectionStyle() }
+    }
+
+    val Container by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         flexWrap(FlexWrap.Wrap)
         gap(Dimensions.Medium)
-        minHeight(100.vh)
         width(100.percent)
     }
 

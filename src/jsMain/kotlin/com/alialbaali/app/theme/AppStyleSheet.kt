@@ -25,6 +25,21 @@ object AppStyleSheet : StyleSheet() {
         }
     }
 
+    val Main by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        padding(Dimensions.MainPadding)
+        alignItems(AlignItems.Center)
+        width(100.percent)
+        gap(Dimensions.MainGap)
+    }
+
+    fun StyleScope.DefaultSectionStyle() {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        width(100.percent)
+    }
+
     val BaseButton by style {
         cursor("pointer")
         fontWeight(FontWeight.Medium)
@@ -108,13 +123,11 @@ object AppStyleSheet : StyleSheet() {
         }
     }
 
-    val Main by style {
-        display(DisplayStyle.Flex)
-        flexDirection(FlexDirection.Column)
-        padding(Dimensions.MainPadding)
-        alignItems(AlignItems.Center)
-        width(100.percent)
-        gap(Dimensions.Medium)
+    val SectionName by style {
+        margin(Dimensions.Large, 0.px)
+        color(Colors.OnBackground)
+        fontWeight(FontWeight.Bold)
+        fontSize(Dimensions.Large)
     }
 
 }

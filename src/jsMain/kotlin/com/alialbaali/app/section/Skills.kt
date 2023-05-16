@@ -2,6 +2,8 @@ package com.alialbaali.app.section
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import com.alialbaali.app.components.SectionName
+import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Skill
 import com.alialbaali.app.theme.SkillsStyleSheet
 import org.jetbrains.compose.web.dom.Div
@@ -12,6 +14,7 @@ import org.jetbrains.compose.web.dom.Section
 fun Skills() {
     val skills = remember { Skill.values() }
     Section(attrs = { classes(SkillsStyleSheet.Section) }) {
+        SectionName(Section.Skills)
         Div(attrs = { classes(SkillsStyleSheet.Container) }) {
             skills.forEach { skill ->
                 SkillItem(skill)

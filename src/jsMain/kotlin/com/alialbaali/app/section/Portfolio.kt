@@ -2,7 +2,9 @@ package com.alialbaali.app.section
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Project
+import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Technology
 import com.alialbaali.app.theme.PortfolioStyleSheet
 import org.jetbrains.compose.web.css.*
@@ -11,13 +13,16 @@ import org.jetbrains.compose.web.dom.*
 @Composable
 fun Portfolio() {
     Section(attrs = { classes(PortfolioStyleSheet.Section) }) {
-        HighlightedProject(Project.Noto)
-        HighlightedProject(Project.Kamel)
-        Project(Project.ChatyChaty)
-        Project(Project.CastingAgency)
-        Project(Project.Minigrep)
-        Project(Project.Shopally)
-        Project(Project.Website)
+        SectionName(Section.Portfolio)
+        Div(attrs = { classes(PortfolioStyleSheet.Container) }) {
+            HighlightedProject(Project.Noto)
+            HighlightedProject(Project.Kamel)
+            Project(Project.ChatyChaty)
+            Project(Project.CastingAgency)
+            Project(Project.Minigrep)
+            Project(Project.Shopally)
+            Project(Project.Website)
+        }
     }
 }
 

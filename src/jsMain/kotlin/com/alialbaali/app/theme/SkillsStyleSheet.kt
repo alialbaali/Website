@@ -5,8 +5,7 @@ import org.jetbrains.compose.web.css.*
 object SkillsStyleSheet : StyleSheet() {
 
     val Section by style {
-        minHeight(100.vh)
-        width(100.percent)
+        AppStyleSheet.apply { DefaultSectionStyle() }
     }
 
     val Container by style {
