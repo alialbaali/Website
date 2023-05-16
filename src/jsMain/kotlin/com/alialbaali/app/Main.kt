@@ -1,6 +1,6 @@
 package com.alialbaali.app
 
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import com.alialbaali.app.nav.Navbar
 import com.alialbaali.app.section.*
 import com.alialbaali.app.theme.*
@@ -15,10 +15,9 @@ fun main() {
 @Composable
 private fun App() {
     Styles.forEach { Style(it) }
-    var headerHeight by remember { mutableStateOf(0) }
-    Navbar(onHeaderHeightChanged = { headerHeight = it })
+    Navbar()
     Main(attrs = { classes(AppStyleSheet.Main) }) {
-        Intro(headerHeight)
+        Intro()
         About()
         Skills()
         Portfolio()

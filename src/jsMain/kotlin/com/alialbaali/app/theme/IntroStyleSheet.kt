@@ -9,7 +9,7 @@ object IntroStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
         width(100.percent)
-        minHeight(100.vh)
+        maxHeight(100.vh)
     }
 
     val Hello by style {

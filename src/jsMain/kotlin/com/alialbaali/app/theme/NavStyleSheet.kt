@@ -15,7 +15,8 @@ object NavStyleSheet : StyleSheet() {
         justifyContent(JustifyContent.SpaceBetween)
         alignItems(AlignItems.Center)
         padding(Dimensions.MainPadding)
-        position(Position.Fixed)
+        position(Position.Sticky)
+        top(0.px)
         backgroundColor(Colors.Background)
     }
 

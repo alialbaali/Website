@@ -16,19 +16,11 @@ import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.get
 
 @Composable
-fun Navbar(onHeaderHeightChanged: (Int) -> Unit) {
+fun Navbar() {
     val sections = remember { Section.values().toList() }
     var currentSection by remember { mutableStateOf<Section?>(null) }
     CurrentSectionEffect { currentSection = it }
-    Header(
-        attrs = {
-            classes(NavStyleSheet.Header)
-            ref { header ->
-                onHeaderHeightChanged(header.clientHeight)
-                onDispose { onHeaderHeightChanged(0) }
-            }
-        }
-    ) {
+    Header(attrs = { classes(NavStyleSheet.Header) }) {
         A(
             attrs = {
                 classes(NavStyleSheet.PageTitle)
