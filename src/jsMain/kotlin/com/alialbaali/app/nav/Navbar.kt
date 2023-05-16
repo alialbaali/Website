@@ -6,6 +6,7 @@ import com.alialbaali.app.model.Strings
 import com.alialbaali.app.theme.*
 import com.alialbaali.app.util.isVisible
 import com.alialbaali.app.util.scrollToSection
+import com.alialbaali.app.util.scrollToTop
 import kotlinx.browser.document
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.A
@@ -28,7 +29,14 @@ fun Navbar(onHeaderHeightChanged: (Int) -> Unit) {
             }
         }
     ) {
-        A(attrs = { classes(NavStyleSheet.PageTitle) }) { Text(Strings.Username) }
+        A(
+            attrs = {
+                classes(NavStyleSheet.PageTitle)
+                onClick { window.scrollToTop() }
+            }
+        ) {
+            Text(Strings.Username)
+        }
         Nav(attrs = { classes(NavStyleSheet.Nav) }) {
             sections.forEach { section ->
                 A(

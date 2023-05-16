@@ -32,3 +32,11 @@ fun Window.scrollToSection(section: Section) {
     }
 }
 
+fun Window.scrollToTop() {
+    scroll(
+        ScrollToOptions(
+            top = 0.0,
+            behavior = ScrollBehavior.SMOOTH
+        )
+    )
+}
