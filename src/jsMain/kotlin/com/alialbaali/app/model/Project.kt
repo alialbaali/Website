@@ -62,7 +62,7 @@ data class Project(
         val Website = Project(
             name = "Website",
             description = "My personal website built using Kotlin/JS by leveraging fritz2 framework in this version and HTML and CSS in the older one.",
-            technologies = listOf(Kotlin, CSS, HTML),
+            technologies = listOf(Kotlin, HTML, CSS),
             githubLink = "https://github.com/alialbaali/Website",
             year = 2021U,
         )

@@ -3,10 +3,7 @@ package com.alialbaali.app.nav
 import androidx.compose.runtime.*
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
-import com.alialbaali.app.theme.AboutStyleSheet
-import com.alialbaali.app.theme.AppStyleSheet
-import com.alialbaali.app.theme.NavStyleSheet
-import com.alialbaali.app.theme.SkillsStyleSheet
+import com.alialbaali.app.theme.*
 import com.alialbaali.app.util.isVisible
 import com.alialbaali.app.util.scrollToSection
 import kotlinx.browser.document
@@ -53,10 +50,12 @@ private fun CurrentSectionEffect(setSection: (Section?) -> Unit) {
     DisposableEffect(Unit) {
         val about = document.body!!.getElementsByClassName(AboutStyleSheet.Section)[0]!!
         val skills = document.body!!.getElementsByClassName(SkillsStyleSheet.Section)[0]!!
+        val portfolio = document.body!!.getElementsByClassName(PortfolioStyleSheet.Section)[0]!!
         document.onscroll = {
             when {
                 about.isVisible && !skills.isVisible -> Section.About
-                skills.isVisible -> Section.Skills
+                skills.isVisible && !portfolio.isVisible -> Section.Skills
+                portfolio.isVisible -> Section.Portfolio
                 else -> null
             }.also(setSection)
         }

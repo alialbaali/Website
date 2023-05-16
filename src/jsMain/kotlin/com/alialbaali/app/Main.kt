@@ -4,6 +4,7 @@ import androidx.compose.runtime.*
 import com.alialbaali.app.nav.Navbar
 import com.alialbaali.app.section.About
 import com.alialbaali.app.section.Intro
+import com.alialbaali.app.section.Portfolio
 import com.alialbaali.app.section.Skills
 import com.alialbaali.app.theme.*
 import org.jetbrains.compose.web.css.Style
@@ -23,7 +24,8 @@ private fun App() {
         Intro(headerHeight)
         About()
         Skills()
+        Portfolio()
     }
 }
 
-private val Styles = listOf(AppStyleSheet, IntroStyleSheet, AboutStyleSheet, SkillsStyleSheet, NavStyleSheet)
+private val Styles = listOf(AppStyleSheet, IntroStyleSheet, AboutStyleSheet, SkillsStyleSheet, PortfolioStyleSheet, NavStyleSheet)
