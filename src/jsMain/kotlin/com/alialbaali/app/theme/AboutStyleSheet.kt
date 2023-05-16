@@ -2,6 +2,7 @@ package com.alialbaali.app.theme
 
 import com.alialbaali.app.util.FontWeight
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.keywords.auto
 
 object AboutStyleSheet : StyleSheet() {
 
@@ -13,14 +14,15 @@ object AboutStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         gap(Dimensions.ExtraSmall)
-        alignItems(AlignItems.Start)
         width(100.percent)
     }
 
     val Image by style {
         maxWidth(30.percent)
+        height(auto)
         backgroundColor(Colors.Primary)
         borderRadius(Dimensions.BorderRadius)
+        property("object-fit", "cover")
     }
 
     val Text by style {
