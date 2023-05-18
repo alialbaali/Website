@@ -13,6 +13,7 @@ repositories {
 }
 
 kotlin {
+    jvmToolchain(JavaVersion.VERSION_17.majorVersion.toInt())
     js(IR) {
         browser {
             testTask {
