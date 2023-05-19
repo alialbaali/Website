@@ -1,5 +1,7 @@
-package com.alialbaali.app.theme
+package com.alialbaali.app.theme.style
 
+import com.alialbaali.app.theme.Dimensions
+import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.util.FontWeight
 import org.jetbrains.compose.web.css.*
 

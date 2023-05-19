@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import com.alialbaali.app.components.HighlightedText
 import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Section
-import com.alialbaali.app.theme.AboutStyleSheet
+import com.alialbaali.app.theme.style.AboutStyleSheet
 import org.jetbrains.compose.web.dom.*
 
 @Composable

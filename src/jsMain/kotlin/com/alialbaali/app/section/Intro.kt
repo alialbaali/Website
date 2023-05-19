@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import com.alialbaali.app.model.Links
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
-import com.alialbaali.app.theme.AppStyleSheet
-import com.alialbaali.app.theme.IntroStyleSheet
+import com.alialbaali.app.theme.style.ComponentsStyleSheet
+import com.alialbaali.app.theme.style.IntroStyleSheet
 import com.alialbaali.app.util.scrollToSection
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.*
@@ -19,7 +19,7 @@ fun Intro() {
         Div(attrs = { classes(IntroStyleSheet.ButtonsContainer) }) {
             Button(
                 attrs = {
-                    classes(AppStyleSheet.BaseButton, AppStyleSheet.FilledButton)
+                    classes(ComponentsStyleSheet.BaseButton, ComponentsStyleSheet.FilledButton)
                     onClick { window.open(Links.Mail) }
                 }
             ) {
@@ -27,7 +27,7 @@ fun Intro() {
             }
             Button(
                 attrs = {
-                    classes(AppStyleSheet.BaseButton, AppStyleSheet.OutlinedButton)
+                    classes(ComponentsStyleSheet.BaseButton, ComponentsStyleSheet.OutlinedButton)
                     onClick { window.scrollToSection(Section.Portfolio) }
                 }
             ) {

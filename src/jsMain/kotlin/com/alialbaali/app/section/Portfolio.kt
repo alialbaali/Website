@@ -6,7 +6,7 @@ import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Project
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Technology
-import com.alialbaali.app.theme.PortfolioStyleSheet
+import com.alialbaali.app.theme.style.PortfolioStyleSheet
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 

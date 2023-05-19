@@ -3,7 +3,7 @@ package com.alialbaali.app.nav
 import androidx.compose.runtime.*
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
-import com.alialbaali.app.theme.*
+import com.alialbaali.app.theme.style.*
 import com.alialbaali.app.util.isPartiallyVisible
 import com.alialbaali.app.util.scrollToSection
 import com.alialbaali.app.util.scrollToTop
@@ -33,9 +33,9 @@ fun Navbar() {
             sections.forEach { section ->
                 A(
                     attrs = {
-                        classes(AppStyleSheet.BaseButton, AppStyleSheet.TextButton)
+                        classes(ComponentsStyleSheet.BaseButton, ComponentsStyleSheet.TextButton)
                         onClick { window.scrollToSection(section) }
-                        style { if (section == currentSection) AppStyleSheet.apply { TextButtonHoverStyle() } }
+                        style { if (section == currentSection) ComponentsStyleSheet.apply { TextButtonHoverStyle() } }
                     }
                 ) {
                     Text(section.name)

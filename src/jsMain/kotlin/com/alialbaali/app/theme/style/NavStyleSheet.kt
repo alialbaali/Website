@@ -1,5 +1,8 @@
-package com.alialbaali.app.theme
+package com.alialbaali.app.theme.style
 
+import com.alialbaali.app.theme.Dimensions
+import com.alialbaali.app.theme.Fonts
+import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.util.FontWeight
 import com.alialbaali.app.util.userSelect
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
@@ -23,12 +26,12 @@ object NavStyleSheet : StyleSheet() {
     val PageTitle by style {
         fontWeight(FontWeight.Medium)
         textDecorationLine("underline")
-        textDecorationThickness(TextDecorationThickness)
+        textDecorationThickness(Dimensions.TextDecorationThickness)
         textDecorationColor(rgba(255, 255, 255, 0))
         property("text-underline-offset", "1rem")
         transitions {
             all {
-                duration(TransitionDuration)
+                duration(Dimensions.TransitionDuration)
             }
         }
         color(Variables.Colors.OnBackground.value())

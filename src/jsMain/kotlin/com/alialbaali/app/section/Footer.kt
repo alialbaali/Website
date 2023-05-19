@@ -2,7 +2,7 @@ package com.alialbaali.app.section
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import com.alialbaali.app.theme.FooterStyleSheet
+import com.alialbaali.app.theme.style.FooterStyleSheet
 import org.jetbrains.compose.web.dom.Footer
 import org.jetbrains.compose.web.dom.Text
 import kotlin.js.Date

@@ -5,7 +5,7 @@ import androidx.compose.runtime.remember
 import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Skill
-import com.alialbaali.app.theme.SkillsStyleSheet
+import com.alialbaali.app.theme.style.SkillsStyleSheet
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Section

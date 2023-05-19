@@ -1,11 +1,13 @@
-package com.alialbaali.app.theme
+package com.alialbaali.app.theme.style
 
+import com.alialbaali.app.theme.Dimensions
+import com.alialbaali.app.theme.Variables
 import org.jetbrains.compose.web.css.*
 
 object SkillsStyleSheet : StyleSheet() {
 
     val Section by style {
-        AppStyleSheet.apply { DefaultSectionStyle() }
+        ComponentsStyleSheet.apply { DefaultSectionStyle() }
     }
 
     val Container by style {

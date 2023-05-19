@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import com.alialbaali.app.nav.Navbar
 import com.alialbaali.app.section.*
-import com.alialbaali.app.theme.*
+import com.alialbaali.app.theme.style.*
 import com.alialbaali.app.util.isSystemInDarkMode
 import kotlinx.browser.document
 import kotlinx.browser.window
@@ -39,13 +39,23 @@ private fun ThemeEffect() {
     LaunchedEffect(isDarkMode) {
         val htmlElement = document.getElementsByTagName("html")[0]!!
         if (isDarkMode) {
-            htmlElement.removeClass(AppStyleSheet.LightTheme)
-            htmlElement.addClass(AppStyleSheet.DarkTheme)
+            htmlElement.removeClass(ThemeStyleSheet.LightTheme)
+            htmlElement.addClass(ThemeStyleSheet.DarkTheme)
         } else {
-            htmlElement.removeClass(AppStyleSheet.DarkTheme)
-            htmlElement.addClass(AppStyleSheet.LightTheme)
+            htmlElement.removeClass(ThemeStyleSheet.DarkTheme)
+            htmlElement.addClass(ThemeStyleSheet.LightTheme)
         }
     }
 }
 
-private val Styles = listOf(AppStyleSheet, IntroStyleSheet, AboutStyleSheet, SkillsStyleSheet, PortfolioStyleSheet, NavStyleSheet, FooterStyleSheet)
+private val Styles = listOf(
+    ThemeStyleSheet,
+    AppStyleSheet,
+    ComponentsStyleSheet,
+    IntroStyleSheet,
+    AboutStyleSheet,
+    SkillsStyleSheet,
+    PortfolioStyleSheet,
+    NavStyleSheet,
+    FooterStyleSheet,
+)
