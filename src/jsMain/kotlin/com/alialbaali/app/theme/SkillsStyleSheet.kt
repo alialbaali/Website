@@ -15,7 +15,7 @@ object SkillsStyleSheet : StyleSheet() {
         alignItems(AlignItems.Center)
         justifyContent(JustifyContent.Center)
         padding(Dimensions.Small)
-        backgroundColor(Colors.Primary)
+        backgroundColor(Variables.Colors.Primary.value())
         borderRadius(Dimensions.BorderRadius)
     }
 

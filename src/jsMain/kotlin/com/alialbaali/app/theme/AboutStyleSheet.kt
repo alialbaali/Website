@@ -20,14 +20,14 @@ object AboutStyleSheet : StyleSheet() {
     val Image by style {
         maxWidth(30.percent)
         height(auto)
-        backgroundColor(Colors.Primary)
+        backgroundColor(Variables.Colors.Primary.value())
         borderRadius(Dimensions.BorderRadius)
         property("object-fit", "cover")
     }
 
     val Text by style {
         width(70.percent)
-        color(Colors.Primary)
+        color(Variables.Colors.Primary.value())
         fontWeight(FontWeight.Normal)
         fontSize(Dimensions.ExtraSmall)
     }

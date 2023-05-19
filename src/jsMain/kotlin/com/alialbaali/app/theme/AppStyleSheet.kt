@@ -21,9 +21,31 @@ object AppStyleSheet : StyleSheet() {
         "html" style {
             fontFamily(Fonts.Inter)
             fontSize(Dimensions.FontScale)
-            backgroundColor(Colors.Background)
-            color(Colors.OnBackground)
+            backgroundColor(Variables.Colors.Background.value())
+            color(Variables.Colors.OnBackground.value())
         }
+    }
+
+    val LightTheme by style {
+        Variables.Colors.Primary(Theme.LightColors.Primary)
+        Variables.Colors.OnPrimary(Theme.LightColors.OnPrimary)
+        Variables.Colors.PrimaryVariant(Theme.LightColors.PrimaryVariant)
+        Variables.Colors.Secondary(Theme.LightColors.Secondary)
+        Variables.Colors.OnSecondary(Theme.LightColors.OnSecondary)
+        Variables.Colors.SecondaryVariant(Theme.LightColors.SecondaryVariant)
+        Variables.Colors.Background(Theme.LightColors.Background)
+        Variables.Colors.OnBackground(Theme.LightColors.OnBackground)
+    }
+
+    val DarkTheme by style {
+        Variables.Colors.Primary(Theme.DarkColors.Primary)
+        Variables.Colors.OnPrimary(Theme.DarkColors.OnPrimary)
+        Variables.Colors.PrimaryVariant(Theme.DarkColors.PrimaryVariant)
+        Variables.Colors.Secondary(Theme.DarkColors.Secondary)
+        Variables.Colors.OnSecondary(Theme.DarkColors.OnSecondary)
+        Variables.Colors.SecondaryVariant(Theme.DarkColors.SecondaryVariant)
+        Variables.Colors.Background(Theme.DarkColors.Background)
+        Variables.Colors.OnBackground(Theme.DarkColors.OnBackground)
     }
 
     val Main by style {
@@ -55,8 +77,8 @@ object AppStyleSheet : StyleSheet() {
     }
 
     val FilledButton by style {
-        backgroundColor(Colors.Primary)
-        color(Colors.OnPrimary)
+        backgroundColor(Variables.Colors.Primary.value())
+        color(Variables.Colors.OnPrimary.value())
         transitions {
             all {
                 duration(TransitionDuration)
@@ -64,32 +86,32 @@ object AppStyleSheet : StyleSheet() {
         }
 
         self + hover style {
-            backgroundColor(Colors.OnPrimary)
-            color(Colors.Primary)
+            backgroundColor(Variables.Colors.OnPrimary.value())
+            color(Variables.Colors.Primary.value())
         }
     }
 
     val OutlinedButton by style {
-        backgroundColor(Colors.Background)
+        backgroundColor(Variables.Colors.Background.value())
         border {
             style = LineStyle.Solid
             width = 2.px
-            color = Colors.Secondary
+            color = Variables.Colors.Secondary.value()
         }
-        color(Colors.Secondary)
+        color(Variables.Colors.Secondary.value())
         transitions {
             all {
                 duration(TransitionDuration)
             }
         }
         self + hover style {
-            backgroundColor(Colors.Secondary)
-            color(Colors.OnSecondary)
+            backgroundColor(Variables.Colors.Secondary.value())
+            color(Variables.Colors.OnSecondary.value())
         }
     }
 
     val TextButton by style {
-        color(Colors.Primary)
+        color(Variables.Colors.Primary.value())
         backgroundColor(Color.transparent)
         textDecorationLine("underline")
         textDecorationThickness(TextDecorationThickness)
@@ -105,7 +127,7 @@ object AppStyleSheet : StyleSheet() {
     }
 
     fun StyleScope.TextButtonHoverStyle() {
-        textDecorationColor(Colors.Primary)
+        textDecorationColor(Variables.Colors.Primary.value())
     }
 
     val HighlightedText by style {
@@ -114,20 +136,20 @@ object AppStyleSheet : StyleSheet() {
         textDecorationThickness(TextDecorationThickness)
         textDecorationColor(rgba(226, 149, 120, 0))
         property("text-underline-offset", "1rem")
-        color(Colors.SecondaryVariant)
+        color(Variables.Colors.SecondaryVariant.value())
         transitions {
             all {
                 duration(TransitionDuration)
             }
         }
         self + hover style {
-            textDecorationColor(Colors.SecondaryVariant)
+            textDecorationColor(Variables.Colors.SecondaryVariant.value())
         }
     }
 
     val SectionName by style {
         margin(Dimensions.Large, 0.px)
-        color(Colors.OnBackground)
+        color(Variables.Colors.OnBackground.value())
         fontWeight(FontWeight.Bold)
         fontSize(Dimensions.Large)
     }

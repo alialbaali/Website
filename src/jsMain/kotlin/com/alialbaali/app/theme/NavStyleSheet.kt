@@ -17,7 +17,7 @@ object NavStyleSheet : StyleSheet() {
         padding(Dimensions.MainPadding)
         position(Position.Sticky)
         top(0.px)
-        backgroundColor(Colors.Background)
+        backgroundColor(Variables.Colors.Background.value())
     }
 
     val PageTitle by style {
@@ -31,13 +31,13 @@ object NavStyleSheet : StyleSheet() {
                 duration(TransitionDuration)
             }
         }
-        color(Colors.OnBackground)
+        color(Variables.Colors.OnBackground.value())
         fontFamily(Fonts.DancingScript)
         fontSize(Dimensions.Small)
         cursor("pointer")
         userSelect("none")
         self + hover style {
-            textDecorationColor(Colors.OnBackground)
+            textDecorationColor(Variables.Colors.OnBackground.value())
         }
     }
 

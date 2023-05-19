@@ -13,7 +13,7 @@ object IntroStyleSheet : StyleSheet() {
 
     val Hello by style {
         marginBottom(Dimensions.ExtraTiny)
-        color(Colors.PrimaryVariant)
+        color(Variables.Colors.PrimaryVariant.value())
         fontWeight(FontWeight.Light)
         fontSize(Dimensions.ExtraLarge)
     }
@@ -21,7 +21,7 @@ object IntroStyleSheet : StyleSheet() {
     val WhoAmI by style {
         marginTop(Dimensions.ExtraTiny)
         marginBottom(Dimensions.ExtraSmall)
-        color(Colors.OnBackground)
+        color(Variables.Colors.OnBackground.value())
         fontWeight(FontWeight.Normal)
         fontSize(Dimensions.ExtraHuge)
     }
@@ -29,7 +29,7 @@ object IntroStyleSheet : StyleSheet() {
     val WhatDoIDo by style {
         marginTop(Dimensions.ExtraSmall)
         marginBottom(Dimensions.Small)
-        color(Colors.Secondary)
+        color(Variables.Colors.Secondary.value())
         fontWeight(FontWeight.Medium)
         fontSize(Dimensions.Medium)
         width(75.percent)

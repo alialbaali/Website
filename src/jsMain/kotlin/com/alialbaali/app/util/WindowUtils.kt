@@ -1,9 +1,12 @@
 package com.alialbaali.app.util
 
+import androidx.compose.runtime.*
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.theme.AppStyleSheet
 import com.alialbaali.app.theme.NavStyleSheet
 import org.w3c.dom.*
+
+private const val DarkModeQuery = "(prefers-color-scheme: dark)"
 
 fun Window.scrollToSection(section: Section) {
     val navbarElementHeight = document.getElementsByClassName(NavStyleSheet.Header)[0]?.clientHeight ?: 0
@@ -21,4 +24,15 @@ fun Window.scrollToTop() {
             behavior = ScrollBehavior.SMOOTH
         )
     )
+}
+
+@Composable
+fun Window.isSystemInDarkMode(): Boolean {
+    var isSystemInDarkMode by remember { mutableStateOf(false) }
+    val mediaQueryList = this.matchMedia(DarkModeQuery)
+    DisposableEffect(Unit) {
+        mediaQueryList.onchange = { isSystemInDarkMode = mediaQueryList.matches; Unit }
+        onDispose { mediaQueryList.onchange = null }
+    }
+    return isSystemInDarkMode
 }
