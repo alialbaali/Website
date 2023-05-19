@@ -4,7 +4,7 @@ import androidx.compose.runtime.*
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.theme.*
-import com.alialbaali.app.util.isVisible
+import com.alialbaali.app.util.isPartiallyVisible
 import com.alialbaali.app.util.scrollToSection
 import com.alialbaali.app.util.scrollToTop
 import kotlinx.browser.document
@@ -53,9 +53,9 @@ private fun CurrentSectionEffect(setSection: (Section?) -> Unit) {
         val portfolio = document.body!!.getElementsByClassName(PortfolioStyleSheet.Section)[0]!!
         document.onscroll = {
             when {
-                about.isVisible && !skills.isVisible -> Section.About
-                skills.isVisible && !portfolio.isVisible -> Section.Skills
-                portfolio.isVisible -> Section.Portfolio
+                about.isPartiallyVisible -> Section.About
+                skills.isPartiallyVisible -> Section.Skills
+                portfolio.isPartiallyVisible -> Section.Portfolio
                 else -> null
             }.also(setSection)
         }
