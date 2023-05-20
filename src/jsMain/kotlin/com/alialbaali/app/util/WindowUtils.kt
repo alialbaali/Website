@@ -4,6 +4,10 @@ import androidx.compose.runtime.*
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.theme.style.ComponentsStyleSheet
 import com.alialbaali.app.theme.style.NavStyleSheet
+import com.alialbaali.app.theme.style.ThemeStyleSheet
+import kotlinx.dom.addClass
+import kotlinx.dom.hasClass
+import kotlinx.dom.removeClass
 import org.w3c.dom.*
 
 private const val DarkModeQuery = "(prefers-color-scheme: dark)"
@@ -51,4 +55,35 @@ private fun Window.inaccurateScrollPercentage(): Double {
     val viewportHeight = innerHeight
     val documentHeight = document.documentElement?.scrollHeight ?: 0
     return (scrollPosition + viewportHeight) / documentHeight * 100
+}
+
+
+fun Window.toggleDarkMode(isSystemInDarkMode: Boolean?): Boolean {
+    val htmlElement = document.getElementsByTagName("html")[0]!!
+    val isDarkTheme = htmlElement.hasClass(ThemeStyleSheet.DarkTheme)
+    return if (isSystemInDarkMode != null) {
+        if (isSystemInDarkMode) {
+            htmlElement.removeClass(ThemeStyleSheet.LightTheme)
+            htmlElement.addClass(ThemeStyleSheet.DarkTheme)
+            true
+        } else {
+            htmlElement.removeClass(ThemeStyleSheet.DarkTheme)
+            htmlElement.addClass(ThemeStyleSheet.LightTheme)
+            false
+        }
+    } else {
+        when {
+            isDarkTheme -> {
+                htmlElement.removeClass(ThemeStyleSheet.DarkTheme)
+                htmlElement.addClass(ThemeStyleSheet.LightTheme)
+                false
+            }
+
+            else -> {
+                htmlElement.removeClass(ThemeStyleSheet.LightTheme)
+                htmlElement.addClass(ThemeStyleSheet.DarkTheme)
+                true
+            }
+        }
+    }
 }

@@ -7,7 +7,6 @@ import com.alialbaali.app.section.*
 import com.alialbaali.app.theme.style.*
 import com.alialbaali.app.util.isSystemInDarkMode
 import com.alialbaali.app.util.toggleDarkMode
-import kotlinx.browser.document
 import kotlinx.browser.window
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.dom.Main
@@ -34,7 +33,7 @@ private fun App() {
 @Composable
 private fun ThemeEffect() {
     val isSystemInDarkMode = window.isSystemInDarkMode()
-    LaunchedEffect(isSystemInDarkMode) { document.toggleDarkMode(isSystemInDarkMode) }
+    LaunchedEffect(isSystemInDarkMode) { window.toggleDarkMode(isSystemInDarkMode) }
 }
 
 private val Styles = listOf(

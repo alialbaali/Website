@@ -5,7 +5,6 @@ import com.alialbaali.app.theme.style.ComponentsStyleSheet
 import com.alialbaali.app.theme.style.ThemeStyleSheet
 import com.alialbaali.app.util.isSystemInDarkMode
 import com.alialbaali.app.util.toggleDarkMode
-import kotlinx.browser.document
 import kotlinx.browser.window
 import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.dom.*
@@ -21,7 +20,7 @@ fun ThemeToggle() {
                 checked(isDarkMode)
                 classes(ComponentsStyleSheet.ThemeToggleInput);
                 id(ComponentsStyleSheet.ThemeToggleId)
-                onChange { isDarkMode = document.toggleDarkMode(isSystemInDarkMode = null) }
+                onChange { isDarkMode = window.toggleDarkMode(isSystemInDarkMode = null) }
             }
         )
         Label(attrs = { classes(ComponentsStyleSheet.ThemeToggleLabel) }, forId = ComponentsStyleSheet.ThemeToggleId) {
