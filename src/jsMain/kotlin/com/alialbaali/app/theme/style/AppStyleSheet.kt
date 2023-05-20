@@ -3,8 +3,10 @@ package com.alialbaali.app.theme.style
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Fonts
 import com.alialbaali.app.theme.Variables
+import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
+@OptIn(ExperimentalComposeWebApi::class)
 object AppStyleSheet : StyleSheet() {
 
     init {
@@ -12,6 +14,11 @@ object AppStyleSheet : StyleSheet() {
             margin(0.px)
             padding(0.px)
             boxSizing("border-box")
+            transitions {
+                properties("color", "background-color") {
+                    duration(Dimensions.TransitionDuration)
+                }
+            }
         }
 
         "html" style {
