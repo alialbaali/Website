@@ -6,14 +6,12 @@ import com.alialbaali.app.nav.Navbar
 import com.alialbaali.app.section.*
 import com.alialbaali.app.theme.style.*
 import com.alialbaali.app.util.isSystemInDarkMode
+import com.alialbaali.app.util.toggleDarkMode
 import kotlinx.browser.document
 import kotlinx.browser.window
-import kotlinx.dom.addClass
-import kotlinx.dom.removeClass
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.dom.Main
 import org.jetbrains.compose.web.renderComposableInBody
-import org.w3c.dom.get
 
 fun main() {
     renderComposableInBody { App() }
@@ -35,17 +33,8 @@ private fun App() {
 
 @Composable
 private fun ThemeEffect() {
-    val isDarkMode = window.isSystemInDarkMode()
-    LaunchedEffect(isDarkMode) {
-        val htmlElement = document.getElementsByTagName("html")[0]!!
-        if (isDarkMode) {
-            htmlElement.removeClass(ThemeStyleSheet.LightTheme)
-            htmlElement.addClass(ThemeStyleSheet.DarkTheme)
-        } else {
-            htmlElement.removeClass(ThemeStyleSheet.DarkTheme)
-            htmlElement.addClass(ThemeStyleSheet.LightTheme)
-        }
-    }
+    val isSystemInDarkMode = window.isSystemInDarkMode()
+    LaunchedEffect(isSystemInDarkMode) { document.toggleDarkMode(isSystemInDarkMode) }
 }
 
 private val Styles = listOf(

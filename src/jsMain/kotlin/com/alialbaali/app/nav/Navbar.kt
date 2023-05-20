@@ -1,6 +1,7 @@
 package com.alialbaali.app.nav
 
 import androidx.compose.runtime.*
+import com.alialbaali.app.components.ThemeToggle
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.theme.style.*
@@ -41,6 +42,7 @@ fun Navbar() {
                     Text(section.name)
                 }
             }
+            ThemeToggle()
         }
     }
 }
