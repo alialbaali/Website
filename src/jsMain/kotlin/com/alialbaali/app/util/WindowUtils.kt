@@ -28,8 +28,8 @@ fun Window.scrollToTop() {
 
 @Composable
 fun Window.isSystemInDarkMode(): Boolean {
-    var isSystemInDarkMode by remember { mutableStateOf(false) }
     val mediaQueryList = this.matchMedia(DarkModeQuery)
+    var isSystemInDarkMode by remember { mutableStateOf(mediaQueryList.matches) }
     DisposableEffect(Unit) {
         mediaQueryList.onchange = { isSystemInDarkMode = mediaQueryList.matches; Unit }
         onDispose { mediaQueryList.onchange = null }
