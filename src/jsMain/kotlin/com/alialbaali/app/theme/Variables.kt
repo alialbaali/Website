@@ -16,6 +16,8 @@ object Variables {
 
         val Background by variable<CSSColorValue>()
         val OnBackground by variable<CSSColorValue>()
+
+        val NavbarShadow by variable<CSSColorValue>()
     }
 
 }

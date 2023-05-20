@@ -21,6 +21,24 @@ object NavStyleSheet : StyleSheet() {
         position(Position.Sticky)
         top(0.px)
         backgroundColor(Variables.Colors.Background.value())
+        transitions {
+            properties("box-shadow") {
+                duration(Dimensions.TransitionDuration)
+            }
+        }
+    }
+
+    fun StyleScope.ElevatedNavbarStyle() {
+        property(
+            "box-shadow",
+            """
+            ${Dimensions.NavbarShadowHorizontalOffset}
+            ${Dimensions.NavbarShadowVerticalOffset}
+            ${Dimensions.NavbarShadowBlurRadius}
+            ${Dimensions.NavbarShadowSpreadRadius}
+            ${Variables.Colors.NavbarShadow.value()}
+           """.trimIndent()
+        )
     }
 
     val PageTitle by style {

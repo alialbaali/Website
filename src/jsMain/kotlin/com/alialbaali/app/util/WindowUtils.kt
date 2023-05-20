@@ -36,3 +36,19 @@ fun Window.isSystemInDarkMode(): Boolean {
     }
     return isSystemInDarkMode
 }
+
+val Window.scrollPercentage: Double
+    get() {
+        val scrollTop = document.documentElement?.scrollTop ?: 0.0
+        val viewportHeight = document.documentElement?.clientHeight ?: 0
+        val documentHeight = document.documentElement?.scrollHeight ?: 0
+        return scrollTop / (documentHeight - viewportHeight) * 100
+    }
+
+@Deprecated("Use Window.scrollPercentage")
+private fun Window.inaccurateScrollPercentage(): Double {
+    val scrollPosition = pageYOffset
+    val viewportHeight = innerHeight
+    val documentHeight = document.documentElement?.scrollHeight ?: 0
+    return (scrollPosition + viewportHeight) / documentHeight * 100
+}

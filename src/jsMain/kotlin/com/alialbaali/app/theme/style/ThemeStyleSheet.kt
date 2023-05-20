@@ -17,6 +17,7 @@ object ThemeStyleSheet : StyleSheet() {
         Variables.Colors.SecondaryVariant(Theme.LightColors.SecondaryVariant)
         Variables.Colors.Background(Theme.LightColors.Background)
         Variables.Colors.OnBackground(Theme.LightColors.OnBackground)
+        Variables.Colors.NavbarShadow(Theme.LightColors.NavbarShadow)
     }
 
     val DarkTheme by style {
@@ -28,6 +29,7 @@ object ThemeStyleSheet : StyleSheet() {
         Variables.Colors.SecondaryVariant(Theme.DarkColors.SecondaryVariant)
         Variables.Colors.Background(Theme.DarkColors.Background)
         Variables.Colors.OnBackground(Theme.DarkColors.OnBackground)
+        Variables.Colors.NavbarShadow(Theme.DarkColors.NavbarShadow)
     }
 
 }

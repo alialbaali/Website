@@ -1,9 +1,6 @@
 package com.alialbaali.app.theme
 
-import org.jetbrains.compose.web.css.cssRem
-import org.jetbrains.compose.web.css.ms
-import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.vh
+import org.jetbrains.compose.web.css.*
 
 object Dimensions {
 
@@ -23,5 +20,10 @@ object Dimensions {
     val MainGap = 25.vh
     val TransitionDuration = 250.ms
     val TextDecorationThickness = 0.25.cssRem
+
+    val NavbarShadowHorizontalOffset = 0.px
+    val NavbarShadowVerticalOffset = 0.px
+    val NavbarShadowBlurRadius = 16.px
+    val NavbarShadowSpreadRadius = 8.px
 
 }

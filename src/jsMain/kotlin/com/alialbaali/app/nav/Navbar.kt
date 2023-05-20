@@ -6,6 +6,7 @@ import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.theme.style.*
 import com.alialbaali.app.util.isPartiallyVisible
+import com.alialbaali.app.util.scrollPercentage
 import com.alialbaali.app.util.scrollToSection
 import com.alialbaali.app.util.scrollToTop
 import kotlinx.browser.document
@@ -16,12 +17,20 @@ import org.jetbrains.compose.web.dom.Nav
 import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.get
 
+private const val ScrollPercentageThreshold = 1
+
 @Composable
 fun Navbar() {
     val sections = remember { Section.values().toList() }
     var currentSection by remember { mutableStateOf<Section?>(null) }
-    CurrentSectionEffect { currentSection = it }
-    Header(attrs = { classes(NavStyleSheet.Header) }) {
+    var isElevated by remember { mutableStateOf(false) }
+    OnScrollEffect(setSection = { currentSection = it }, setIsElevated = { isElevated = it })
+    Header(
+        attrs = {
+            classes(NavStyleSheet.Header)
+            style { if (isElevated) NavStyleSheet.apply { ElevatedNavbarStyle() } }
+        }
+    ) {
         A(
             attrs = {
                 classes(NavStyleSheet.PageTitle)
@@ -48,7 +57,7 @@ fun Navbar() {
 }
 
 @Composable
-private fun CurrentSectionEffect(setSection: (Section?) -> Unit) {
+private fun OnScrollEffect(setSection: (Section?) -> Unit, setIsElevated: (Boolean) -> Unit) {
     DisposableEffect(Unit) {
         val about = document.body!!.getElementsByClassName(AboutStyleSheet.Section)[0]!!
         val skills = document.body!!.getElementsByClassName(SkillsStyleSheet.Section)[0]!!
@@ -60,6 +69,7 @@ private fun CurrentSectionEffect(setSection: (Section?) -> Unit) {
                 portfolio.isPartiallyVisible -> Section.Portfolio
                 else -> null
             }.also(setSection)
+            setIsElevated(window.scrollPercentage > ScrollPercentageThreshold)
         }
         onDispose { document.onscroll = null }
     }

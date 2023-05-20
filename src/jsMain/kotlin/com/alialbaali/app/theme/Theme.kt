@@ -2,6 +2,7 @@ package com.alialbaali.app.theme
 
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.rgb
+import org.jetbrains.compose.web.css.rgba
 
 object Theme {
 
@@ -16,6 +17,8 @@ object Theme {
 
         val Background = Color.white
         val OnBackground = Color.black
+
+        val NavbarShadow = rgba(0, 0, 0, 0.1)
     }
 
     object DarkColors {
@@ -29,6 +32,8 @@ object Theme {
 
         val Background = Color.black
         val OnBackground = Color.white
+
+        val NavbarShadow = rgba(255, 255, 255, 0.1)
     }
 
 }
