@@ -9,8 +9,10 @@ import kotlinx.dom.addClass
 import kotlinx.dom.hasClass
 import kotlinx.dom.removeClass
 import org.w3c.dom.*
+import org.w3c.dom.events.Event
 
 private const val DarkModeQuery = "(prefers-color-scheme: dark)"
+private const val ScrollEventType = "scroll"
 
 fun Window.scrollToSection(section: Section) {
     val navbarElementHeight = document.getElementsByClassName(NavStyleSheet.Header)[0]?.clientHeight ?: 0
@@ -85,5 +87,13 @@ fun Window.toggleDarkMode(isSystemInDarkMode: Boolean?): Boolean {
                 true
             }
         }
+    }
+}
+
+@Composable
+fun Window.OnScrollEffect(callback: (Event) -> Unit) {
+    DisposableEffect(Unit) {
+        document.addEventListener(ScrollEventType, callback)
+        onDispose { document.removeEventListener(ScrollEventType, callback) }
     }
 }

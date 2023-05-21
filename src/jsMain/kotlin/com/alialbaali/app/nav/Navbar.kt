@@ -5,11 +5,7 @@ import com.alialbaali.app.components.ThemeToggle
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.theme.style.*
-import com.alialbaali.app.util.isPartiallyVisible
-import com.alialbaali.app.util.scrollPercentage
-import com.alialbaali.app.util.scrollToSection
-import com.alialbaali.app.util.scrollToTop
-import kotlinx.browser.document
+import com.alialbaali.app.util.*
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Header
@@ -22,9 +18,10 @@ private const val ScrollPercentageThreshold = 1
 @Composable
 fun Navbar() {
     val sections = remember { Section.values().toList() }
-    var currentSection by remember { mutableStateOf<Section?>(null) }
+    var visibleSection by remember { mutableStateOf<Section?>(null) }
     var isElevated by remember { mutableStateOf(false) }
-    OnScrollEffect(setSection = { currentSection = it }, setIsElevated = { isElevated = it })
+    VisibleSectionEffect { visibleSection = it }
+    window.OnScrollEffect { isElevated = window.scrollPercentage > ScrollPercentageThreshold }
     Header(
         attrs = {
             classes(NavStyleSheet.Header)
@@ -45,7 +42,7 @@ fun Navbar() {
                     attrs = {
                         classes(ComponentsStyleSheet.BaseButton, ComponentsStyleSheet.TextButton)
                         onClick { window.scrollToSection(section) }
-                        style { if (section == currentSection) ComponentsStyleSheet.apply { TextButtonHoverStyle() } }
+                        style { if (section == visibleSection) ComponentsStyleSheet.apply { TextButtonHoverStyle() } }
                     }
                 ) {
                     Text(section.name)
@@ -57,20 +54,20 @@ fun Navbar() {
 }
 
 @Composable
-private fun OnScrollEffect(setSection: (Section?) -> Unit, setIsElevated: (Boolean) -> Unit) {
+private fun VisibleSectionEffect(callback: (Section?) -> Unit) {
     DisposableEffect(Unit) {
-        val about = document.body!!.getElementsByClassName(AboutStyleSheet.Section)[0]!!
-        val skills = document.body!!.getElementsByClassName(SkillsStyleSheet.Section)[0]!!
-        val portfolio = document.body!!.getElementsByClassName(PortfolioStyleSheet.Section)[0]!!
-        document.onscroll = {
-            when {
+        val about = window.document.body!!.getElementsByClassName(AboutStyleSheet.Section)[0]!!
+        val skills = window.document.body!!.getElementsByClassName(SkillsStyleSheet.Section)[0]!!
+        val portfolio = window.document.body!!.getElementsByClassName(PortfolioStyleSheet.Section)[0]!!
+        window.document.onscroll = {
+            val visibleSection = when {
                 about.isPartiallyVisible -> Section.About
                 skills.isPartiallyVisible -> Section.Skills
                 portfolio.isPartiallyVisible -> Section.Portfolio
                 else -> null
-            }.also(setSection)
-            setIsElevated(window.scrollPercentage > ScrollPercentageThreshold)
+            }
+            callback(visibleSection)
         }
-        onDispose { document.onscroll = null }
+        onDispose { window.document.onscroll = null }
     }
 }
