@@ -3,34 +3,42 @@ package com.alialbaali.app.section
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import com.alialbaali.app.components.SectionName
+import com.alialbaali.app.model.Category
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Technology
 import com.alialbaali.app.theme.style.SkillsStyleSheet
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Img
-import org.jetbrains.compose.web.dom.Section
+import com.alialbaali.app.util.isSystemInDarkMode
+import kotlinx.browser.window
+import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun Skills() {
-    val technologies = remember { Technology.values() }
+    val categories = remember { Category.values().toList() }
     Section(attrs = { classes(SkillsStyleSheet.Section) }) {
         SectionName(Section.Skills)
         Div(attrs = { classes(SkillsStyleSheet.Container) }) {
-            technologies.forEach { technology ->
-                TechnologyItem(technology)
-            }
+            categories.forEach { category -> CategoryItem(category) }
+        }
+    }
+}
+
+@Composable
+private fun CategoryItem(category: Category) {
+    Article(attrs = { classes(SkillsStyleSheet.CategoryItem) }) {
+        Span(attrs = { classes(SkillsStyleSheet.CategoryTitle) }) { Text(category.title) }
+        Hr(attrs = { classes(SkillsStyleSheet.CategoryDivider) })
+        Div(attrs = { classes(SkillsStyleSheet.TechnologiesContainer) }) {
+            category.content.forEach { technology -> TechnologyItem(technology) }
         }
     }
 }
 
 @Composable
 private fun TechnologyItem(technology: Technology) {
-    Div(
-        attrs = {
-            title(technology.name)
-            classes(SkillsStyleSheet.Item)
-        }
-    ) {
-        Img(src = technology.imagePath, alt = technology.name, attrs = { classes(SkillsStyleSheet.Image) })
+    val isDarkMode = window.isSystemInDarkMode()
+    val technologyIcon = if (isDarkMode) technology.lightIconUrl else technology.darkIconUrl
+    Div(attrs = { classes(SkillsStyleSheet.TechnologyItem) }) {
+        Img(src = technologyIcon, alt = technology.title, attrs = { classes(SkillsStyleSheet.TechnologyImage) })
+        Span(attrs = { classes(SkillsStyleSheet.TechnologyTitle) }) { Text(technology.title) }
     }
 }
