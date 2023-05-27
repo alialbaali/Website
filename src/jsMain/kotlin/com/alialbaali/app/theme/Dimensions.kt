@@ -20,6 +20,8 @@ object Dimensions {
     val MainGap = 25.vh
     val TransitionDuration = 250.ms
     val TextDecorationThickness = 0.25.cssRem
+    val FilledButtonHoverBrightness = 80.percent
+    val OutlinedButtonBorderWidth = 2.px
 
     val NavbarShadowHorizontalOffset = 0.px
     val NavbarShadowVerticalOffset = 0.px

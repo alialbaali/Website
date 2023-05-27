@@ -33,8 +33,9 @@ object ComponentsStyleSheet : StyleSheet() {
         }
 
         self + hover style {
-            backgroundColor(Variables.Colors.OnPrimary.value())
-            color(Variables.Colors.Primary.value())
+            filter {
+                brightness(Dimensions.FilledButtonHoverBrightness)
+            }
         }
     }
 
@@ -42,7 +43,7 @@ object ComponentsStyleSheet : StyleSheet() {
         backgroundColor(Variables.Colors.Background.value())
         border {
             style = LineStyle.Solid
-            width = 2.px
+            width = Dimensions.OutlinedButtonBorderWidth
             color = Variables.Colors.Secondary.value()
         }
         color(Variables.Colors.Secondary.value())
@@ -120,7 +121,7 @@ object ComponentsStyleSheet : StyleSheet() {
         backgroundColor(Variables.Colors.Background.value())
         cursor("pointer")
         borderRadius(3.vmin)
-        border(2.px, LineStyle.Solid, Variables.Colors.Primary.value())
+        border(Dimensions.OutlinedButtonBorderWidth, LineStyle.Solid, Variables.Colors.Primary.value())
     }
 
     val ThemeToggleLightModeIcon by style {

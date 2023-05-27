@@ -16,7 +16,7 @@ import org.jetbrains.compose.web.dom.*
 @Composable
 fun Contact() {
     Section(attrs = { classes(ContactStyleSheet.Section) }) {
-        SectionName(Section.Contact)
+//        SectionName(Section.Contact)
         Div(attrs = { classes(ContactStyleSheet.Container) }) {
             Div(attrs = { classes(ContactStyleSheet.Info) }) {
                 Span(attrs = { classes(ContactStyleSheet.InfoText) }) { Text(Strings.ContactInfoTitle) }
