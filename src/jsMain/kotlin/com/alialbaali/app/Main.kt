@@ -44,6 +44,7 @@ private val Styles = listOf(
     AboutStyleSheet,
     SkillsStyleSheet,
     PortfolioStyleSheet,
+    ContactStyleSheet,
     NavStyleSheet,
     FooterStyleSheet,
 )

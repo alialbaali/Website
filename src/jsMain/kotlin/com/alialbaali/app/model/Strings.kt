@@ -8,5 +8,14 @@ object Strings {
     const val Contact = "Contact"
     const val ViewPortfolio = "View Portfolio"
     const val Username = "alialbaali"
+    const val Submit = "Submit"
+    const val Email = "Email"
+    const val EmailPlaceholder = "example@company.com"
+    const val Subject = "Subject"
+    const val SubjectPlaceholder = "Give it a title!"
+    const val Message = "Message"
+    const val MessagePlaceholder = "What's on your mind?"
+    const val ContactInfoTitle = "Love to hear from you,"
+    const val ContactInfoGetInTouch = "Get in touch 👋🏻"
 
 }
