@@ -163,4 +163,12 @@ object ComponentsStyleSheet : StyleSheet() {
         }
     }
 
+    val Card by style {
+        backgroundColor(Variables.Colors.Background.value())
+        color(Variables.Colors.OnBackground.value())
+        overflow("hidden")
+        borderRadius(Dimensions.BorderRadius)
+        property("box-shadow", "8px 8px 16px 8px ${Color.whitesmoke}")
+    }
+
 }

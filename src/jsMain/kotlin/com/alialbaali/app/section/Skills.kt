@@ -6,6 +6,7 @@ import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Category
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Technology
+import com.alialbaali.app.theme.style.ComponentsStyleSheet
 import com.alialbaali.app.theme.style.SkillsStyleSheet
 import com.alialbaali.app.util.isSystemInDarkMode
 import kotlinx.browser.window
@@ -24,7 +25,7 @@ fun Skills() {
 
 @Composable
 private fun CategoryItem(category: Category) {
-    Article(attrs = { classes(SkillsStyleSheet.CategoryItem) }) {
+    Article(attrs = { classes(ComponentsStyleSheet.Card, SkillsStyleSheet.CategoryItem) }) {
         Span(attrs = { classes(SkillsStyleSheet.CategoryTitle) }) { Text(category.title) }
         Hr(attrs = { classes(SkillsStyleSheet.CategoryDivider) })
         Div(attrs = { classes(SkillsStyleSheet.TechnologiesContainer) }) {

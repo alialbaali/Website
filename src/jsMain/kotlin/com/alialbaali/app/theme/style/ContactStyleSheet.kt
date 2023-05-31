@@ -45,9 +45,6 @@ object ContactStyleSheet : StyleSheet() {
         flexDirection(FlexDirection.Column)
         gap(InputSpacing)
         padding(InputSpacing)
-        backgroundColor(Variables.Colors.Background.value())
-        borderRadius(Dimensions.BorderRadius)
-        property("box-shadow", "4px 4px 16px 8px ${Color.whitesmoke}")
         width(50.percent)
     }
 

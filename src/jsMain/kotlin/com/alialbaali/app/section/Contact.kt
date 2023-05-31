@@ -1,9 +1,7 @@
 package com.alialbaali.app.section
 
 import androidx.compose.runtime.Composable
-import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Links
-import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.theme.style.ComponentsStyleSheet
 import com.alialbaali.app.theme.style.ContactStyleSheet
@@ -23,7 +21,7 @@ fun Contact() {
                 Span(attrs = { classes(ContactStyleSheet.InfoText) }) { Text(Strings.ContactInfoGetInTouch) }
             }
 
-            Form(attrs = { classes(ContactStyleSheet.Form) }, action = Links.Mail) {
+            Form(attrs = { classes(ComponentsStyleSheet.Card, ContactStyleSheet.Form) }, action = Links.Mail) {
                 Div(attrs = { classes(ContactStyleSheet.InputContainer) }) {
                     Label(forId = ContactStyleSheet.EmailId, attrs = { classes(ContactStyleSheet.InputLabel) }) { Text(Strings.Email) }
                     Input(

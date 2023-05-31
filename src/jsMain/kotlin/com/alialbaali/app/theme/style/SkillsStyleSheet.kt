@@ -27,9 +27,6 @@ object SkillsStyleSheet : StyleSheet() {
         flexDirection(FlexDirection.Column)
         width((100.percent / 3) - CategoryItemSpacing)
         flexGrow(1)
-        overflow("hidden")
-        borderRadius(Dimensions.BorderRadius)
-        property("box-shadow", "8px 8px 16px 8px ${Color.whitesmoke}")
     }
 
     val CategoryTitle by style {
