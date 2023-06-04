@@ -1,13 +1,16 @@
 package com.alialbaali.app.theme.style
 
 import com.alialbaali.app.theme.Dimensions
-import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.util.FontWeight
 import com.alialbaali.app.util.userSelect
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto
+import org.jetbrains.compose.web.css.selectors.Nth
 
 object PortfolioStyleSheet : StyleSheet() {
+
+    private val ProjectSpacing = Dimensions.Small
+    private val ProjectDescriptionFontSize = Dimensions.ExtraSmall - 0.4.cssRem
 
     val Section by style {
         ComponentsStyleSheet.apply { DefaultSectionStyle() }
@@ -21,22 +24,33 @@ object PortfolioStyleSheet : StyleSheet() {
         width(100.percent)
     }
 
-    val HighlightedProject by style {
+    val ProjectContainer by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        gap(ProjectSpacing)
+        padding(ProjectSpacing)
+        height(auto)
+        flex(1, 1, 50.percent - ProjectSpacing)
+        self + nthChild(Nth.Functional(1, 5)) style {
+            flex(1, 1, (100.percent / 3) - ProjectSpacing)
+        }
+        justifyContent(JustifyContent.SpaceBetween)
+    }
+
+    val HighlightedProjectContainer by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
-        gap(Dimensions.Small)
-        backgroundColor(Variables.Colors.Primary.value())
-        borderRadius(Dimensions.BorderRadius)
-        overflow("clip")
+        gap(ProjectSpacing)
         flex(1, 1, 100.percent)
     }
 
-    val HighlightedProjectInfo by style {
+    val HighlightedProjectInfoContainer by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-        gap(Dimensions.Small)
+        gap(ProjectSpacing)
+        padding(ProjectSpacing)
         width(30.percent)
-        padding(Dimensions.Tiny)
+        justifyContent(JustifyContent.SpaceBetween)
     }
 
     val HighlightedProjectImage by style {
@@ -44,39 +58,52 @@ object PortfolioStyleSheet : StyleSheet() {
         width(70.percent)
     }
 
-    val HighlightedProjectHeader by style {
+    val ProjectInfo by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-        gap(Dimensions.Tiny)
+        gap(ProjectSpacing)
     }
 
-    val HighlightedProjectName by style {
-        fontWeight(FontWeight.Medium)
-        fontSize(Dimensions.Medium)
-    }
-
-    val HighlightedProjectDescription by style {
-        fontWeight(FontWeight.Normal)
-        fontSize(2.0.cssRem)
-    }
-
-    val Project by style {
+    val ProjectHeader by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-        gap(Dimensions.Small)
-        backgroundColor(Variables.Colors.Primary.value())
-        borderRadius(Dimensions.BorderRadius)
-        padding(Dimensions.Tiny)
-        height(auto)
-        flex(1, 1, 25.percent)
+        gap(Dimensions.ExtraTiny)
     }
 
-    val TechnologyName by style {
-        borderRadius(Dimensions.BorderRadius)
-        padding(Dimensions.ExtraTiny, Dimensions.Tiny)
+    val ProjectTitleContainer by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        justifyContent(JustifyContent.SpaceBetween)
+        alignItems(AlignItems.Center)
+        gap(Dimensions.ExtraSmall)
+    }
+
+    val ProjectTitle by style {
         fontWeight(FontWeight.SemiBold)
+        fontSize(Dimensions.Small)
+    }
+
+    val ProjectSubtitle by style {
+        color(Color.gray)
+        fontWeight(FontWeight.Medium)
+        fontSize(Dimensions.ExtraSmall)
+    }
+
+    val ProjectYear by style {
+        color(Color.gray)
+        fontWeight(FontWeight.Medium)
         fontSize(Dimensions.Tiny)
-        userSelect("none")
+    }
+
+    val ProjectDescription by style {
+        fontSize(ProjectDescriptionFontSize)
+        whiteSpace("pre-line")
+    }
+
+    val ProjectFeatureContainer by style {
+        fontSize(ProjectDescriptionFontSize)
+        not(lastChild) style { marginBottom(Dimensions.ExtraTiny) }
+        marginLeft(1.em)
     }
 
     val TechnologiesContainer by style {
@@ -84,6 +111,22 @@ object PortfolioStyleSheet : StyleSheet() {
         flexDirection(FlexDirection.Row)
         gap(Dimensions.Tiny)
         flexWrap(FlexWrap.Wrap)
+        margin(Dimensions.Tiny, 0.px, Dimensions.ExtraTiny)
+    }
+
+    val TechnologyItem by style {
+        borderRadius(Dimensions.BorderRadius)
+        padding(Dimensions.ExtraTiny, Dimensions.Tiny)
+        fontWeight(FontWeight.SemiBold)
+        fontSize(Dimensions.Tiny)
+        userSelect("none")
+    }
+
+    val ActionsContainer by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        gap(Dimensions.Medium)
+        alignSelf(AlignSelf.SelfEnd)
     }
 
 }

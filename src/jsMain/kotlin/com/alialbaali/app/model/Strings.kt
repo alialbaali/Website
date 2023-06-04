@@ -17,5 +17,7 @@ object Strings {
     const val MessagePlaceholder = "What's on your mind?"
     const val ContactInfoTitle = "Love to hear from you,"
     const val ContactInfoGetInTouch = "Get in touch 👋🏻"
+    const val Current = "Current"
+    const val LearnMore = "Learn more"
 
 }

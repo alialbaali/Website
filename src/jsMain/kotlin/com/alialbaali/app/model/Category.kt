@@ -6,7 +6,7 @@ enum class Category(val title: String, private vararg val technologies: Technolo
     ProgrammingLanguages("Programming Languages", Kotlin, Rust, Java, Python),
     OtherLanguages("Other Languages", HTML, CSS, SQL),
     Frameworks("Frameworks", Android, Compose, Ktor, React, Flask),
-    Platforms("Platforms", GitHub, Netlify, Docker, Supabase, Heroku),
+    Platforms("Platforms", GitHub, Netlify, Docker, Supabase, Heroku, Maven),
     Tools("Tools", AndroidStudio, IntelliJ, Git, Postman, Linux),
     Design("Design", Figma, Inkscape);
 

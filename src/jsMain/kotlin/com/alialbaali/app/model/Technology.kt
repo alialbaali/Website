@@ -4,135 +4,182 @@ enum class Technology(
     val title: String,
     val lightIconUrl: String,
     val darkIconUrl: String,
-    val color: String = "",
+    val lightColor: String,
+    val darkColor: String,
 ) {
     Android(
         title = "Android",
         lightIconUrl = "logos/Android-Light.svg",
         darkIconUrl = "logos/Android-Dark.svg",
-        color = "#69F0AE"
+        lightColor = "A5D6A7",
+        darkColor = "2E7D32",
     ),
     Compose(
         title = "Compose",
         lightIconUrl = "logos/Compose-Light.svg",
         darkIconUrl = "logos/Compose-Dark.svg",
-        color = "#64FFDA"
+        lightColor = "90CAF9",
+        darkColor = "1565C0",
     ),
     Kotlin(
         title = "Kotlin",
         lightIconUrl = "https://skillicons.dev/icons?i=kotlin&theme=light",
         darkIconUrl = "https://skillicons.dev/icons?i=kotlin&theme=dark",
-        color = "#E040FB"
+        lightColor = "CE93D8",
+        darkColor = "6A1B9A",
     ),
     Rust(
         title = "Rust",
         lightIconUrl = "https://skillicons.dev/icons?i=rust&theme=light",
         darkIconUrl = "https://skillicons.dev/icons?i=rust&theme=dark",
-        color = "#B2FF59"
+        lightColor = "FFCC80",
+        darkColor = "EF6C00",
     ),
     Python(
         title = "Python",
         lightIconUrl = "https://skillicons.dev/icons?i=python&theme=light",
         darkIconUrl = "https://skillicons.dev/icons?i=python&theme=dark",
-        color = "#536DFE"
+        lightColor = "FFF59D",
+        darkColor = "F9A825"
     ),
     Figma(
         title = "Figma",
         lightIconUrl = "https://skillicons.dev/icons?i=figma&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=figma&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=figma&theme=dark",
+        lightColor = "F48FB1",
+        darkColor = "AD1457",
     ),
     Flask(
         title = "Flask",
         lightIconUrl = "https://skillicons.dev/icons?i=flask&theme=light",
         darkIconUrl = "https://skillicons.dev/icons?i=flask&theme=dark",
-        color = "#18FFFF"
+        lightColor = "FFFFFF",
+        darkColor = "000000",
     ),
     Git(
         title = "Git",
         lightIconUrl = "https://skillicons.dev/icons?i=git&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=git&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=git&theme=dark",
+        lightColor = "EF9A9A",
+        darkColor = "C62828",
     ),
     CSS(
         title = "CSS",
         lightIconUrl = "https://skillicons.dev/icons?i=css&theme=light",
         darkIconUrl = "https://skillicons.dev/icons?i=css&theme=dark",
-        color = "#FFAB40"
+        lightColor = "9FA8DA",
+        darkColor = "283593",
     ),
     HTML(
         title = "HTML",
         lightIconUrl = "https://skillicons.dev/icons?i=html&theme=light",
         darkIconUrl = "https://skillicons.dev/icons?i=html&theme=dark",
-        color = "#EEFF41"
+        lightColor = "FFAB91",
+        darkColor = "D84315",
     ),
     Ktor(
         title = "Ktor",
         lightIconUrl = "https://skillicons.dev/icons?i=ktor&theme=light",
         darkIconUrl = "https://skillicons.dev/icons?i=ktor&theme=dark",
-        color = "#FF5252"
+        lightColor = "EF9A9A",
+        darkColor = "C62828",
     ),
     Java(
         title = "Java",
         lightIconUrl = "https://skillicons.dev/icons?i=java&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=java&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=java&theme=dark",
+        lightColor = "BCAAA4",
+        darkColor = "4E342E",
     ),
     SQL(
         title = "SQL",
         lightIconUrl = "https://skillicons.dev/icons?i=postgresql&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=postgresql&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=postgresql&theme=dark",
+        lightColor = "81D4FA",
+        darkColor = "0277BD"
     ),
     Inkscape(
         title = "Inkscape",
         lightIconUrl = "logos/Inkscape-Light.svg",
-        darkIconUrl = "logos/Inkscape-Dark.svg"
+        darkIconUrl = "logos/Inkscape-Dark.svg",
+        lightColor = "FFFFFF",
+        darkColor = "000000",
     ),
     React(
         title = "React",
         lightIconUrl = "https://skillicons.dev/icons?i=react&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=react&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=react&theme=dark",
+        lightColor = "B3E5FC",
+        darkColor = "0277BD",
     ),
     IntelliJ(
         title = "IntelliJ IDEA",
         lightIconUrl = "logos/IntelliJ-Light.svg",
-        darkIconUrl = "logos/IntelliJ-Dark.svg"
+        darkIconUrl = "logos/IntelliJ-Dark.svg",
+        lightColor = "EF9A9A",
+        darkColor = "C62828",
     ),
     AndroidStudio(
         "Android Studio",
         "https://skillicons.dev/icons?i=androidstudio&theme=light",
         "https://skillicons.dev/icons?i=androidstudio&theme=dark",
+        lightColor = "90CAF9",
+        darkColor = "1565C0",
     ),
     GitHub(
         title = "GitHub",
         lightIconUrl = "https://skillicons.dev/icons?i=github&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=github&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=github&theme=dark",
+        lightColor = "FFFFFF",
+        darkColor = "000000",
     ),
     Netlify(
         title = "Netlify",
         lightIconUrl = "https://skillicons.dev/icons?i=netlify&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=netlify&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=netlify&theme=dark",
+        lightColor = "80DEEA",
+        darkColor = "00838F",
     ),
     Docker(
         title = "Docker",
         lightIconUrl = "https://skillicons.dev/icons?i=docker&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=docker&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=docker&theme=dark",
+        lightColor = "81D4FA",
+        darkColor = "0277BD",
     ),
     Heroku(
         title = "Heroku",
         lightIconUrl = "https://skillicons.dev/icons?i=heroku&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=heroku&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=heroku&theme=dark",
+        lightColor = "CE93D8",
+        darkColor = "6A1B9A",
     ),
     Postman(
         title = "Postman",
         lightIconUrl = "https://skillicons.dev/icons?i=postman&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=postman&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=postman&theme=dark",
+        lightColor = "FFAB91",
+        darkColor = "D84315",
     ),
     Linux(
         title = "Linux",
         lightIconUrl = "https://skillicons.dev/icons?i=linux&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=linux&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=linux&theme=dark",
+        lightColor = "FFE082",
+        darkColor = "FF8F00",
     ),
     Supabase(
         title = "Supabase",
         lightIconUrl = "https://skillicons.dev/icons?i=supabase&theme=light",
-        darkIconUrl = "https://skillicons.dev/icons?i=supabase&theme=dark"
+        darkIconUrl = "https://skillicons.dev/icons?i=supabase&theme=dark",
+        lightColor = "80CBC4",
+        darkColor = "00695C",
+    ),
+    Maven(
+        title = "Maven",
+        lightIconUrl = "https://skillicons.dev/icons?i=maven&theme=light",
+        darkIconUrl = "https://skillicons.dev/icons?i=maven&theme=dark",
+        lightColor = "FFCC80",
+        darkColor = "EF6C00",
     ),
 }
