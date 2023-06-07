@@ -22,10 +22,8 @@ object Dimensions {
     val TextDecorationThickness = 0.25.cssRem
     val FilledButtonHoverBrightness = 80.percent
     val OutlinedButtonBorderWidth = 2.px
-
-    val NavbarShadowHorizontalOffset = 0.px
-    val NavbarShadowVerticalOffset = 0.px
-    val NavbarShadowBlurRadius = 16.px
-    val NavbarShadowSpreadRadius = 8.px
+    val TextUnderlineOffset = 0.5.cssRem
+    val SectionNameVerticalMargin = Large
+    val ItemGap = Medium
 
 }

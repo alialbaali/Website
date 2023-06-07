@@ -10,10 +10,7 @@ import com.alialbaali.app.util.*
 import kotlinx.browser.window
 import org.jetbrains.compose.web.css.textDecorationColor
 import org.jetbrains.compose.web.css.value
-import org.jetbrains.compose.web.dom.A
-import org.jetbrains.compose.web.dom.Header
-import org.jetbrains.compose.web.dom.Nav
-import org.jetbrains.compose.web.dom.Text
+import org.jetbrains.compose.web.dom.*
 import org.w3c.dom.get
 
 private const val ScrollPercentageThreshold = 1
@@ -41,11 +38,15 @@ fun Navbar() {
         }
         Nav(attrs = { classes(NavStyleSheet.Nav) }) {
             sections.forEach { section ->
-                A(
+                Button(
                     attrs = {
-                        classes(ComponentsStyleSheet.TextButton, ComponentsStyleSheet.PrimaryButton)
+                        if (section == visibleSection) {
+                            classes(ComponentsStyleSheet.TextButton, ComponentsStyleSheet.PrimaryButton)
+                            style { textDecorationColor(Variables.Colors.Primary.value()) }
+                        } else {
+                            classes(ComponentsStyleSheet.TextButton, ComponentsStyleSheet.SecondaryButton)
+                        }
                         onClick { window.scrollToSection(section) }
-                        style { if (section == visibleSection) textDecorationColor(Variables.Colors.Primary.value()) }
                     }
                 ) {
                     Text(section.name)
