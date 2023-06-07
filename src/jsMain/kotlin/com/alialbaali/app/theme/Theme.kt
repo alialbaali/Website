@@ -15,6 +15,9 @@ object Theme {
         val OnSecondary = rgb(255, 255, 255)
         val SecondaryVariant = rgb(255, 221, 210)
 
+        val Surface = rgb(245, 245, 245)
+        val OnSurface = Color.black
+
         val Background = Color.white
         val OnBackground = Color.black
 
@@ -29,6 +32,9 @@ object Theme {
         val Secondary = rgb(226, 149, 120)
         val OnSecondary = rgb(255, 255, 255)
         val SecondaryVariant = rgb(255, 221, 210)
+
+        val Surface = rgb(66, 66, 66)
+        val OnSurface = Color.white
 
         val Background = Color.black
         val OnBackground = Color.white

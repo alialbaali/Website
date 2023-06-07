@@ -14,6 +14,9 @@ object Variables {
         val OnSecondary by variable<CSSColorValue>()
         val SecondaryVariant by variable<CSSColorValue>()
 
+        val Surface by variable<CSSColorValue>()
+        val OnSurface by variable<CSSColorValue>()
+
         val Background by variable<CSSColorValue>()
         val OnBackground by variable<CSSColorValue>()
 
