@@ -3,6 +3,7 @@ package com.alialbaali.app.theme.style
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.util.FontWeight
+import com.alialbaali.app.util.cssClass
 import com.alialbaali.app.util.userSelect
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
@@ -10,73 +11,127 @@ import org.jetbrains.compose.web.css.*
 @OptIn(ExperimentalComposeWebApi::class)
 object ComponentsStyleSheet : StyleSheet() {
 
-    val BaseButton by style {
+    val PrimaryButton by cssClass()
+    val SecondaryButton by cssClass()
+
+    val LargeButton by cssClass()
+    val SmallButton by cssClass()
+
+    private fun CSSBuilder.DefaultButtonStyle() {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        gap(Dimensions.ExtraTiny)
+        justifyContent(JustifyContent.Center)
+        alignItems(AlignItems.Center)
         cursor("pointer")
         fontWeight(FontWeight.Medium)
-        borderRadius(Dimensions.BorderRadius)
-        paddingLeft(Dimensions.ExtraSmall)
-        paddingRight(Dimensions.ExtraSmall)
-        paddingTop(Dimensions.ExtraTiny)
-        paddingBottom(Dimensions.ExtraTiny)
         fontSize(Dimensions.ExtraSmall)
-        border(0.px)
+        borderRadius(Dimensions.BorderRadius)
+        padding(Dimensions.ExtraTiny, Dimensions.ExtraSmall)
         userSelect("none")
-    }
-
-    val FilledButton by style {
-        backgroundColor(Variables.Colors.Primary.value())
-        color(Variables.Colors.OnPrimary.value())
+        property("text-underline-offset", "0.5rem")
+        textDecorationColor(Color.transparent)
+        textDecorationLine("underline")
+        textDecorationThickness(Dimensions.TextDecorationThickness)
+        border(Dimensions.OutlinedButtonBorderWidth, LineStyle.Solid, Color.transparent)
         transitions {
             all {
                 duration(Dimensions.TransitionDuration)
             }
         }
+
+        self + className(LargeButton) style {
+            padding(Dimensions.Tiny, Dimensions.ExtraSmall)
+            fontSize(Dimensions.Small)
+        }
+
+        self + className(SmallButton) style {
+            padding(Dimensions.ExtraTiny, Dimensions.ExtraSmall)
+            fontSize(Dimensions.Tiny)
+        }
+    }
+
+    val FilledButton by style {
+        DefaultButtonStyle()
+        backgroundColor(Variables.Colors.Surface.value())
+        color(Variables.Colors.OnSurface.value())
 
         self + hover style {
             filter {
                 brightness(Dimensions.FilledButtonHoverBrightness)
             }
         }
-    }
 
-    val OutlinedButton by style {
-        backgroundColor(Variables.Colors.Background.value())
-        border {
-            style = LineStyle.Solid
-            width = Dimensions.OutlinedButtonBorderWidth
-            color = Variables.Colors.Secondary.value()
+        self + className(PrimaryButton) style {
+            backgroundColor(Variables.Colors.Primary.value())
+            color(Variables.Colors.OnPrimary.value())
         }
-        color(Variables.Colors.Secondary.value())
-        transitions {
-            all {
-                duration(Dimensions.TransitionDuration)
-            }
-        }
-        self + hover style {
+
+        self + className(SecondaryButton) style {
             backgroundColor(Variables.Colors.Secondary.value())
             color(Variables.Colors.OnSecondary.value())
         }
     }
 
-    val TextButton by style {
-        color(Variables.Colors.Primary.value())
-        backgroundColor(Color.transparent)
-        textDecorationLine("underline")
-        textDecorationThickness(Dimensions.TextDecorationThickness)
-        textDecorationColor(rgba(0, 109, 119, 0))
-        property("text-underline-offset", "0.5rem")
-        transitions {
-            all {
-                duration(Dimensions.TransitionDuration)
+    val OutlinedButton by style {
+        DefaultButtonStyle()
+        backgroundColor(Variables.Colors.Background.value())
+        color(Variables.Colors.OnBackground.value())
+
+        self + hover style {
+            backgroundColor(Variables.Colors.OnBackground.value())
+            color(Variables.Colors.Background.value())
+        }
+
+        self + className(PrimaryButton) style {
+            backgroundColor(Variables.Colors.Background.value())
+            color(Variables.Colors.Primary.value())
+            border(Dimensions.OutlinedButtonBorderWidth, LineStyle.Solid, Variables.Colors.Primary.value())
+
+            self + hover style {
+                backgroundColor(Variables.Colors.Primary.value())
+                color(Variables.Colors.Background.value())
             }
         }
 
-        self + hover style { TextButtonHoverStyle() }
+        self + className(SecondaryButton) style {
+            backgroundColor(Variables.Colors.Background.value())
+            color(Variables.Colors.Secondary.value())
+            border(Dimensions.OutlinedButtonBorderWidth, LineStyle.Solid, Variables.Colors.Secondary.value())
+
+            self + hover style {
+                backgroundColor(Variables.Colors.Secondary.value())
+                color(Variables.Colors.Background.value())
+            }
+        }
     }
 
+    val TextButton by style {
+        DefaultButtonStyle()
+        backgroundColor(Variables.Colors.Background.value())
+        color(Variables.Colors.OnBackground.value())
 
-    fun StyleScope.TextButtonHoverStyle() {
-        textDecorationColor(Variables.Colors.Primary.value())
+        self + hover style {
+            textDecorationColor(Variables.Colors.OnBackground.value())
+        }
+
+        self + className(PrimaryButton) style {
+            backgroundColor(Variables.Colors.Background.value())
+            color(Variables.Colors.Primary.value())
+
+            self + hover style {
+                textDecorationColor(Variables.Colors.Primary.value())
+            }
+        }
+
+        self + className(SecondaryButton) style {
+            backgroundColor(Variables.Colors.Background.value())
+            color(Variables.Colors.Secondary.value())
+
+            self + hover style {
+                textDecorationColor(Variables.Colors.Secondary.value())
+            }
+        }
     }
 
     val HighlightedText by style {

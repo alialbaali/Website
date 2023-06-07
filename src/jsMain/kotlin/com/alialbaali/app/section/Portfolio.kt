@@ -87,7 +87,7 @@ private fun ProjectActions(project: Project) {
     Div(attrs = { classes(PortfolioStyleSheet.ActionsContainer) }) {
         Button(
             attrs = {
-                classes(ComponentsStyleSheet.BaseButton, ComponentsStyleSheet.TextButton)
+                classes(ComponentsStyleSheet.TextButton, ComponentsStyleSheet.PrimaryButton)
                 onClick { window.open(project.githubLink) }
             }
         ) {

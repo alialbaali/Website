@@ -4,9 +4,12 @@ import androidx.compose.runtime.*
 import com.alialbaali.app.components.ThemeToggle
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
+import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.theme.style.*
 import com.alialbaali.app.util.*
 import kotlinx.browser.window
+import org.jetbrains.compose.web.css.textDecorationColor
+import org.jetbrains.compose.web.css.value
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Header
 import org.jetbrains.compose.web.dom.Nav
@@ -40,9 +43,9 @@ fun Navbar() {
             sections.forEach { section ->
                 A(
                     attrs = {
-                        classes(ComponentsStyleSheet.BaseButton, ComponentsStyleSheet.TextButton)
+                        classes(ComponentsStyleSheet.TextButton, ComponentsStyleSheet.PrimaryButton)
                         onClick { window.scrollToSection(section) }
-                        style { if (section == visibleSection) ComponentsStyleSheet.apply { TextButtonHoverStyle() } }
+                        style { if (section == visibleSection) textDecorationColor(Variables.Colors.Primary.value()) }
                     }
                 ) {
                     Text(section.name)

@@ -19,7 +19,7 @@ fun Intro() {
         Div(attrs = { classes(IntroStyleSheet.ButtonsContainer) }) {
             Button(
                 attrs = {
-                    classes(ComponentsStyleSheet.BaseButton, ComponentsStyleSheet.FilledButton)
+                    classes(ComponentsStyleSheet.FilledButton, ComponentsStyleSheet.PrimaryButton)
                     onClick { window.open(Links.Mail) }
                 }
             ) {
@@ -27,7 +27,7 @@ fun Intro() {
             }
             Button(
                 attrs = {
-                    classes(ComponentsStyleSheet.BaseButton, ComponentsStyleSheet.OutlinedButton)
+                    classes(ComponentsStyleSheet.OutlinedButton, ComponentsStyleSheet.SecondaryButton)
                     onClick { window.scrollToSection(Section.Portfolio) }
                 }
             ) {

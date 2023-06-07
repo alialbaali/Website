@@ -66,7 +66,7 @@ fun Contact() {
                 Input(
                     InputType.Submit,
                     attrs = {
-                        classes(ComponentsStyleSheet.BaseButton, ComponentsStyleSheet.FilledButton)
+                        classes(ComponentsStyleSheet.FilledButton, ComponentsStyleSheet.PrimaryButton)
                         value(Strings.Submit)
                     }
                 )
