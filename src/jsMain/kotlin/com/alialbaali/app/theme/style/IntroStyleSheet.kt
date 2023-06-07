@@ -9,31 +9,32 @@ object IntroStyleSheet : StyleSheet() {
 
     val Section by style {
         ComponentsStyleSheet.apply { DefaultSectionStyle() }
-        gap(Dimensions.ItemGap * 2)
+        flexDirection(FlexDirection.Row)
+        gap(Dimensions.ItemGap)
+        alignItems(AlignItems.FlexEnd)
     }
 
     val Container by style {
         display(DisplayStyle.Flex)
-        flexDirection(FlexDirection.Row)
-        gap(Dimensions.ItemGap)
-        justifyContent(JustifyContent.Center)
+        flexDirection(FlexDirection.Column)
+        gap(Dimensions.ItemGap * 2)
+        width(50.percent)
+    }
+
+    val Image by style {
+        property("object-fit", "contain")
+        width(50.percent)
     }
 
     val TextContainer by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-        width(50.percent)
         gap(Dimensions.ItemGap)
     }
 
     val IntroTextContainer by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-    }
-
-    val Image by style {
-        width(50.percent)
-        property("object-fit", "contain")
     }
 
     val Hello by style {

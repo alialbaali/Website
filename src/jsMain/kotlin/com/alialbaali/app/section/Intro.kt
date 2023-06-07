@@ -21,25 +21,25 @@ fun Intro() {
                 }
                 Span(attrs = { classes(IntroStyleSheet.WhatDoIDo) }) { Text(Strings.WhatDoIDo) }
             }
-            Img(src = "images/Hello.svg", attrs = { classes(IntroStyleSheet.Image) })
-        }
-        Div(attrs = { classes(IntroStyleSheet.ButtonsContainer) }) {
-            Button(
-                attrs = {
-                    classes(ComponentsStyleSheet.FilledButton, ComponentsStyleSheet.PrimaryButton)
-                    onClick { window.open(Links.Mail) }
+            Div(attrs = { classes(IntroStyleSheet.ButtonsContainer) }) {
+                Button(
+                    attrs = {
+                        classes(ComponentsStyleSheet.FilledButton, ComponentsStyleSheet.PrimaryButton)
+                        onClick { window.open(Links.Mail) }
+                    }
+                ) {
+                    Text(Strings.Contact)
                 }
-            ) {
-                Text(Strings.Contact)
-            }
-            Button(
-                attrs = {
-                    classes(ComponentsStyleSheet.OutlinedButton, ComponentsStyleSheet.PrimaryButton)
-                    onClick { window.scrollToSection(Section.Portfolio) }
+                Button(
+                    attrs = {
+                        classes(ComponentsStyleSheet.OutlinedButton, ComponentsStyleSheet.PrimaryButton)
+                        onClick { window.scrollToSection(Section.Portfolio) }
+                    }
+                ) {
+                    Text(Strings.ViewPortfolio)
                 }
-            ) {
-                Text(Strings.ViewPortfolio)
             }
         }
+        Img(src = "images/Hello.svg", attrs = { classes(IntroStyleSheet.Image) })
     }
 }
