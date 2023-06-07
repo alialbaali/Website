@@ -4,7 +4,7 @@ import com.alialbaali.app.model.Technology.*
 import kotlin.js.Date
 
 data class Project(
-    val name: String,
+    val title: String,
     val subtitle: String,
     val description: String,
     val technologies: List<Technology>,
@@ -12,6 +12,7 @@ data class Project(
     val link: String? = null,
     val githubLink: String,
     val imagePath: String? = null,
+    val imageBackgroundColor: String? = null,
     val features: List<String> = emptyList(),
 ) {
 
@@ -20,100 +21,72 @@ data class Project(
     companion object {
 
         val Noto = Project(
-            name = "Noto",
-            subtitle = "Minimal Note-Taking Application",
-            description = "Noto provides ad-free experience, private data handling, modern design, lightweight APK size, and quite amount of useful features, such as:",
+            title = Strings.Noto.Title,
+            subtitle = Strings.Noto.Subtitle,
+            description = Strings.Noto.Description,
             technologies = listOf(Kotlin, SQL, Android, Compose, Supabase, Figma),
-            githubLink = "https://github.com/alialbaali/Noto",
-            link = "https://play.google.com/store/apps/details?id=com.noto",
+            githubLink = GitHubLinks.Noto,
+            link = Links.Noto,
             year = Date().getFullYear().toUInt(),
             imagePath = "images/Noto.svg",
-            features = listOf(
-                "Reading Mode.",
-                "Undo/Redo functionality.",
-                "Multi-selection for notes.",
-                "Find in Note & Continuous search.",
-                "Label filtering.",
-                "And, much more!"
-            )
+            imageBackgroundColor = "FFFFFF",
+            features = Strings.Noto.Features,
         )
 
         val Kamel = Project(
-            name = "Kamel",
-            subtitle = "Declarative Asynchronous Image Loading Library",
-            description = """Multi-platform library which supports loading, caching, and displaying images in a Compose application.
-                |
-                |It provides an intuitive API which let's the developer configure fetchers, decoders, mappers, and other data specific for each target, if needed.
-                |
-                |By default, it utilizes Ktor client & an LRU caching algorithm under the hood to perform the requests. 
-            """.trimMargin(),
+            title = Strings.Kamel.Title,
+            subtitle = Strings.Kamel.Subtitle,
+            description = Strings.Kamel.Description,
             technologies = listOf(Kotlin, Compose, Ktor, Maven),
-            githubLink = "https://github.com/alialbaali/Kamel",
+            githubLink = GitHubLinks.Kamel,
             year = Date().getFullYear().toUInt(),
-            imagePath = "images/Kamel.svg"
-        )
-
-        val CastingAgency = Project(
-            name = "Casting Agency",
-            subtitle = "Simulated Movies & Actors Management API",
-            description = """API that models a company which is responsible for creating movies, and managing and assigning actors to those movies.
-                |
-                |It provides endpoints to perform CRUD operations on the data, along with adequate error handling.
-            """.trimMargin(),
-            technologies = listOf(Python, SQL, Flask, Docker),
-            githubLink = "https://github.com/alialbaali/FSND-Capstone",
-            year = 2020U,
+            imagePath = "images/Kamel.svg",
+            imageBackgroundColor = "263238"
         )
 
         val ChatyChaty = Project(
-            name = "ChatyChaty",
-            subtitle = "Basic Messaging Application",
-            description = """ChatyChaty delivers a simple, elegant UI to find users, and start chatting with them. It also provides a few client-side convenient features to enhance the experience.
-                |
-                |Furthermore, it communicates in real time through WebSockets API using Retrofit & Kotlin Flows. The project is based on MVVM design pattern, and Clean Architecture.
-                |
-                |The API is developed using .Net Framework with SignalR & C# by my friend Yousif.
-            """.trimMargin(),
+            title = Strings.ChatyChaty.Title,
+            subtitle = Strings.ChatyChaty.Subtitle,
+            description = Strings.ChatyChaty.Description,
             technologies = listOf(Kotlin, SQL, Android, Figma),
-            githubLink = "https://github.com/alialbaali/ChatyChaty",
+            githubLink = GitHubLinks.ChatyChaty,
+            year = 2020U,
+        )
+
+        val CastingAgency = Project(
+            title = Strings.CastingAgency.Title,
+            subtitle = Strings.CastingAgency.Subtitle,
+            description = Strings.CastingAgency.Description,
+            technologies = listOf(Python, SQL, Flask, Docker),
+            githubLink = GitHubLinks.CastingAgency,
             year = 2020U,
         )
 
         val Shopally = Project(
-            name = "Shopally",
-            subtitle = "Dummy E-Commerce API",
-            description = """Shopally implements a way for users to sign up to the site, browse the products, add them to the cart, and order them.
-                | 
-                |The project follows Domain Driven Design structure and RESTful architecture style with more than 30 endpoints implemented by making use of:
-            """.trimMargin(),
+            title = Strings.Shopally.Title,
+            subtitle = Strings.Shopally.Subtitle,
+            description = Strings.Shopally.Description,
             technologies = listOf(Kotlin, SQL, Ktor, Docker, Heroku),
-            githubLink = "https://github.com/alialbaali/Shopping-API",
+            githubLink = GitHubLinks.Shopally,
             year = 2020U,
-            features = listOf(
-                "JWT for authentication.",
-                "SQLDelight for database management.",
-                "Cloudinary for product info & images.",
-                "Stripe for payment methods.",
-            )
+            features = Strings.Shopally.Features,
         )
 
         val Website = Project(
-            name = "Website",
-            subtitle = "Futuristic Site",
-            description = """This website is built using Kotlin/JS & Compose HTML. It supports accessibility, dark mode, and other features.
-                |
-                |It also utilizes CSS concepts, such as, media queries, flexbox, and animations.""".trimMargin(),
+            title = Strings.Website.Title,
+            subtitle = Strings.Website.Subtitle,
+            description = Strings.Website.Description,
             technologies = listOf(Kotlin, HTML, CSS, Netlify, Figma),
-            githubLink = "https://github.com/alialbaali/Website",
+            githubLink = GitHubLinks.Website,
             year = Date().getFullYear().toUInt(),
         )
 
         val Minigrep = Project(
-            name = "Minigrep",
-            subtitle = "Simple CLI Tool",
-            description = "Simple implementation of the grep tool that searches for words in a file by using command line arguments and environment variables.",
+            title = Strings.Minigrep.Title,
+            subtitle = Strings.Minigrep.Subtitle,
+            description = Strings.Minigrep.Description,
             technologies = listOf(Rust, Linux),
-            githubLink = "https://github.com/alialbaali/Minigrep",
+            githubLink = GitHubLinks.Minigrep,
             year = 2021U,
         )
 

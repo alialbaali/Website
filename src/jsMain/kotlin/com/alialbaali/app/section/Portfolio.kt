@@ -9,15 +9,10 @@ import com.alialbaali.app.model.Strings
 import com.alialbaali.app.model.Technology
 import com.alialbaali.app.theme.style.ComponentsStyleSheet
 import com.alialbaali.app.theme.style.PortfolioStyleSheet
-import com.alialbaali.app.util.darkCSSColor
-import com.alialbaali.app.util.isSystemInDarkMode
-import com.alialbaali.app.util.lightCSSColor
-import com.alialbaali.app.util.yearAsString
+import com.alialbaali.app.util.*
 import kotlinx.browser.window
-import org.jetbrains.compose.web.css.LineStyle
-import org.jetbrains.compose.web.css.border
-import org.jetbrains.compose.web.css.color
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.attributes.href
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
 @Composable
@@ -39,7 +34,14 @@ private fun HighlightedProject(project: Project) {
             ProjectInfo(project)
             ProjectActions(project)
         }
-        Img(src = project.imagePath!!, alt = project.name, attrs = { classes(PortfolioStyleSheet.HighlightedProjectImage) })
+        Img(
+            src = project.imagePath!!,
+            alt = project.title,
+            attrs = {
+                classes(PortfolioStyleSheet.HighlightedProjectImage)
+                style { backgroundColor(project.imageBackgroundCssColor) }
+            }
+        )
     }
 }
 
@@ -64,7 +66,7 @@ private fun ProjectHeader(project: Project) {
     val projectYear = remember(project) { project.yearAsString }
     Header(attrs = { classes(PortfolioStyleSheet.ProjectHeader) }) {
         Div(attrs = { classes(PortfolioStyleSheet.ProjectTitleContainer) }) {
-            Span(attrs = { classes(PortfolioStyleSheet.ProjectTitle) }) { Text(project.name) }
+            Span(attrs = { classes(PortfolioStyleSheet.ProjectTitle) }) { Text(project.title) }
             Span(attrs = { classes(PortfolioStyleSheet.ProjectYear) }) { Text(projectYear) }
         }
         Span(attrs = { classes(PortfolioStyleSheet.ProjectSubtitle) }) { Text(project.subtitle) }
@@ -85,10 +87,10 @@ private fun ProjectDescription(project: Project) {
 @Composable
 private fun ProjectActions(project: Project) {
     Div(attrs = { classes(PortfolioStyleSheet.ActionsContainer) }) {
-        Button(
+        A(
             attrs = {
+                href(project.githubLink)
                 classes(ComponentsStyleSheet.TextButton, ComponentsStyleSheet.PrimaryButton)
-                onClick { window.open(project.githubLink) }
             }
         ) {
             Text(Strings.LearnMore)
