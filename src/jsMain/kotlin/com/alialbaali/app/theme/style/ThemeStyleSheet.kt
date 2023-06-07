@@ -11,29 +11,29 @@ object ThemeStyleSheet : StyleSheet() {
     val LightTheme by style {
         Variables.Colors.Primary(Theme.LightColors.Primary)
         Variables.Colors.OnPrimary(Theme.LightColors.OnPrimary)
-        Variables.Colors.PrimaryVariant(Theme.LightColors.PrimaryVariant)
+
         Variables.Colors.Secondary(Theme.LightColors.Secondary)
         Variables.Colors.OnSecondary(Theme.LightColors.OnSecondary)
-        Variables.Colors.SecondaryVariant(Theme.LightColors.SecondaryVariant)
+
         Variables.Colors.Surface(Theme.LightColors.Surface)
         Variables.Colors.OnSurface(Theme.LightColors.OnSurface)
+
         Variables.Colors.Background(Theme.LightColors.Background)
         Variables.Colors.OnBackground(Theme.LightColors.OnBackground)
-        Variables.Colors.NavbarShadow(Theme.LightColors.NavbarShadow)
     }
 
     val DarkTheme by style {
         Variables.Colors.Primary(Theme.DarkColors.Primary)
         Variables.Colors.OnPrimary(Theme.DarkColors.OnPrimary)
-        Variables.Colors.PrimaryVariant(Theme.DarkColors.PrimaryVariant)
+
         Variables.Colors.Secondary(Theme.DarkColors.Secondary)
         Variables.Colors.OnSecondary(Theme.DarkColors.OnSecondary)
-        Variables.Colors.SecondaryVariant(Theme.DarkColors.SecondaryVariant)
+
         Variables.Colors.Surface(Theme.DarkColors.Surface)
         Variables.Colors.OnSurface(Theme.DarkColors.OnSurface)
+
         Variables.Colors.Background(Theme.DarkColors.Background)
         Variables.Colors.OnBackground(Theme.DarkColors.OnBackground)
-        Variables.Colors.NavbarShadow(Theme.DarkColors.NavbarShadow)
     }
 
 }
