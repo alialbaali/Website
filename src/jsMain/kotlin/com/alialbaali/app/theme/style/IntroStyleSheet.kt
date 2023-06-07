@@ -8,33 +8,51 @@ import org.jetbrains.compose.web.css.*
 object IntroStyleSheet : StyleSheet() {
 
     val Section by style {
+        ComponentsStyleSheet.apply { DefaultSectionStyle() }
+        gap(Dimensions.ItemGap * 2)
+    }
+
+    val Container by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        gap(Dimensions.ItemGap)
+        justifyContent(JustifyContent.Center)
+    }
+
+    val TextContainer by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-        width(100.percent)
+        width(50.percent)
+        gap(Dimensions.ItemGap)
+    }
+
+    val IntroTextContainer by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+    }
+
+    val Image by style {
+        width(50.percent)
+        property("object-fit", "contain")
     }
 
     val Hello by style {
-        marginBottom(Dimensions.ExtraTiny)
-        color(Variables.Colors.PrimaryVariant.value())
+        color(Variables.Colors.Secondary.value())
         fontWeight(FontWeight.Light)
-        fontSize(Dimensions.ExtraLarge)
+        fontSize(Dimensions.Medium)
+        width(75.percent)
     }
 
     val WhoAmI by style {
-        marginTop(Dimensions.ExtraTiny)
-        marginBottom(Dimensions.ExtraSmall)
-        color(Variables.Colors.OnBackground.value())
+        color(Variables.Colors.Primary.value())
         fontWeight(FontWeight.Normal)
-        fontSize(Dimensions.ExtraHuge)
+        fontSize(Dimensions.Large)
     }
 
     val WhatDoIDo by style {
-        marginTop(Dimensions.ExtraSmall)
-        marginBottom(Dimensions.Small)
         color(Variables.Colors.Secondary.value())
         fontWeight(FontWeight.Medium)
-        fontSize(Dimensions.Medium)
-        width(75.percent)
+        fontSize(Dimensions.Small)
     }
 
     val ButtonsContainer by style {

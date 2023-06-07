@@ -13,9 +13,16 @@ import org.jetbrains.compose.web.dom.*
 @Composable
 fun Intro() {
     Section(attrs = { classes(IntroStyleSheet.Section) }) {
-        Span(attrs = { classes(IntroStyleSheet.Hello) }) { Text(Strings.Hello) }
-        Span(attrs = { classes(IntroStyleSheet.WhoAmI) }) { Text(Strings.WhoAmI) }
-        Span(attrs = { classes(IntroStyleSheet.WhatDoIDo) }) { Text(Strings.WhatDoIDo) }
+        Div(attrs = { classes(IntroStyleSheet.Container) }) {
+            Div(attrs = { classes(IntroStyleSheet.TextContainer) }) {
+                Div(attrs = { classes(IntroStyleSheet.IntroTextContainer) }) {
+                    Span(attrs = { classes(IntroStyleSheet.Hello) }) { Text(Strings.Hello) }
+                    Span(attrs = { classes(IntroStyleSheet.WhoAmI) }) { Text(Strings.WhoAmI) }
+                }
+                Span(attrs = { classes(IntroStyleSheet.WhatDoIDo) }) { Text(Strings.WhatDoIDo) }
+            }
+            Img(src = "images/Hello.svg", attrs = { classes(IntroStyleSheet.Image) })
+        }
         Div(attrs = { classes(IntroStyleSheet.ButtonsContainer) }) {
             Button(
                 attrs = {
@@ -27,7 +34,7 @@ fun Intro() {
             }
             Button(
                 attrs = {
-                    classes(ComponentsStyleSheet.OutlinedButton, ComponentsStyleSheet.SecondaryButton)
+                    classes(ComponentsStyleSheet.OutlinedButton, ComponentsStyleSheet.PrimaryButton)
                     onClick { window.scrollToSection(Section.Portfolio) }
                 }
             ) {
