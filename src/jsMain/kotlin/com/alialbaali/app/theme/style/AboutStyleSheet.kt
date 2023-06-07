@@ -15,21 +15,21 @@ object AboutStyleSheet : StyleSheet() {
     val Container by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
-        gap(Dimensions.ExtraSmall)
+        gap(Dimensions.ItemGap)
         width(100.percent)
+        padding(Dimensions.Small)
     }
 
     val Image by style {
-        maxWidth(30.percent)
+        width(50.percent)
         height(auto)
-        backgroundColor(Variables.Colors.Primary.value())
         borderRadius(Dimensions.BorderRadius)
-        property("object-fit", "cover")
+        property("object-fit", "contain")
     }
 
     val Text by style {
-        width(70.percent)
-        color(Variables.Colors.Primary.value())
+        width(50.percent)
+        color(Variables.Colors.OnBackground.value())
         fontWeight(FontWeight.Normal)
         fontSize(Dimensions.ExtraSmall)
     }
