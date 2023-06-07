@@ -10,7 +10,7 @@ import org.jetbrains.compose.web.css.*
 @OptIn(ExperimentalComposeWebApi::class)
 object ContactStyleSheet : StyleSheet() {
 
-    private val InputSpacing = Dimensions.Medium
+    private val InputSpacing = Dimensions.ItemGap
     private val InputBorderWidth = 2.px
     private val InputBorderStyle = LineStyle.Solid
     private val MessageMinHeight = Dimensions.Medium * 4
@@ -26,7 +26,7 @@ object ContactStyleSheet : StyleSheet() {
     val Container by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
-        gap(Dimensions.Medium)
+        gap(Dimensions.ItemGap)
         width(100.percent)
     }
 
@@ -64,7 +64,7 @@ object ContactStyleSheet : StyleSheet() {
         fontSize(Dimensions.Tiny)
 
         borderRadius(Dimensions.BorderRadius)
-        backgroundColor(Color.whitesmoke)
+        backgroundColor(Variables.Colors.Secondary.value())
 
         outline("none")
         border(InputBorderWidth, InputBorderStyle, Color.transparent)
@@ -76,7 +76,7 @@ object ContactStyleSheet : StyleSheet() {
         }
 
         self + hover style {
-            border(InputBorderWidth, InputBorderStyle, Variables.Colors.PrimaryVariant.value())
+            border(InputBorderWidth, InputBorderStyle, Variables.Colors.Primary.value())
         }
 
         self + focus style {

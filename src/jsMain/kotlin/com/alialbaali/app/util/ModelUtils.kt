@@ -20,3 +20,6 @@ val Project.isCurrent: Boolean
 
 val Project.yearAsString
     get() = if (isCurrent) Strings.Current else year.toString()
+
+val Project.imageBackgroundCssColor
+    get() = Color("#$imageBackgroundColor")

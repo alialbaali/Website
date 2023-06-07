@@ -29,7 +29,7 @@ object ComponentsStyleSheet : StyleSheet() {
         borderRadius(Dimensions.BorderRadius)
         padding(Dimensions.ExtraTiny, Dimensions.ExtraSmall)
         userSelect("none")
-        property("text-underline-offset", "0.5rem")
+        property("text-underline-offset", Dimensions.TextUnderlineOffset)
         textDecorationColor(Color.transparent)
         textDecorationLine("underline")
         textDecorationThickness(Dimensions.TextDecorationThickness)
@@ -77,6 +77,7 @@ object ComponentsStyleSheet : StyleSheet() {
         DefaultButtonStyle()
         backgroundColor(Variables.Colors.Background.value())
         color(Variables.Colors.OnBackground.value())
+        border(Dimensions.OutlinedButtonBorderWidth, LineStyle.Solid, Variables.Colors.OnBackground.value())
 
         self + hover style {
             backgroundColor(Variables.Colors.OnBackground.value())
@@ -135,24 +136,23 @@ object ComponentsStyleSheet : StyleSheet() {
     }
 
     val HighlightedText by style {
-        fontWeight(FontWeight.Medium)
         textDecorationLine("underline")
         textDecorationThickness(Dimensions.TextDecorationThickness)
-        textDecorationColor(rgba(226, 149, 120, 0))
-        property("text-underline-offset", "1rem")
-        color(Variables.Colors.SecondaryVariant.value())
+        textDecorationColor(Color.transparent)
+        fontWeight(FontWeight.Medium)
+        property("text-underline-offset", Dimensions.TextUnderlineOffset)
+        color(Variables.Colors.Primary.value())
         transitions {
             all {
                 duration(Dimensions.TransitionDuration)
             }
         }
-        self + hover style {
-            textDecorationColor(Variables.Colors.SecondaryVariant.value())
-        }
+
+        self + hover style { textDecorationColor(Variables.Colors.Primary.value()) }
     }
 
     val SectionName by style {
-        margin(Dimensions.Large, 0.px)
+        margin(Dimensions.SectionNameVerticalMargin, 0.px)
         color(Variables.Colors.OnBackground.value())
         fontWeight(FontWeight.Bold)
         fontSize(Dimensions.Large)
@@ -223,7 +223,7 @@ object ComponentsStyleSheet : StyleSheet() {
         color(Variables.Colors.OnBackground.value())
         overflow("hidden")
         borderRadius(Dimensions.BorderRadius)
-        property("box-shadow", "8px 8px 16px 8px ${Color.whitesmoke}")
+        property("box-shadow", "0px 0px 16px 8px ${Variables.Colors.Surface.value()}")
     }
 
 }

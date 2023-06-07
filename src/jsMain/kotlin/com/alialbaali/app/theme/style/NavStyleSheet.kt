@@ -11,13 +11,18 @@ import org.jetbrains.compose.web.css.*
 @OptIn(ExperimentalComposeWebApi::class)
 object NavStyleSheet : StyleSheet() {
 
+    private val NavbarShadowHorizontalOffset = 0.px
+    private val NavbarShadowVerticalOffset = 0.px
+    private val NavbarShadowBlurRadius = 16.px
+    private val NavbarShadowSpreadRadius = 8.px
+
     val Header by style {
         width(100.percent)
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         justifyContent(JustifyContent.SpaceBetween)
         alignItems(AlignItems.Center)
-        padding(Dimensions.MainPadding)
+        padding(Dimensions.Small, Dimensions.MainPadding)
         position(Position.Sticky)
         top(0.px)
         backgroundColor(Variables.Colors.Background.value())
@@ -32,11 +37,11 @@ object NavStyleSheet : StyleSheet() {
         property(
             "box-shadow",
             """
-            ${Dimensions.NavbarShadowHorizontalOffset}
-            ${Dimensions.NavbarShadowVerticalOffset}
-            ${Dimensions.NavbarShadowBlurRadius}
-            ${Dimensions.NavbarShadowSpreadRadius}
-            ${Variables.Colors.NavbarShadow.value()}
+            $NavbarShadowHorizontalOffset
+            $NavbarShadowVerticalOffset
+            $NavbarShadowBlurRadius
+            $NavbarShadowSpreadRadius
+            ${Variables.Colors.Surface.value()}
            """.trimIndent()
         )
     }
@@ -45,21 +50,19 @@ object NavStyleSheet : StyleSheet() {
         fontWeight(FontWeight.Medium)
         textDecorationLine("underline")
         textDecorationThickness(Dimensions.TextDecorationThickness)
-        textDecorationColor(rgba(255, 255, 255, 0))
+        textDecorationColor(Color.transparent)
         property("text-underline-offset", "1rem")
         transitions {
             all {
                 duration(Dimensions.TransitionDuration)
             }
         }
-        color(Variables.Colors.OnBackground.value())
+        color(Variables.Colors.Primary.value())
         fontFamily(Fonts.DancingScript)
         fontSize(Dimensions.Small)
         cursor("pointer")
         userSelect("none")
-        self + hover style {
-            textDecorationColor(Variables.Colors.OnBackground.value())
-        }
+        self + hover style { textDecorationColor(Variables.Colors.Primary.value()) }
     }
 
     val Nav by style {

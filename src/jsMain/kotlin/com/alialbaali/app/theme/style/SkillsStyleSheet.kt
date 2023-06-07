@@ -1,12 +1,13 @@
 package com.alialbaali.app.theme.style
 
 import com.alialbaali.app.theme.Dimensions
+import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.util.FontWeight
 import org.jetbrains.compose.web.css.*
 
 object SkillsStyleSheet : StyleSheet() {
 
-    private val CategoryItemSpacing = Dimensions.Medium
+    private val CategoryItemSpacing = Dimensions.ItemGap
     private val CategoryContentSpacing = Dimensions.Small
     private val TechnologyImageSize = 64.px
 
@@ -37,7 +38,7 @@ object SkillsStyleSheet : StyleSheet() {
 
     val CategoryDivider by style {
         margin(0.px, CategoryContentSpacing)
-        border(2.px, LineStyle.Solid, Color.whitesmoke)
+        border(2.px, LineStyle.Solid, Variables.Colors.Surface.value())
         borderRadius(Dimensions.BorderRadius)
     }
 

@@ -1,6 +1,7 @@
 package com.alialbaali.app.theme.style
 
 import com.alialbaali.app.theme.Dimensions
+import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.util.FontWeight
 import com.alialbaali.app.util.userSelect
 import org.jetbrains.compose.web.css.*
@@ -20,7 +21,7 @@ object PortfolioStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         flexWrap(FlexWrap.Wrap)
-        gap(Dimensions.Medium)
+        gap(Dimensions.ItemGap)
         width(100.percent)
     }
 
@@ -40,7 +41,6 @@ object PortfolioStyleSheet : StyleSheet() {
     val HighlightedProjectContainer by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
-        gap(ProjectSpacing)
         flex(1, 1, 100.percent)
     }
 
@@ -49,13 +49,14 @@ object PortfolioStyleSheet : StyleSheet() {
         flexDirection(FlexDirection.Column)
         gap(ProjectSpacing)
         padding(ProjectSpacing)
-        width(30.percent)
         justifyContent(JustifyContent.SpaceBetween)
+        width(50.percent)
     }
 
     val HighlightedProjectImage by style {
         height(auto)
-        width(70.percent)
+        property("object-fit", "contain")
+        width(50.percent)
     }
 
     val ProjectInfo by style {
@@ -84,13 +85,13 @@ object PortfolioStyleSheet : StyleSheet() {
     }
 
     val ProjectSubtitle by style {
-        color(Color.gray)
+        color(Variables.Colors.Secondary.value())
         fontWeight(FontWeight.Medium)
         fontSize(Dimensions.ExtraSmall)
     }
 
     val ProjectYear by style {
-        color(Color.gray)
+        color(Variables.Colors.Secondary.value())
         fontWeight(FontWeight.Medium)
         fontSize(Dimensions.Tiny)
     }

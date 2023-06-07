@@ -2,23 +2,28 @@ package com.alialbaali.app.util
 
 import androidx.compose.runtime.*
 import com.alialbaali.app.model.Section
+import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.style.ComponentsStyleSheet
 import com.alialbaali.app.theme.style.NavStyleSheet
 import com.alialbaali.app.theme.style.ThemeStyleSheet
 import kotlinx.dom.addClass
 import kotlinx.dom.hasClass
 import kotlinx.dom.removeClass
+import org.jetbrains.compose.web.css.times
 import org.w3c.dom.*
 import org.w3c.dom.events.Event
 
 private const val DarkModeQuery = "(prefers-color-scheme: dark)"
 private const val ScrollEventType = "scroll"
 
+private external fun parseFloat(s: String, radix: Int = definedExternally): Double
+
 fun Window.scrollToSection(section: Section) {
     val navbarElementHeight = document.getElementsByClassName(NavStyleSheet.Header)[0]?.clientHeight ?: 0
     val sectionElement = document.getElementsByClassName(ComponentsStyleSheet.SectionName)[section.ordinal]
     val sectionElementRelativePosition = sectionElement?.getBoundingClientRect()?.top ?: 0.0
-    val sectionElementActualPosition = pageYOffset + sectionElementRelativePosition - navbarElementHeight
+    val sectionMargin = Dimensions.SectionNameVerticalMargin * parseFloat(getComputedStyle(document.documentElement!!).fontSize)
+    val sectionElementActualPosition = pageYOffset + sectionElementRelativePosition - navbarElementHeight - sectionMargin.value
     val scrollOptions = ScrollToOptions(top = sectionElementActualPosition, behavior = ScrollBehavior.SMOOTH)
     window.scrollTo(scrollOptions)
 }

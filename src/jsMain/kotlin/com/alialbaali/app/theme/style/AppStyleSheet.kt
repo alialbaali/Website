@@ -26,6 +26,7 @@ object AppStyleSheet : StyleSheet() {
             fontSize(Dimensions.FontScale)
             backgroundColor(Variables.Colors.Background.value())
             color(Variables.Colors.OnBackground.value())
+            property("text-decoration-skip-ink", "none")
         }
     }
 
