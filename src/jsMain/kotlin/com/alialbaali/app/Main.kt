@@ -26,6 +26,7 @@ private fun App() {
         About()
         Skills()
         Portfolio()
+        Contact()
         Footer()
     }
 }
@@ -44,7 +45,8 @@ private val Styles = listOf(
     AboutStyleSheet,
     SkillsStyleSheet,
     PortfolioStyleSheet,
-    ContactStyleSheet,
+    ContactFormStyleSheet,
     NavStyleSheet,
     FooterStyleSheet,
+    ContactStyleSheet,
 )

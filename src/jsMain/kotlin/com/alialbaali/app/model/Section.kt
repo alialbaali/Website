@@ -1,5 +1,5 @@
 package com.alialbaali.app.model
 
 enum class Section {
-    About, Skills, Portfolio,
+    About, Skills, Portfolio, Contact,
 }

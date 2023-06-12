@@ -25,5 +25,6 @@ object Dimensions {
     val TextUnderlineOffset = 0.5.cssRem
     val SectionNameVerticalMargin = Large
     val ItemGap = Medium
+    val CardPadding = Small
 
 }

@@ -8,7 +8,7 @@ import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
 @OptIn(ExperimentalComposeWebApi::class)
-object ContactStyleSheet : StyleSheet() {
+object ContactFormStyleSheet : StyleSheet() {
 
     private val InputSpacing = Dimensions.ItemGap
     private val InputBorderWidth = 2.px

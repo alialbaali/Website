@@ -63,11 +63,13 @@ private fun VisibleSectionEffect(callback: (Section?) -> Unit) {
         val about = window.document.body!!.getElementsByClassName(AboutStyleSheet.Section)[0]!!
         val skills = window.document.body!!.getElementsByClassName(SkillsStyleSheet.Section)[0]!!
         val portfolio = window.document.body!!.getElementsByClassName(PortfolioStyleSheet.Section)[0]!!
+        val contact = window.document.body!!.getElementsByClassName(ContactStyleSheet.Section)[0]!!
         window.document.onscroll = {
             val visibleSection = when {
                 about.isPartiallyVisible -> Section.About
                 skills.isPartiallyVisible -> Section.Skills
                 portfolio.isPartiallyVisible -> Section.Portfolio
+                contact.isPartiallyVisible -> Section.Contact
                 else -> null
             }
             callback(visibleSection)
