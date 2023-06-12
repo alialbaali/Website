@@ -163,7 +163,7 @@ object ComponentsStyleSheet : StyleSheet() {
 
     val SectionName by style {
         margin(Dimensions.SectionNameVerticalMargin, 0.px)
-        color(Variables.Colors.OnBackground.value())
+        color(Variables.Colors.Primary.value())
         fontWeight(FontWeight.Bold)
         fontSize(Dimensions.Large)
     }
