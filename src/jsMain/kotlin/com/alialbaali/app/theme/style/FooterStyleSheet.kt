@@ -6,12 +6,22 @@ import org.jetbrains.compose.web.css.*
 
 object FooterStyleSheet : StyleSheet() {
 
+    val Section by style {
+        ComponentsStyleSheet.apply { DefaultSectionStyle() }
+        alignItems(AlignItems.Center)
+        justifyContent(JustifyContent.Center)
+        gap(Dimensions.Medium)
+    }
+
+    val ProfileLinks by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        alignItems(AlignItems.Center)
+    }
+
     val Text by style {
-        width(100.percent)
-        textAlign("center")
         fontWeight(FontWeight.SemiBold)
         fontSize(Dimensions.Tiny)
-        margin(Dimensions.Small)
     }
 
 }

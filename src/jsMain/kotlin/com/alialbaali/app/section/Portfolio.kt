@@ -11,7 +11,9 @@ import com.alialbaali.app.theme.style.ComponentsStyleSheet
 import com.alialbaali.app.theme.style.PortfolioStyleSheet
 import com.alialbaali.app.util.*
 import kotlinx.browser.window
+import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.href
+import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
@@ -90,10 +92,12 @@ private fun ProjectActions(project: Project) {
         A(
             attrs = {
                 href(project.githubLink)
+                target(ATarget.Blank)
                 classes(ComponentsStyleSheet.TextButton, ComponentsStyleSheet.PrimaryButton)
             }
         ) {
             Text(Strings.LearnMore)
+            I(attrs = { feather("external-link") })
         }
     }
 }

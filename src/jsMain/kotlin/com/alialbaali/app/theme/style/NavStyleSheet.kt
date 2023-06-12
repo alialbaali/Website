@@ -4,7 +4,6 @@ import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Fonts
 import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.util.FontWeight
-import com.alialbaali.app.util.userSelect
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
@@ -20,7 +19,6 @@ object NavStyleSheet : StyleSheet() {
         width(100.percent)
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
-        justifyContent(JustifyContent.SpaceBetween)
         alignItems(AlignItems.Center)
         padding(Dimensions.Small, Dimensions.MainPadding)
         position(Position.Sticky)
@@ -48,28 +46,27 @@ object NavStyleSheet : StyleSheet() {
 
     val PageTitle by style {
         fontWeight(FontWeight.Medium)
-        textDecorationLine("underline")
-        textDecorationThickness(Dimensions.TextDecorationThickness)
-        textDecorationColor(Color.transparent)
-        property("text-underline-offset", "1rem")
-        transitions {
-            all {
-                duration(Dimensions.TransitionDuration)
-            }
-        }
-        color(Variables.Colors.Primary.value())
         fontFamily(Fonts.DancingScript)
         fontSize(Dimensions.Small)
-        cursor("pointer")
-        userSelect("none")
-        self + hover style { textDecorationColor(Variables.Colors.Primary.value()) }
+        padding(0.px)
+        width(25.percent)
+        justifyContent(JustifyContent.FlexStart)
     }
 
     val Nav by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         alignContent(AlignContent.Center)
-        gap(Dimensions.Small)
+        width(50.percent)
+        justifyContent(JustifyContent.Center)
+    }
+
+    val ProfileLinks by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        alignItems(AlignItems.Center)
+        justifyContent(JustifyContent.FlexEnd)
+        width(25.percent)
     }
 
 }

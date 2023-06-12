@@ -135,6 +135,16 @@ object ComponentsStyleSheet : StyleSheet() {
         }
     }
 
+    val IconButton by style {
+        padding(0.px, Dimensions.ExtraTiny)
+        color(Variables.Colors.Secondary.value())
+        self + hover style { color(Variables.Colors.OnBackground.value()) }
+
+        self + className(PrimaryButton) style {
+            self + hover style { color(Variables.Colors.Primary.value()) }
+        }
+    }
+
     val HighlightedText by style {
         textDecorationLine("underline")
         textDecorationThickness(Dimensions.TextDecorationThickness)

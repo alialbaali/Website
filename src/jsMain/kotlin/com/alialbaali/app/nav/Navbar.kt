@@ -1,13 +1,15 @@
 package com.alialbaali.app.nav
 
 import androidx.compose.runtime.*
-import com.alialbaali.app.components.ThemeToggle
+import com.alialbaali.app.model.ProfileLinks
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.theme.style.*
 import com.alialbaali.app.util.*
 import kotlinx.browser.window
+import org.jetbrains.compose.web.attributes.ATarget
+import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.textDecorationColor
 import org.jetbrains.compose.web.css.value
 import org.jetbrains.compose.web.dom.*
@@ -28,14 +30,15 @@ fun Navbar() {
             style { if (isElevated) NavStyleSheet.apply { ElevatedNavbarStyle() } }
         }
     ) {
-        A(
+        Button(
             attrs = {
-                classes(NavStyleSheet.PageTitle)
+                classes(ComponentsStyleSheet.TextButton, ComponentsStyleSheet.PrimaryButton, NavStyleSheet.PageTitle)
                 onClick { window.scrollToTop() }
             }
         ) {
             Text(Strings.Username)
         }
+
         Nav(attrs = { classes(NavStyleSheet.Nav) }) {
             sections.forEach { section ->
                 Button(
@@ -52,7 +55,21 @@ fun Navbar() {
                     Text(section.name)
                 }
             }
-            ThemeToggle()
+        }
+
+        Aside(attrs = { classes(NavStyleSheet.ProfileLinks) }) {
+            ProfileLinks.All.forEach { profileLink ->
+                A(
+                    href = profileLink.url,
+                    attrs = {
+                        title(profileLink.name)
+                        target(ATarget.Blank)
+                        classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
+                    }
+                ) {
+                    I(attrs = { feather(profileLink.iconName) })
+                }
+            }
         }
     }
 }
