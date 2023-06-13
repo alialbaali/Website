@@ -20,7 +20,7 @@ object Dimensions {
     val MainGap = 25.vh
     val TransitionDuration = 250.ms
     val TextDecorationThickness = 0.25.cssRem
-    val FilledButtonHoverBrightness = 80.percent
+    val FilledButtonHoverBrightness = 75.percent
     val OutlinedButtonBorderWidth = 2.px
     val TextUnderlineOffset = 0.5.cssRem
     val SectionNameVerticalMargin = Large
