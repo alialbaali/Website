@@ -136,13 +136,18 @@ object ComponentsStyleSheet : StyleSheet() {
     }
 
     val IconButton by style {
-        padding(0.px, Dimensions.ExtraTiny)
+        padding(0.px, Dimensions.Tiny)
         color(Variables.Colors.Secondary.value())
         self + hover style { color(Variables.Colors.OnBackground.value()) }
 
         self + className(PrimaryButton) style {
             self + hover style { color(Variables.Colors.Primary.value()) }
         }
+    }
+
+    val ProfileLinkIcon by style {
+        width(32.px)
+        height(32.px)
     }
 
     val HighlightedText by style {

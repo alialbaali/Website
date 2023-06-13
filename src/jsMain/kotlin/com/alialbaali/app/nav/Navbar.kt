@@ -67,7 +67,12 @@ fun Navbar() {
                         classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
                     }
                 ) {
-                    I(attrs = { feather(profileLink.iconName) })
+                    I(
+                        attrs = {
+                            feather(profileLink.iconName)
+                            classes(ComponentsStyleSheet.ProfileLinkIcon)
+                        }
+                    )
                 }
             }
         }

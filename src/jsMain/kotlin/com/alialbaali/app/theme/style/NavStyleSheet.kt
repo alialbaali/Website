@@ -47,7 +47,7 @@ object NavStyleSheet : StyleSheet() {
     val PageTitle by style {
         fontWeight(FontWeight.Medium)
         fontFamily(Fonts.DancingScript)
-        fontSize(Dimensions.Small)
+        fontSize(Dimensions.Medium)
         padding(0.px)
         width(25.percent)
         justifyContent(JustifyContent.FlexStart)
