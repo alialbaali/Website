@@ -68,7 +68,15 @@ private fun ProjectHeader(project: Project) {
     val projectYear = remember(project) { project.yearAsString }
     Header(attrs = { classes(PortfolioStyleSheet.ProjectHeader) }) {
         Div(attrs = { classes(PortfolioStyleSheet.ProjectTitleContainer) }) {
-            Span(attrs = { classes(PortfolioStyleSheet.ProjectTitle) }) { Text(project.title) }
+            A(
+                href = project.githubLink,
+                attrs = {
+                    target(ATarget.Blank)
+                    classes(ComponentsStyleSheet.TextButton, PortfolioStyleSheet.ProjectTitle)
+                }
+            ) {
+                Text(project.title)
+            }
             Span(attrs = { classes(PortfolioStyleSheet.ProjectYear) }) { Text(projectYear) }
         }
         Span(attrs = { classes(PortfolioStyleSheet.ProjectSubtitle) }) { Text(project.subtitle) }

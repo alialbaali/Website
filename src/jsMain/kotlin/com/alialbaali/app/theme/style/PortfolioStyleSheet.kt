@@ -82,6 +82,8 @@ object PortfolioStyleSheet : StyleSheet() {
     val ProjectTitle by style {
         fontWeight(FontWeight.SemiBold)
         fontSize(Dimensions.Small)
+        padding(0.px)
+        border(0.px)
     }
 
     val ProjectSubtitle by style {
