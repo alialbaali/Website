@@ -3,7 +3,7 @@ package com.alialbaali.app.model
 object Links {
     const val Mail = "mailto:ali@albaali.com"
     const val Ktor = "https://ktor.io/"
-    const val WebsiteV1 = "https://old.alialbaali.com"
+    const val WebsiteV1 = "https://v1.alialbaali.com"
     const val UdacityNanodegreeProgram = "https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd0044"
     const val Certificate = "https://graduation.udacity.com/confirm/N72UE3J"
     const val Noto = "https://play.google.com/store/apps/details?id=com.noto"
