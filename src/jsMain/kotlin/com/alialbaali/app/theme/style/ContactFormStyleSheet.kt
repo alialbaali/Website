@@ -44,7 +44,7 @@ object ContactFormStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
         gap(InputSpacing)
-        padding(InputSpacing)
+        padding(Dimensions.CardPadding)
         width(50.percent)
     }
 

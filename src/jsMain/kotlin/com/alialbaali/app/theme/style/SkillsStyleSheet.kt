@@ -8,7 +8,7 @@ import org.jetbrains.compose.web.css.*
 object SkillsStyleSheet : StyleSheet() {
 
     private val CategoryItemSpacing = Dimensions.ItemGap
-    private val CategoryContentSpacing = Dimensions.Small
+    private val CategoryContentSpacing = Dimensions.CardPadding
     private val TechnologyImageSize = 64.px
 
     val Section by style {

@@ -29,7 +29,7 @@ object PortfolioStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
         gap(ProjectSpacing)
-        padding(ProjectSpacing)
+        padding(Dimensions.CardPadding)
         height(auto)
         flex(1, 1, 50.percent - ProjectSpacing)
         self + nthChild(Nth.Functional(1, 5)) style {
@@ -48,7 +48,7 @@ object PortfolioStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
         gap(ProjectSpacing)
-        padding(ProjectSpacing)
+        padding(Dimensions.CardPadding)
         justifyContent(JustifyContent.SpaceBetween)
         width(50.percent)
     }

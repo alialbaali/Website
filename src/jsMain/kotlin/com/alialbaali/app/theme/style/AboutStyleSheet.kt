@@ -17,7 +17,7 @@ object AboutStyleSheet : StyleSheet() {
         flexDirection(FlexDirection.Row)
         gap(Dimensions.ItemGap)
         width(100.percent)
-        padding(Dimensions.Small)
+        padding(Dimensions.CardPadding)
     }
 
     val Image by style {
