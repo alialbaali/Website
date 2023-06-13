@@ -15,7 +15,7 @@ object Dimensions {
     val ExtraHuge = 7.2.cssRem
 
     val BorderRadius = ExtraTiny
-    val MainPadding = Medium
+    val MainPadding = 8.percent
     val FontScale = 62.5.percent
     val MainGap = 25.vh
     val TransitionDuration = 250.ms
