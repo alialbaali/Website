@@ -7,6 +7,7 @@ import org.jetbrains.compose.web.css.StyleSheet
 object ThemeStyleSheet : StyleSheet() {
 
     const val MaterialDesignIcons = "material-icons-round"
+    const val FAIcon = "fa-solid"
 
     val LightTheme by style {
         Variables.Colors.Primary(Theme.LightColors.Primary)

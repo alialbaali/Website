@@ -16,8 +16,10 @@ object Dimensions {
 
     val BorderRadius = ExtraTiny
     val MainPadding = 8.percent
+    val SmallMainPadding = 6.percent
     val FontScale = 62.5.percent
     val MainGap = 25.vh
+    val SmallMainGap = 15.vh
     val TransitionDuration = 250.ms
     val TextDecorationThickness = 0.25.cssRem
     val FilledButtonHoverBrightness = 75.percent
@@ -25,6 +27,9 @@ object Dimensions {
     val TextUnderlineOffset = 0.5.cssRem
     val SectionNameVerticalMargin = Large
     val ItemGap = Medium
+    val SmallItemGap = Small
     val CardPadding = Small
+    val SmallCardPadding = ExtraSmall
+    val IconSize = 3.cssRem
 
 }

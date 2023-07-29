@@ -1,5 +1,6 @@
 package com.alialbaali.app.theme.style
 
+import com.alialbaali.app.theme.Breakpoints
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Fonts
 import com.alialbaali.app.theme.Variables
@@ -11,6 +12,7 @@ import org.jetbrains.compose.web.css.*
 object ContactFormStyleSheet : StyleSheet() {
 
     private val InputSpacing = Dimensions.ItemGap
+    private val SmallInputSpacing = Dimensions.SmallItemGap
     private val InputBorderWidth = 2.px
     private val InputBorderStyle = LineStyle.Solid
     private val MessageMinHeight = Dimensions.Medium * 4
@@ -28,6 +30,12 @@ object ContactFormStyleSheet : StyleSheet() {
         flexDirection(FlexDirection.Row)
         gap(Dimensions.ItemGap)
         width(100.percent)
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                gap(Dimensions.SmallItemGap)
+            }
+        }
     }
 
     val Info by style {
@@ -46,6 +54,13 @@ object ContactFormStyleSheet : StyleSheet() {
         gap(InputSpacing)
         padding(Dimensions.CardPadding)
         width(50.percent)
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                padding(Dimensions.SmallCardPadding)
+                gap(SmallInputSpacing)
+            }
+        }
     }
 
     val InputContainer by style {

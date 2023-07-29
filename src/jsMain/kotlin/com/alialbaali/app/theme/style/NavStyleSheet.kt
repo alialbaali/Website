@@ -1,5 +1,6 @@
 package com.alialbaali.app.theme.style
 
+import com.alialbaali.app.theme.Breakpoints
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Fonts
 import com.alialbaali.app.theme.Variables
@@ -18,23 +19,27 @@ object NavStyleSheet : StyleSheet() {
     val Header by style {
         width(100.percent)
         display(DisplayStyle.Flex)
-        flexDirection(FlexDirection.Row)
-        alignItems(AlignItems.Center)
+        flexDirection(FlexDirection.Column)
         padding(Dimensions.Small, Dimensions.MainPadding)
         position(Position.Sticky)
         top(0.px)
         backgroundColor(Variables.Colors.Background.value())
         transitions {
-            properties("box-shadow") {
+            properties("box-shadow", "gap") {
                 duration(Dimensions.TransitionDuration)
+            }
+        }
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                padding(Dimensions.ExtraSmall, Dimensions.SmallMainPadding)
             }
         }
     }
 
     fun StyleScope.ElevatedNavbarStyle() {
         property(
-            "box-shadow",
-            """
+            "box-shadow", """
             $NavbarShadowHorizontalOffset
             $NavbarShadowVerticalOffset
             $NavbarShadowBlurRadius
@@ -42,6 +47,18 @@ object NavStyleSheet : StyleSheet() {
             ${Variables.Colors.Surface.value()}
            """.trimIndent()
         )
+    }
+
+    val NavContainer by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        alignItems(AlignItems.Center)
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                justifyContent(JustifyContent.SpaceBetween)
+            }
+        }
     }
 
     val PageTitle by style {
@@ -59,6 +76,12 @@ object NavStyleSheet : StyleSheet() {
         alignContent(AlignContent.Center)
         width(50.percent)
         justifyContent(JustifyContent.Center)
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                display(DisplayStyle.None)
+            }
+        }
     }
 
     val ProfileLinks by style {
@@ -67,6 +90,62 @@ object NavStyleSheet : StyleSheet() {
         alignItems(AlignItems.Center)
         justifyContent(JustifyContent.FlexEnd)
         width(25.percent)
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                display(DisplayStyle.None)
+            }
+        }
+    }
+
+    val SmallProfileLinks by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        justifyContent(JustifyContent.Center)
+        width(100.percent)
+
+        media(mediaMinWidth(Breakpoints.Small)) {
+            self style {
+                display(DisplayStyle.None)
+            }
+        }
+    }
+
+    val MenuIconButton by style {
+        media(mediaMinWidth(Breakpoints.Small)) {
+            self style {
+                display(DisplayStyle.None)
+            }
+        }
+    }
+
+    val MenuContainer by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        backgroundColor(Variables.Colors.Background.value())
+        gap(Dimensions.Small)
+        width(100.percent)
+        overflow("hidden")
+
+        transitions {
+            properties("max-height") {
+                duration(Dimensions.TransitionDuration)
+            }
+        }
+    }
+
+    val MenuNav by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        width(100.percent)
+    }
+
+    val MenuItem by style {
+        paddingLeft(0.px)
+        paddingRight(0.px)
+        width(100.percent)
+        justifyContent(JustifyContent.FlexStart)
+        alignItems(AlignItems.FlexStart)
     }
 
 }

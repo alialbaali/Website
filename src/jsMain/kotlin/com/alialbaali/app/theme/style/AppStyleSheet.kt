@@ -1,5 +1,6 @@
 package com.alialbaali.app.theme.style
 
+import com.alialbaali.app.theme.Breakpoints
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Fonts
 import com.alialbaali.app.theme.Variables
@@ -37,6 +38,13 @@ object AppStyleSheet : StyleSheet() {
         alignItems(AlignItems.Center)
         width(100.percent)
         gap(Dimensions.MainGap)
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                padding(Dimensions.SmallMainPadding)
+                gap(Dimensions.SmallMainGap)
+            }
+        }
     }
 
 }

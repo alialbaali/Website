@@ -1,5 +1,6 @@
 package com.alialbaali.app.theme.style
 
+import com.alialbaali.app.theme.Breakpoints
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.util.FontWeight
@@ -37,6 +38,13 @@ object ComponentsStyleSheet : StyleSheet() {
         transitions {
             all {
                 duration(Dimensions.TransitionDuration)
+            }
+        }
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                fontSize(Dimensions.Tiny)
+                padding(Dimensions.ExtraTiny, Dimensions.Tiny)
             }
         }
 
@@ -136,8 +144,21 @@ object ComponentsStyleSheet : StyleSheet() {
     }
 
     val IconButton by style {
+        display(DisplayStyle.Grid)
+        gridColumn("1")
+        gridRow("1")
+        alignItems(AlignItems.Center)
+        alignContent(AlignContent.Center)
+        justifyContent(JustifyContent.Center)
+        justifyItems("center")
         padding(0.px, Dimensions.Tiny)
         color(Variables.Colors.Secondary.value())
+
+        child(self, universal) style {
+            gridColumn("1")
+            gridRow("1")
+        }
+
         self + hover style { color(Variables.Colors.OnBackground.value()) }
 
         self + className(PrimaryButton) style {
@@ -148,6 +169,13 @@ object ComponentsStyleSheet : StyleSheet() {
     val ProfileLinkIcon by style {
         width(32.px)
         height(32.px)
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                width(24.px)
+                height(24.px)
+            }
+        }
     }
 
     val HighlightedText by style {
@@ -171,6 +199,12 @@ object ComponentsStyleSheet : StyleSheet() {
         color(Variables.Colors.Primary.value())
         fontWeight(FontWeight.Bold)
         fontSize(Dimensions.Large)
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                fontSize(Dimensions.Medium)
+            }
+        }
     }
 
     fun StyleScope.DefaultSectionStyle() {
@@ -239,6 +273,14 @@ object ComponentsStyleSheet : StyleSheet() {
         overflow("hidden")
         borderRadius(Dimensions.BorderRadius)
         property("box-shadow", "0px 0px 16px 8px ${Variables.Colors.Surface.value()}")
+    }
+
+    val Icon by style {
+        transitions {
+            all {
+                duration(Dimensions.TransitionDuration)
+            }
+        }
     }
 
 }
