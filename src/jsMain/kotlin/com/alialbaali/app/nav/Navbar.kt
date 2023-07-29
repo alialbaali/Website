@@ -69,11 +69,14 @@ fun Navbar() {
 
             Aside(attrs = { classes(NavStyleSheet.ProfileLinks) }) {
                 ProfileLinks.All.forEach { profileLink ->
-                    A(href = profileLink.url, attrs = {
-                        title(profileLink.name)
-                        target(ATarget.Blank)
-                        classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
-                    }) {
+                    A(
+                        href = profileLink.url,
+                        attrs = {
+                            title(profileLink.name)
+                            target(ATarget.Blank)
+                            classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
+                        }
+                    ) {
                         I(attrs = {
                             feather(profileLink.iconName)
                             classes(ComponentsStyleSheet.ProfileLinkIcon)

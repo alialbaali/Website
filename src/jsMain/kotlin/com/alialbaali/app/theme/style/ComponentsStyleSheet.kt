@@ -153,6 +153,7 @@ object ComponentsStyleSheet : StyleSheet() {
         justifyItems("center")
         padding(0.px, Dimensions.Tiny)
         color(Variables.Colors.Secondary.value())
+        cursor("pointer")
 
         child(self, universal) style {
             gridColumn("1")
