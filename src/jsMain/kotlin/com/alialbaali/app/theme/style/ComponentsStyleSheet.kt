@@ -145,8 +145,6 @@ object ComponentsStyleSheet : StyleSheet() {
 
     val IconButton by style {
         display(DisplayStyle.Grid)
-        gridColumn("1")
-        gridRow("1")
         alignItems(AlignItems.Center)
         alignContent(AlignContent.Center)
         justifyContent(JustifyContent.Center)
