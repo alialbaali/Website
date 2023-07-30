@@ -40,6 +40,12 @@ object SkillsStyleSheet : StyleSheet() {
         width((100.percent / 3) - CategoryItemSpacing)
         flexGrow(1)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                width((100.percent / 2) - CategoryItemSpacing)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 width(100.percent)
@@ -86,6 +92,12 @@ object SkillsStyleSheet : StyleSheet() {
         gap(Dimensions.ExtraSmall)
         padding(CategoryContentSpacing)
         width(100.percent / 3)
+
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                width(100.percent / 2)
+            }
+        }
 
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {

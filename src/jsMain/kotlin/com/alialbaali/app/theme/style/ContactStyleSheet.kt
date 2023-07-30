@@ -17,6 +17,12 @@ object ContactStyleSheet : StyleSheet() {
         gap(Dimensions.ItemGap)
         padding(Dimensions.CardPadding)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                flexDirection(FlexDirection.ColumnReverse)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 flexDirection(FlexDirection.ColumnReverse)
@@ -32,6 +38,12 @@ object ContactStyleSheet : StyleSheet() {
         gap(Dimensions.ItemGap)
         width(50.percent)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                width(100.percent)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 width(100.percent)
@@ -43,6 +55,12 @@ object ContactStyleSheet : StyleSheet() {
     val Image by style {
         width(50.percent)
         property("object-fit", "contain")
+
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                width(100.percent)
+            }
+        }
 
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {

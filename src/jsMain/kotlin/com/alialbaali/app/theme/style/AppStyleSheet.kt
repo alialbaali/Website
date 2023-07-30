@@ -39,6 +39,13 @@ object AppStyleSheet : StyleSheet() {
         width(100.percent)
         gap(Dimensions.MainGap)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                padding(Dimensions.MediumMainPadding)
+                gap(Dimensions.MediumMainGap)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 padding(Dimensions.SmallMainPadding)

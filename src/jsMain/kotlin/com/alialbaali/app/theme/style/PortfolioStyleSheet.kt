@@ -48,6 +48,14 @@ object PortfolioStyleSheet : StyleSheet() {
             flex(1, 1, (100.percent / 3) - ProjectSpacing)
         }
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                self + nthChild(Nth.Functional(1)) style {
+                    flex(1, 1, 50.percent - ProjectSpacing)
+                }
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 gap(SmallProjectSpacing)
@@ -61,6 +69,12 @@ object PortfolioStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         flex(1, 1, 100.percent)
+
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                flexDirection(FlexDirection.ColumnReverse)
+            }
+        }
 
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
@@ -77,6 +91,12 @@ object PortfolioStyleSheet : StyleSheet() {
         justifyContent(JustifyContent.SpaceBetween)
         width(50.percent)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                width(100.percent)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 gap(SmallProjectSpacing)
@@ -90,6 +110,12 @@ object PortfolioStyleSheet : StyleSheet() {
         height(auto)
         property("object-fit", "contain")
         width(50.percent)
+
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                width(100.percent)
+            }
+        }
 
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {

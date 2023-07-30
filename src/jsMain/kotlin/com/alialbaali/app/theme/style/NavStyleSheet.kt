@@ -30,6 +30,12 @@ object NavStyleSheet : StyleSheet() {
             }
         }
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                padding(Dimensions.ExtraSmall, Dimensions.MediumMainPadding)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 padding(Dimensions.ExtraSmall, Dimensions.SmallMainPadding)
@@ -54,6 +60,12 @@ object NavStyleSheet : StyleSheet() {
         flexDirection(FlexDirection.Row)
         alignItems(AlignItems.Center)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                justifyContent(JustifyContent.SpaceBetween)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 justifyContent(JustifyContent.SpaceBetween)
@@ -77,6 +89,12 @@ object NavStyleSheet : StyleSheet() {
         width(50.percent)
         justifyContent(JustifyContent.Center)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                display(DisplayStyle.None)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 display(DisplayStyle.None)
@@ -91,6 +109,12 @@ object NavStyleSheet : StyleSheet() {
         justifyContent(JustifyContent.FlexEnd)
         width(25.percent)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                display(DisplayStyle.None)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 display(DisplayStyle.None)
@@ -104,7 +128,7 @@ object NavStyleSheet : StyleSheet() {
         justifyContent(JustifyContent.Center)
         width(100.percent)
 
-        media(mediaMinWidth(Breakpoints.Small)) {
+        media(mediaMinWidth(Breakpoints.Medium)) {
             self style {
                 display(DisplayStyle.None)
             }
@@ -112,7 +136,7 @@ object NavStyleSheet : StyleSheet() {
     }
 
     val MenuIconButton by style {
-        media(mediaMinWidth(Breakpoints.Small)) {
+        media(mediaMinWidth(Breakpoints.Medium)) {
             self style {
                 display(DisplayStyle.None)
             }

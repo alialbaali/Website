@@ -20,6 +20,12 @@ object AboutStyleSheet : StyleSheet() {
         width(100.percent)
         padding(Dimensions.CardPadding)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                flexDirection(FlexDirection.Column)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 flexDirection(FlexDirection.Column)
@@ -35,6 +41,12 @@ object AboutStyleSheet : StyleSheet() {
         borderRadius(Dimensions.BorderRadius)
         property("object-fit", "contain")
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                width(100.percent)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 width(100.percent)
@@ -47,6 +59,12 @@ object AboutStyleSheet : StyleSheet() {
         color(Variables.Colors.OnBackground.value())
         fontWeight(FontWeight.Normal)
         fontSize(Dimensions.ExtraSmall)
+
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                width(100.percent)
+            }
+        }
 
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {

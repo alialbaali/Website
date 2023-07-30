@@ -14,6 +14,13 @@ object IntroStyleSheet : StyleSheet() {
         gap(Dimensions.ItemGap)
         alignItems(AlignItems.FlexEnd)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                flexDirection(FlexDirection.ColumnReverse)
+                alignItems(AlignItems.Center)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 flexDirection(FlexDirection.ColumnReverse)
@@ -29,6 +36,12 @@ object IntroStyleSheet : StyleSheet() {
         gap(Dimensions.ItemGap * 2)
         width(50.percent)
 
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                width(100.percent)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 width(100.percent)
@@ -40,6 +53,12 @@ object IntroStyleSheet : StyleSheet() {
     val Image by style {
         property("object-fit", "contain")
         width(50.percent)
+
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                width(100.percent)
+            }
+        }
 
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
