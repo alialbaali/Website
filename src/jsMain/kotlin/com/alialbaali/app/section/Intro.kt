@@ -1,11 +1,13 @@
 package com.alialbaali.app.section
 
 import androidx.compose.runtime.Composable
+import com.alialbaali.app.model.FAIcons
 import com.alialbaali.app.model.Links
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.theme.style.ComponentsStyleSheet
 import com.alialbaali.app.theme.style.IntroStyleSheet
+import com.alialbaali.app.theme.style.ThemeStyleSheet
 import com.alialbaali.app.util.scrollToSection
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.*
@@ -29,6 +31,7 @@ fun Intro() {
                     }
                 ) {
                     Text(Strings.Contact)
+                    I(attrs = { classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Envelope) })
                 }
                 Button(
                     attrs = {
@@ -37,6 +40,7 @@ fun Intro() {
                     }
                 ) {
                     Text(Strings.ViewPortfolio)
+                    I(attrs = { classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.PersonDigging) })
                 }
             }
         }

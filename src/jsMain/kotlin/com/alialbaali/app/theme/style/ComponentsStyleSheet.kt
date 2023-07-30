@@ -21,7 +21,7 @@ object ComponentsStyleSheet : StyleSheet() {
     private fun CSSBuilder.DefaultButtonStyle() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
-        gap(Dimensions.ExtraTiny)
+        gap(Dimensions.Tiny)
         justifyContent(JustifyContent.Center)
         alignItems(AlignItems.Center)
         cursor("pointer")
@@ -44,6 +44,7 @@ object ComponentsStyleSheet : StyleSheet() {
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 fontSize(Dimensions.Tiny)
+                gap(Dimensions.ExtraTiny)
                 padding(Dimensions.ExtraTiny, Dimensions.Tiny)
             }
         }

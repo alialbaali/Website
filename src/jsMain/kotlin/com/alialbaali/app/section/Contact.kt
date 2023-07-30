@@ -2,11 +2,13 @@ package com.alialbaali.app.section
 
 import androidx.compose.runtime.Composable
 import com.alialbaali.app.components.SectionName
+import com.alialbaali.app.model.FAIcons
 import com.alialbaali.app.model.Links
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.theme.style.ComponentsStyleSheet
 import com.alialbaali.app.theme.style.ContactStyleSheet
+import com.alialbaali.app.theme.style.ThemeStyleSheet
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.*
 
@@ -34,6 +36,7 @@ fun Contact() {
                     }
                 ) {
                     Text(Strings.Contact)
+                    I(attrs = { classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Envelope) })
                 }
             }
             Img(src = "images/Contact.svg", attrs = { classes(ContactStyleSheet.Image) })
