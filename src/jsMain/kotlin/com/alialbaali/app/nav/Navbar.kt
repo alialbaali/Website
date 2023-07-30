@@ -1,14 +1,18 @@
 package com.alialbaali.app.nav
 
 import androidx.compose.runtime.*
-import com.alialbaali.app.model.*
+import com.alialbaali.app.model.FAIcons
 import com.alialbaali.app.model.FAIcons.faIcon
+import com.alialbaali.app.model.Links
+import com.alialbaali.app.model.Section
+import com.alialbaali.app.model.Strings
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.theme.style.*
 import com.alialbaali.app.util.*
 import kotlinx.browser.window
 import org.jetbrains.compose.web.attributes.ATarget
+import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
@@ -36,19 +40,19 @@ fun Navbar() {
         },
     ) {
         Div(attrs = { classes(NavStyleSheet.NavContainer) }) {
-            Button(attrs = {
-                classes(
-                    ComponentsStyleSheet.TextButton,
-                    ComponentsStyleSheet.PrimaryButton,
-                    NavStyleSheet.PageTitle,
-                )
-                onClick {
-                    window.scrollToTop()
-                    isMenuVisible = false
+            Button(
+                attrs = {
+                    classes(
+                        ComponentsStyleSheet.TextButton,
+                        ComponentsStyleSheet.PrimaryButton,
+                        NavStyleSheet.Title,
+                    )
+                    onClick {
+                        window.scrollToTop()
+                        isMenuVisible = false
+                    }
                 }
-            }) {
-                Text(Strings.Username)
-            }
+            ) { Text(Strings.Username) }
 
             Nav(attrs = { classes(NavStyleSheet.Nav) }) {
                 sections.forEach { section ->
@@ -66,17 +70,31 @@ fun Navbar() {
                 }
             }
 
-            Aside(attrs = { classes(NavStyleSheet.ProfileLinks) }) {
-                Links.Profile.entries.forEach { profileLink ->
-                    A(
-                        href = profileLink.url,
-                        attrs = {
-                            title(profileLink.name)
-                            target(ATarget.Blank)
-                            classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
-                        },
-                    ) { I(attrs = { classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FABrand, profileLink.faIcon) }) }
+            Aside(attrs = { classes(NavStyleSheet.Aside) }) {
+                Div(attrs = { classes(NavStyleSheet.ProfileLinks) }) {
+                    Links.Profile.entries.forEach { profileLink ->
+                        A(
+                            href = profileLink.url,
+                            attrs = {
+                                title(profileLink.name)
+                                target(ATarget.Blank)
+                                classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
+                            },
+                        ) {
+                            I(
+                                attrs = {
+                                    classes(
+                                        ComponentsStyleSheet.Icon,
+                                        ThemeStyleSheet.FABrand,
+                                        profileLink.faIcon
+                                    )
+                                }
+                            )
+                        }
+                    }
                 }
+
+                ThemeToggle()
             }
 
             Div(
@@ -173,5 +191,41 @@ private fun VisibleSectionEffect(callback: (Section?) -> Unit) {
             callback(visibleSection)
         }
         onDispose { window.document.onscroll = null }
+    }
+}
+
+
+@Composable
+private fun ThemeToggle() {
+    val isSystemInDarkMode = window.isSystemInDarkMode()
+    var isDarkMode by remember(isSystemInDarkMode) { mutableStateOf(isSystemInDarkMode) }
+    Div(attrs = { classes(NavStyleSheet.ThemeToggleContainer) }) {
+        Input(
+            type = InputType.Checkbox,
+            attrs = {
+                checked(isDarkMode)
+                classes(NavStyleSheet.ThemeToggleInput);
+                id(NavStyleSheet.ThemeToggleId)
+                onChange { isDarkMode = window.toggleDarkMode(isSystemInDarkMode = null) }
+            }
+        )
+        Label(
+            attrs = { classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton) },
+            forId = NavStyleSheet.ThemeToggleId,
+        ) {
+            I(
+                attrs = {
+                    classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Sun)
+                    style { fontSize(if (isDarkMode) 0.em else Dimensions.IconSize) }
+                }
+            )
+
+            I(
+                attrs = {
+                    classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Moon)
+                    style { fontSize(if (isDarkMode) Dimensions.IconSize else 0.em) }
+                }
+            )
+        }
     }
 }

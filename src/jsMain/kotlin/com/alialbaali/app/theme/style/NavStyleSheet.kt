@@ -16,6 +16,8 @@ object NavStyleSheet : StyleSheet() {
     private val NavbarShadowBlurRadius = 16.px
     private val NavbarShadowSpreadRadius = 8.px
 
+    const val ThemeToggleId = "ThemeToggle"
+
     val Header by style {
         width(100.percent)
         display(DisplayStyle.Flex)
@@ -59,35 +61,45 @@ object NavStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         alignItems(AlignItems.Center)
-
-        media(mediaMaxWidth(Breakpoints.Medium)) {
-            self style {
-                justifyContent(JustifyContent.SpaceBetween)
-            }
-        }
-
-        media(mediaMaxWidth(Breakpoints.Small)) {
-            self style {
-                justifyContent(JustifyContent.SpaceBetween)
-            }
-        }
+        justifyContent(JustifyContent.SpaceBetween)
     }
 
-    val PageTitle by style {
+    val Title by style {
         fontWeight(FontWeight.Medium)
         fontFamily(Fonts.DancingScript)
         fontSize(Dimensions.Medium)
         padding(0.px)
         width(25.percent)
+        alignItems(AlignItems.Center)
         justifyContent(JustifyContent.FlexStart)
     }
 
     val Nav by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
-        alignContent(AlignContent.Center)
+        alignItems(AlignItems.Center)
         width(50.percent)
         justifyContent(JustifyContent.Center)
+
+        media(mediaMaxWidth(Breakpoints.Medium)) {
+            self style {
+                display(DisplayStyle.None)
+            }
+        }
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                display(DisplayStyle.None)
+            }
+        }
+    }
+
+    val Aside by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        alignItems(AlignItems.Center)
+        justifyContent(JustifyContent.SpaceBetween)
+        width(25.percent)
 
         media(mediaMaxWidth(Breakpoints.Medium)) {
             self style {
@@ -106,20 +118,12 @@ object NavStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         alignItems(AlignItems.Center)
-        justifyContent(JustifyContent.FlexEnd)
-        width(25.percent)
+    }
 
-        media(mediaMaxWidth(Breakpoints.Medium)) {
-            self style {
-                display(DisplayStyle.None)
-            }
-        }
+    val ThemeToggleContainer by style {}
 
-        media(mediaMaxWidth(Breakpoints.Small)) {
-            self style {
-                display(DisplayStyle.None)
-            }
-        }
+    val ThemeToggleInput by style {
+        display(DisplayStyle.None)
     }
 
     val SmallProfileLinks by style {

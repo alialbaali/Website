@@ -212,60 +212,6 @@ object ComponentsStyleSheet : StyleSheet() {
         width(100.percent)
     }
 
-    const val ThemeToggleId = "Toggle"
-
-    val ThemeToggleContainer by style {}
-
-    val ThemeToggleLabel by style {
-        display(DisplayStyle.Grid)
-        justifyContent(JustifyContent.Center)
-        alignItems(AlignItems.Center)
-        width(100.percent)
-        backgroundColor(Variables.Colors.Background.value())
-        cursor("pointer")
-        borderRadius(3.vmin)
-        border(Dimensions.OutlinedButtonBorderWidth, LineStyle.Solid, Variables.Colors.Primary.value())
-    }
-
-    val ThemeToggleLightModeIcon by style {
-        gridColumn(1, 1)
-        gridRow(1, 1)
-        color(Variables.Colors.Primary.value())
-        padding(Dimensions.ExtraTiny)
-        opacity(1)
-        userSelect("none")
-        transitions {
-            all {
-                duration(Dimensions.TransitionDuration)
-            }
-        }
-    }
-
-    val ThemeToggleDarkModeIcon by style {
-        gridColumn(1, 1)
-        gridRow(1, 1)
-        color(Variables.Colors.Primary.value())
-        padding(Dimensions.ExtraTiny)
-        opacity(0)
-        userSelect("none")
-        transitions {
-            all {
-                duration(Dimensions.TransitionDuration)
-            }
-        }
-    }
-
-    val ThemeToggleInput by style {
-        display(DisplayStyle.None)
-        adjacent(self + checked, desc(className(ThemeToggleLabel), className(ThemeToggleLightModeIcon))) style {
-            opacity(0)
-        }
-
-        adjacent(self + checked, desc(className(ThemeToggleLabel), className(ThemeToggleDarkModeIcon))) style {
-            opacity(1)
-        }
-    }
-
     val Card by style {
         backgroundColor(Variables.Colors.Background.value())
         color(Variables.Colors.OnBackground.value())

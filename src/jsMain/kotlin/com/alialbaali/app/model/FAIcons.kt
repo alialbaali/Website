@@ -8,6 +8,8 @@ object FAIcons {
     const val ExternalLink = "$Prefix-arrow-up-right-from-square"
     const val Envelope = "$Prefix-envelope"
     const val PersonDigging = "$Prefix-person-digging"
+    const val Moon = "$Prefix-moon"
+    const val Sun = "$Prefix-sun"
 
     val Links.Profile.faIcon get() = "$Prefix-$name".lowercase()
 }
