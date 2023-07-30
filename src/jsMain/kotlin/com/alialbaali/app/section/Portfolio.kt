@@ -3,12 +3,10 @@ package com.alialbaali.app.section
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import com.alialbaali.app.components.SectionName
-import com.alialbaali.app.model.Project
-import com.alialbaali.app.model.Section
-import com.alialbaali.app.model.Strings
-import com.alialbaali.app.model.Technology
+import com.alialbaali.app.model.*
 import com.alialbaali.app.theme.style.ComponentsStyleSheet
 import com.alialbaali.app.theme.style.PortfolioStyleSheet
+import com.alialbaali.app.theme.style.ThemeStyleSheet
 import com.alialbaali.app.util.*
 import kotlinx.browser.window
 import org.jetbrains.compose.web.attributes.ATarget
@@ -105,7 +103,7 @@ private fun ProjectActions(project: Project) {
             }
         ) {
             Text(Strings.LearnMore)
-            I(attrs = { feather("external-link") })
+            I(attrs = { classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.ExternalLink) })
         }
     }
 }

@@ -8,6 +8,7 @@ object ThemeStyleSheet : StyleSheet() {
 
     const val MaterialDesignIcons = "material-icons-round"
     const val FAIcon = "fa-solid"
+    const val FABrand = "fa-brands"
 
     val LightTheme by style {
         Variables.Colors.Primary(Theme.LightColors.Primary)

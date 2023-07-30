@@ -30,6 +30,6 @@ object Dimensions {
     val SmallItemGap = Small
     val CardPadding = Small
     val SmallCardPadding = ExtraSmall
-    val IconSize = 3.cssRem
+    val IconSize = 1.em
 
 }

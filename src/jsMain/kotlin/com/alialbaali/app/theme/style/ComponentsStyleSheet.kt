@@ -152,6 +152,8 @@ object ComponentsStyleSheet : StyleSheet() {
         padding(0.px, Dimensions.Tiny)
         color(Variables.Colors.Secondary.value())
         cursor("pointer")
+        textDecoration("none")
+        fontSize(Dimensions.Small)
 
         child(self, universal) style {
             gridColumn("1")
@@ -165,14 +167,11 @@ object ComponentsStyleSheet : StyleSheet() {
         }
     }
 
-    val ProfileLinkIcon by style {
-        width(32.px)
-        height(32.px)
-
-        media(mediaMaxWidth(Breakpoints.Small)) {
-            self style {
-                width(24.px)
-                height(24.px)
+    val Icon by style {
+        fontSize(Dimensions.IconSize)
+        transitions {
+            all {
+                duration(Dimensions.TransitionDuration)
             }
         }
     }
@@ -272,14 +271,6 @@ object ComponentsStyleSheet : StyleSheet() {
         overflow("hidden")
         borderRadius(Dimensions.BorderRadius)
         property("box-shadow", "0px 0px 16px 8px ${Variables.Colors.Surface.value()}")
-    }
-
-    val Icon by style {
-        transitions {
-            all {
-                duration(Dimensions.TransitionDuration)
-            }
-        }
     }
 
 }

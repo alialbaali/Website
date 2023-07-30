@@ -25,7 +25,7 @@ data class Project(
             subtitle = Strings.Noto.Subtitle,
             description = Strings.Noto.Description,
             technologies = listOf(Kotlin, SQL, Android, Compose, Supabase, Figma),
-            githubLink = GitHubLinks.Noto,
+            githubLink = Links.GitHub.Noto,
             link = Links.Noto,
             year = Date().getFullYear().toUInt(),
             imagePath = "images/Noto.svg",
@@ -38,7 +38,7 @@ data class Project(
             subtitle = Strings.Kamel.Subtitle,
             description = Strings.Kamel.Description,
             technologies = listOf(Kotlin, Compose, Ktor, Maven),
-            githubLink = GitHubLinks.Kamel,
+            githubLink = Links.GitHub.Kamel,
             year = Date().getFullYear().toUInt(),
             imagePath = "images/Kamel.svg",
             imageBackgroundColor = "263238"
@@ -49,7 +49,7 @@ data class Project(
             subtitle = Strings.ChatyChaty.Subtitle,
             description = Strings.ChatyChaty.Description,
             technologies = listOf(Kotlin, SQL, Android, Figma),
-            githubLink = GitHubLinks.ChatyChaty,
+            githubLink = Links.GitHub.ChatyChaty,
             year = 2020U,
         )
 
@@ -58,7 +58,7 @@ data class Project(
             subtitle = Strings.CastingAgency.Subtitle,
             description = Strings.CastingAgency.Description,
             technologies = listOf(Python, SQL, Flask, Docker),
-            githubLink = GitHubLinks.CastingAgency,
+            githubLink = Links.GitHub.CastingAgency,
             year = 2020U,
         )
 
@@ -67,7 +67,7 @@ data class Project(
             subtitle = Strings.Shopally.Subtitle,
             description = Strings.Shopally.Description,
             technologies = listOf(Kotlin, SQL, Ktor, Docker, Heroku),
-            githubLink = GitHubLinks.Shopally,
+            githubLink = Links.GitHub.Shopally,
             year = 2020U,
             features = Strings.Shopally.Features,
         )
@@ -77,7 +77,7 @@ data class Project(
             subtitle = Strings.Website.Subtitle,
             description = Strings.Website.Description,
             technologies = listOf(Kotlin, HTML, CSS, Netlify, Figma),
-            githubLink = GitHubLinks.Website,
+            githubLink = Links.GitHub.Website,
             year = Date().getFullYear().toUInt(),
         )
 
@@ -86,7 +86,7 @@ data class Project(
             subtitle = Strings.Minigrep.Subtitle,
             description = Strings.Minigrep.Description,
             technologies = listOf(Rust, Linux),
-            githubLink = GitHubLinks.Minigrep,
+            githubLink = Links.GitHub.Minigrep,
             year = 2021U,
         )
 

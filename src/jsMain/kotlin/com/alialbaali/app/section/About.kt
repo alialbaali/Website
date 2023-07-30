@@ -3,7 +3,6 @@ package com.alialbaali.app.section
 import androidx.compose.runtime.Composable
 import com.alialbaali.app.components.HighlightedText
 import com.alialbaali.app.components.SectionName
-import com.alialbaali.app.model.GitHubLinks
 import com.alialbaali.app.model.Links
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
@@ -45,7 +44,7 @@ fun About() {
                 Text(" ")
                 HighlightedText(Strings.Noto.Title, Links.Noto)
                 Text(" & ")
-                HighlightedText(Strings.Kamel.Title, GitHubLinks.Kamel)
+                HighlightedText(Strings.Kamel.Title, Links.GitHub.Kamel)
                 Text(", ")
                 Text(Strings.About[6])
             }

@@ -1,9 +1,8 @@
 package com.alialbaali.app.nav
 
 import androidx.compose.runtime.*
-import com.alialbaali.app.model.ProfileLinks
-import com.alialbaali.app.model.Section
-import com.alialbaali.app.model.Strings
+import com.alialbaali.app.model.*
+import com.alialbaali.app.model.FAIcons.faIcon
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.theme.style.*
@@ -68,20 +67,15 @@ fun Navbar() {
             }
 
             Aside(attrs = { classes(NavStyleSheet.ProfileLinks) }) {
-                ProfileLinks.entries.forEach { profileLink ->
+                Links.Profile.entries.forEach { profileLink ->
                     A(
                         href = profileLink.url,
                         attrs = {
                             title(profileLink.name)
                             target(ATarget.Blank)
                             classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
-                        }
-                    ) {
-                        I(attrs = {
-                            feather(profileLink.iconName)
-                            classes(ComponentsStyleSheet.ProfileLinkIcon)
-                        })
-                    }
+                        },
+                    ) { I(attrs = { classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FABrand, profileLink.faIcon) }) }
                 }
             }
 
@@ -96,17 +90,17 @@ fun Navbar() {
             ) {
                 I(
                     attrs = {
-                        classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, "fa-bars")
+                        classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Menu)
                         onClick { isMenuVisible = true }
-                        style { fontSize(if (isMenuVisible) 0.cssRem else Dimensions.IconSize) }
+                        style { fontSize(if (isMenuVisible) 0.em else Dimensions.IconSize) }
                     }
                 )
 
                 I(
                     attrs = {
-                        classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, "fa-xmark")
+                        classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Close)
                         onClick { isMenuVisible = false }
-                        style { fontSize(if (isMenuVisible) Dimensions.IconSize else 0.cssRem) }
+                        style { fontSize(if (isMenuVisible) Dimensions.IconSize else 0.em) }
                     }
                 )
             }
@@ -146,17 +140,15 @@ fun Navbar() {
             }
 
             Aside(attrs = { classes(NavStyleSheet.SmallProfileLinks) }) {
-                ProfileLinks.entries.forEach { profileLink ->
-                    A(href = profileLink.url, attrs = {
-                        title(profileLink.name)
-                        target(ATarget.Blank)
-                        classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
-                    }) {
-                        I(attrs = {
-                            feather(profileLink.iconName)
-                            classes(ComponentsStyleSheet.ProfileLinkIcon)
-                        })
-                    }
+                Links.Profile.entries.forEach { profileLink ->
+                    A(
+                        href = profileLink.url,
+                        attrs = {
+                            title(profileLink.name)
+                            target(ATarget.Blank)
+                            classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
+                        },
+                    ) { I(attrs = { classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FABrand, profileLink.faIcon) }) }
                 }
             }
         }
