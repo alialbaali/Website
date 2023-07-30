@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import com.alialbaali.app.nav.Navbar
 import com.alialbaali.app.section.*
-import com.alialbaali.app.theme.style.*
+import com.alialbaali.app.style.*
 import com.alialbaali.app.util.isSystemInDarkMode
 import com.alialbaali.app.util.toggleDarkMode
 import kotlinx.browser.window

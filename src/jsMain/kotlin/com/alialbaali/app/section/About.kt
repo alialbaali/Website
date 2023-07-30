@@ -6,8 +6,8 @@ import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Links
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
-import com.alialbaali.app.theme.style.AboutStyleSheet
-import com.alialbaali.app.theme.style.ComponentsStyleSheet
+import com.alialbaali.app.style.AboutStyleSheet
+import com.alialbaali.app.style.ComponentsStyleSheet
 import org.jetbrains.compose.web.dom.*
 
 @Composable

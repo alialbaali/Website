@@ -2,10 +2,10 @@ package com.alialbaali.app.util
 
 import androidx.compose.runtime.*
 import com.alialbaali.app.model.Section
+import com.alialbaali.app.style.ComponentsStyleSheet
+import com.alialbaali.app.style.NavStyleSheet
+import com.alialbaali.app.style.ThemeStyleSheet
 import com.alialbaali.app.theme.Dimensions
-import com.alialbaali.app.theme.style.ComponentsStyleSheet
-import com.alialbaali.app.theme.style.NavStyleSheet
-import com.alialbaali.app.theme.style.ThemeStyleSheet
 import kotlinx.dom.addClass
 import kotlinx.dom.hasClass
 import kotlinx.dom.removeClass

@@ -4,9 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import com.alialbaali.app.model.FAIcons.faIcon
 import com.alialbaali.app.model.Links
-import com.alialbaali.app.theme.style.ComponentsStyleSheet
-import com.alialbaali.app.theme.style.FooterStyleSheet
-import com.alialbaali.app.theme.style.ThemeStyleSheet
+import com.alialbaali.app.style.ComponentsStyleSheet
+import com.alialbaali.app.style.FooterStyleSheet
+import com.alialbaali.app.style.ThemeStyleSheet
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.dom.*

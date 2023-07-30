@@ -6,8 +6,8 @@ import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Category
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Technology
-import com.alialbaali.app.theme.style.ComponentsStyleSheet
-import com.alialbaali.app.theme.style.SkillsStyleSheet
+import com.alialbaali.app.style.ComponentsStyleSheet
+import com.alialbaali.app.style.SkillsStyleSheet
 import com.alialbaali.app.util.isSystemInDarkMode
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.*

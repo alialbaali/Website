@@ -6,9 +6,9 @@ import com.alialbaali.app.model.FAIcons.faIcon
 import com.alialbaali.app.model.Links
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
+import com.alialbaali.app.style.*
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Variables
-import com.alialbaali.app.theme.style.*
 import com.alialbaali.app.util.*
 import kotlinx.browser.window
 import org.jetbrains.compose.web.attributes.ATarget

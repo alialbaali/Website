@@ -1,4 +1,4 @@
-package com.alialbaali.app.theme.style
+package com.alialbaali.app.style
 
 import com.alialbaali.app.theme.Breakpoints
 import com.alialbaali.app.theme.Dimensions

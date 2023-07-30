@@ -1,23 +1,25 @@
-package com.alialbaali.app.theme.style
+package com.alialbaali.app.style
 
 import com.alialbaali.app.theme.Breakpoints
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Variables
-import com.alialbaali.app.util.FontWeight
 import org.jetbrains.compose.web.css.*
 
-object IntroStyleSheet : StyleSheet() {
+object ContactStyleSheet : StyleSheet() {
 
     val Section by style {
         ComponentsStyleSheet.apply { DefaultSectionStyle() }
+    }
+
+    val Container by style {
+        display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         gap(Dimensions.ItemGap)
-        alignItems(AlignItems.FlexEnd)
+        padding(Dimensions.CardPadding)
 
         media(mediaMaxWidth(Breakpoints.Medium)) {
             self style {
                 flexDirection(FlexDirection.ColumnReverse)
-                alignItems(AlignItems.Center)
             }
         }
 
@@ -25,15 +27,15 @@ object IntroStyleSheet : StyleSheet() {
             self style {
                 flexDirection(FlexDirection.ColumnReverse)
                 gap(Dimensions.SmallItemGap)
-                alignItems(AlignItems.Center)
+                padding(Dimensions.SmallCardPadding)
             }
         }
     }
 
-    val Container by style {
+    val Info by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-        gap(Dimensions.ItemGap * 2)
+        gap(Dimensions.ItemGap)
         width(50.percent)
 
         media(mediaMaxWidth(Breakpoints.Medium)) {
@@ -45,14 +47,14 @@ object IntroStyleSheet : StyleSheet() {
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 width(100.percent)
-                gap(Dimensions.SmallItemGap * 2)
+                gap(Dimensions.SmallItemGap)
             }
         }
     }
 
     val Image by style {
-        property("object-fit", "contain")
         width(50.percent)
+        property("object-fit", "contain")
 
         media(mediaMaxWidth(Breakpoints.Medium)) {
             self style {
@@ -67,26 +69,7 @@ object IntroStyleSheet : StyleSheet() {
         }
     }
 
-    val TextContainer by style {
-        display(DisplayStyle.Flex)
-        flexDirection(FlexDirection.Column)
-        gap(Dimensions.ItemGap)
-
-        media(mediaMaxWidth(Breakpoints.Small)) {
-            self style {
-                gap(Dimensions.SmallItemGap)
-            }
-        }
-    }
-
-    val IntroTextContainer by style {
-        display(DisplayStyle.Flex)
-        flexDirection(FlexDirection.Column)
-    }
-
-    val Hello by style {
-        color(Variables.Colors.Secondary.value())
-        fontWeight(FontWeight.Light)
+    val Title by style {
         fontSize(Dimensions.Medium)
 
         media(mediaMaxWidth(Breakpoints.Small)) {
@@ -96,40 +79,19 @@ object IntroStyleSheet : StyleSheet() {
         }
     }
 
-    val WhoAmI by style {
-        color(Variables.Colors.Primary.value())
-        fontWeight(FontWeight.Normal)
-        fontSize(Dimensions.Large)
-
-        media(mediaMaxWidth(Breakpoints.Small)) {
-            self style {
-                fontSize(Dimensions.Medium)
-            }
-        }
-    }
-
-    val WhatDoIDo by style {
+    val Description by style {
+        fontSize(Dimensions.ExtraSmall)
         color(Variables.Colors.Secondary.value())
-        fontWeight(FontWeight.Medium)
-        fontSize(Dimensions.Small)
 
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
-                fontSize(Dimensions.ExtraSmall)
+                fontSize(Dimensions.Tiny)
             }
         }
     }
 
-    val ButtonsContainer by style {
-        display(DisplayStyle.Flex)
-        flexDirection(FlexDirection.Row)
-        gap(Dimensions.Small)
-
-        media(mediaMaxWidth(Breakpoints.Small)) {
-            self style {
-                gap(Dimensions.ExtraSmall)
-            }
-        }
+    val Button by style {
+        property("width", "min-content")
     }
 
 }

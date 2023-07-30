@@ -5,8 +5,8 @@ import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Links
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
-import com.alialbaali.app.theme.style.ComponentsStyleSheet
-import com.alialbaali.app.theme.style.ContactFormStyleSheet
+import com.alialbaali.app.style.ComponentsStyleSheet
+import com.alialbaali.app.style.ContactFormStyleSheet
 import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.attributes.name
 import org.jetbrains.compose.web.attributes.placeholder
@@ -25,7 +25,9 @@ fun ContactForm() {
 
             Form(attrs = { classes(ComponentsStyleSheet.Card, ContactFormStyleSheet.Form) }, action = Links.Mail) {
                 Div(attrs = { classes(ContactFormStyleSheet.InputContainer) }) {
-                    Label(forId = ContactFormStyleSheet.EmailId, attrs = { classes(ContactFormStyleSheet.InputLabel) }) { Text(Strings.Email) }
+                    Label(
+                        forId = ContactFormStyleSheet.EmailId,
+                        attrs = { classes(ContactFormStyleSheet.InputLabel) }) { Text(Strings.Email) }
                     Input(
                         InputType.Email,
                         attrs = {
@@ -39,7 +41,9 @@ fun ContactForm() {
                 }
 
                 Div(attrs = { classes(ContactFormStyleSheet.InputContainer) }) {
-                    Label(forId = ContactFormStyleSheet.SubjectId, attrs = { classes(ContactFormStyleSheet.InputLabel) }) { Text(Strings.Subject) }
+                    Label(
+                        forId = ContactFormStyleSheet.SubjectId,
+                        attrs = { classes(ContactFormStyleSheet.InputLabel) }) { Text(Strings.Subject) }
                     Input(
                         InputType.Text,
                         attrs = {
@@ -53,7 +57,9 @@ fun ContactForm() {
                 }
 
                 Div(attrs = { classes(ContactFormStyleSheet.InputContainer) }) {
-                    Label(forId = ContactFormStyleSheet.MessageId, attrs = { classes(ContactFormStyleSheet.InputLabel) }) { Text(Strings.Message) }
+                    Label(
+                        forId = ContactFormStyleSheet.MessageId,
+                        attrs = { classes(ContactFormStyleSheet.InputLabel) }) { Text(Strings.Message) }
                     TextArea(
                         attrs = {
                             name("body")

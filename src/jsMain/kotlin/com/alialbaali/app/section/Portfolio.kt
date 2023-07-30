@@ -4,9 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.*
-import com.alialbaali.app.theme.style.ComponentsStyleSheet
-import com.alialbaali.app.theme.style.PortfolioStyleSheet
-import com.alialbaali.app.theme.style.ThemeStyleSheet
+import com.alialbaali.app.style.ComponentsStyleSheet
+import com.alialbaali.app.style.PortfolioStyleSheet
+import com.alialbaali.app.style.ThemeStyleSheet
 import com.alialbaali.app.util.*
 import kotlinx.browser.window
 import org.jetbrains.compose.web.attributes.ATarget
