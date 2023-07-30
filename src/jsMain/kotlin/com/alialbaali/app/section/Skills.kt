@@ -14,7 +14,7 @@ import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun Skills() {
-    val categories = remember { Category.values().toList() }
+    val categories = Category.entries
     Section(attrs = { classes(SkillsStyleSheet.Section) }) {
         SectionName(Section.Skills)
         Div(attrs = { classes(SkillsStyleSheet.Container) }) {

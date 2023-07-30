@@ -25,8 +25,4 @@ enum class ProfileLinks(val iconName: String, val url: String) {
     Dribbble("dribbble", "https://dribbble.com/alialbaali/"),
     LinkedIn("linkedin", "https://www.linkedin.com/in/alialbaali/"),
     GitHub("github", "https://github.com/alialbaali/");
-
-    companion object {
-        val All = values().toList()
-    }
 }

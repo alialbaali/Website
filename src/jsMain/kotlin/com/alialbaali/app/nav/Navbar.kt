@@ -21,8 +21,8 @@ private val MenuContainerHiddenMaxHeight = 0.px
 
 @Composable
 fun Navbar() {
+    val sections = Section.entries
     var isMenuVisible by remember { mutableStateOf(false) }
-    val sections = remember { Section.values().toList() }
     var visibleSection by remember { mutableStateOf<Section?>(null) }
     var isElevated by remember { mutableStateOf(false) }
     VisibleSectionEffect { visibleSection = it }
@@ -68,7 +68,7 @@ fun Navbar() {
             }
 
             Aside(attrs = { classes(NavStyleSheet.ProfileLinks) }) {
-                ProfileLinks.All.forEach { profileLink ->
+                ProfileLinks.entries.forEach { profileLink ->
                     A(
                         href = profileLink.url,
                         attrs = {
@@ -146,7 +146,7 @@ fun Navbar() {
             }
 
             Aside(attrs = { classes(NavStyleSheet.SmallProfileLinks) }) {
-                ProfileLinks.All.forEach { profileLink ->
+                ProfileLinks.entries.forEach { profileLink ->
                     A(href = profileLink.url, attrs = {
                         title(profileLink.name)
                         target(ATarget.Blank)

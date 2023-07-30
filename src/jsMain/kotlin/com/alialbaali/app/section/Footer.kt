@@ -17,7 +17,7 @@ fun Footer() {
     Footer(attrs = { classes(FooterStyleSheet.Section) }) {
         Span(attrs = { classes(FooterStyleSheet.Text) }) { Text("$currentYear © Ali Albaali — One step at a time") }
         Div(attrs = { classes(FooterStyleSheet.ProfileLinks) }) {
-            ProfileLinks.All.forEach { profileLink ->
+            ProfileLinks.entries.forEach { profileLink ->
                 A(profileLink.url,
                     attrs = {
                         title(profileLink.name)
