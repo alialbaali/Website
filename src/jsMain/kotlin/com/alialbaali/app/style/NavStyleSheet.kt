@@ -16,6 +16,7 @@ object NavStyleSheet : StyleSheet() {
     private val NavbarShadowBlurRadius = 16.px
     private val NavbarShadowSpreadRadius = 8.px
 
+    const val ThemeStorageId = "Theme"
     const val ThemeToggleId = "ThemeToggle"
 
     val Header by style {

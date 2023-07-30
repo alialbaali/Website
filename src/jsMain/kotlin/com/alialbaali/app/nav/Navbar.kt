@@ -8,8 +8,10 @@ import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.style.*
 import com.alialbaali.app.theme.Dimensions
+import com.alialbaali.app.theme.Theme
 import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.util.*
+import kotlinx.browser.localStorage
 import kotlinx.browser.window
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.InputType
@@ -197,16 +199,23 @@ private fun VisibleSectionEffect(callback: (Section?) -> Unit) {
 
 @Composable
 private fun ThemeToggle() {
-    val isSystemInDarkMode = window.isSystemInDarkMode()
-    var isDarkMode by remember(isSystemInDarkMode) { mutableStateOf(isSystemInDarkMode) }
+    val storageStatus = localStorage.getItem(StorageIds.Theme)?.toThemeStatus()
+    val windowStatus = window.themeStatus
+    var state by remember(windowStatus) { mutableStateOf(storageStatus ?: windowStatus) }
+
     Div(attrs = { classes(NavStyleSheet.ThemeToggleContainer) }) {
         Input(
             type = InputType.Checkbox,
             attrs = {
-                checked(isDarkMode)
+                checked(state.isDark)
                 classes(NavStyleSheet.ThemeToggleInput);
                 id(NavStyleSheet.ThemeToggleId)
-                onChange { isDarkMode = window.toggleDarkMode(isSystemInDarkMode = null) }
+                onChange {
+                    val newState = if (state.isLight) Theme.Status.Dark else Theme.Status.Light
+                    state = newState // Update UI
+                    localStorage.setItem(StorageIds.Theme, newState.name) // Update initial status
+                    window.toggleThemeStatus() // Toggle UI theme
+                }
             }
         )
         Label(
@@ -216,14 +225,14 @@ private fun ThemeToggle() {
             I(
                 attrs = {
                     classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Sun)
-                    style { fontSize(if (isDarkMode) 0.em else Dimensions.IconSize) }
+                    style { fontSize(if (state.isDark) Dimensions.IconSize else 0.em) }
                 }
             )
 
             I(
                 attrs = {
                     classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Moon)
-                    style { fontSize(if (isDarkMode) Dimensions.IconSize else 0.em) }
+                    style { fontSize(if (state.isLight) Dimensions.IconSize else 0.em) }
                 }
             )
         }

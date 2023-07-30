@@ -2,9 +2,15 @@ package com.alialbaali.app.theme
 
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.rgb
-import org.jetbrains.compose.web.css.rgba
 
 object Theme {
+
+    enum class Status {
+        Light, Dark;
+
+        val isLight get() = this == Light
+        val isDark get() = this == Dark
+    }
 
     object LightColors {
         val Primary = Color("#3F51B5")

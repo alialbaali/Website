@@ -112,7 +112,7 @@ private fun ProjectActions(project: Project) {
 private fun TechnologyItem(technology: Technology) {
     val lightColor = remember(technology) { technology.lightCSSColor }
     val darkColor = remember(technology) { technology.darkCSSColor }
-    val themeBasedColor = if (window.isSystemInDarkMode()) lightColor else darkColor
+    val themeBasedColor = if (window.themeStatus.isDark) lightColor else darkColor
     Span(
         attrs = {
             classes(PortfolioStyleSheet.TechnologyItem)

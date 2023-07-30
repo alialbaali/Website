@@ -6,6 +6,7 @@ import com.alialbaali.app.style.ComponentsStyleSheet
 import com.alialbaali.app.style.NavStyleSheet
 import com.alialbaali.app.style.ThemeStyleSheet
 import com.alialbaali.app.theme.Dimensions
+import com.alialbaali.app.theme.Theme
 import kotlinx.dom.addClass
 import kotlinx.dom.hasClass
 import kotlinx.dom.removeClass
@@ -37,17 +38,6 @@ fun Window.scrollToTop() {
     )
 }
 
-@Composable
-fun Window.isSystemInDarkMode(): Boolean {
-    val mediaQueryList = this.matchMedia(DarkModeQuery)
-    var isSystemInDarkMode by remember { mutableStateOf(mediaQueryList.matches) }
-    DisposableEffect(Unit) {
-        mediaQueryList.onchange = { isSystemInDarkMode = mediaQueryList.matches; Unit }
-        onDispose { mediaQueryList.onchange = null }
-    }
-    return isSystemInDarkMode
-}
-
 val Window.scrollPercentage: Double
     get() {
         val scrollTop = document.documentElement?.scrollTop ?: 0.0
@@ -64,33 +54,45 @@ private fun Window.inaccurateScrollPercentage(): Double {
     return (scrollPosition + viewportHeight) / documentHeight * 100
 }
 
+val Window.themeStatus: Theme.Status
+    @Composable
+    get() {
+        val mediaQueryList = this.matchMedia(DarkModeQuery)
+        var status by remember { mutableStateOf(mediaQueryList.matches.toThemeStatus()) }
+        DisposableEffect(Unit) {
+            mediaQueryList.onchange = { status = mediaQueryList.matches.toThemeStatus(); Unit }
+            onDispose { mediaQueryList.onchange = null }
+        }
+        return status
+    }
 
-fun Window.toggleDarkMode(isSystemInDarkMode: Boolean?): Boolean {
+fun Window.initTheme(status: Theme.Status) {
     val htmlElement = document.getElementsByTagName("html")[0]!!
-    val isDarkTheme = htmlElement.hasClass(ThemeStyleSheet.DarkTheme)
-    return if (isSystemInDarkMode != null) {
-        if (isSystemInDarkMode) {
-            htmlElement.removeClass(ThemeStyleSheet.LightTheme)
-            htmlElement.addClass(ThemeStyleSheet.DarkTheme)
-            true
-        } else {
+    when (status) {
+        Theme.Status.Light -> {
             htmlElement.removeClass(ThemeStyleSheet.DarkTheme)
             htmlElement.addClass(ThemeStyleSheet.LightTheme)
-            false
         }
-    } else {
-        when {
-            isDarkTheme -> {
-                htmlElement.removeClass(ThemeStyleSheet.DarkTheme)
-                htmlElement.addClass(ThemeStyleSheet.LightTheme)
-                false
-            }
 
-            else -> {
-                htmlElement.removeClass(ThemeStyleSheet.LightTheme)
-                htmlElement.addClass(ThemeStyleSheet.DarkTheme)
-                true
-            }
+        Theme.Status.Dark -> {
+            htmlElement.removeClass(ThemeStyleSheet.LightTheme)
+            htmlElement.addClass(ThemeStyleSheet.DarkTheme)
+        }
+    }
+}
+
+fun Window.toggleThemeStatus() {
+    val htmlElement = document.getElementsByTagName("html")[0]!!
+    val themeStatus = htmlElement.hasClass(ThemeStyleSheet.DarkTheme).toThemeStatus()
+    when (themeStatus) {
+        Theme.Status.Light -> {
+            htmlElement.removeClass(ThemeStyleSheet.LightTheme)
+            htmlElement.addClass(ThemeStyleSheet.DarkTheme)
+        }
+
+        Theme.Status.Dark -> {
+            htmlElement.removeClass(ThemeStyleSheet.DarkTheme)
+            htmlElement.addClass(ThemeStyleSheet.LightTheme)
         }
     }
 }
@@ -102,3 +104,5 @@ fun Window.OnScrollEffect(callback: (Event) -> Unit) {
         onDispose { document.removeEventListener(ScrollEventType, callback) }
     }
 }
+
+private fun Boolean.toThemeStatus() = if (this) Theme.Status.Dark else Theme.Status.Light

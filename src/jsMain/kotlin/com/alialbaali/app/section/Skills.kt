@@ -1,14 +1,13 @@
 package com.alialbaali.app.section
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Category
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Technology
 import com.alialbaali.app.style.ComponentsStyleSheet
 import com.alialbaali.app.style.SkillsStyleSheet
-import com.alialbaali.app.util.isSystemInDarkMode
+import com.alialbaali.app.util.themeStatus
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.*
 
@@ -36,8 +35,7 @@ private fun CategoryItem(category: Category) {
 
 @Composable
 private fun TechnologyItem(technology: Technology) {
-    val isDarkMode = window.isSystemInDarkMode()
-    val technologyIcon = if (isDarkMode) technology.lightIconUrl else technology.darkIconUrl
+    val technologyIcon = if (window.themeStatus.isDark) technology.lightIconUrl else technology.darkIconUrl
     Div(attrs = { classes(SkillsStyleSheet.TechnologyItem) }) {
         Img(src = technologyIcon, alt = technology.title, attrs = { classes(SkillsStyleSheet.TechnologyImage) })
         Span(attrs = { classes(SkillsStyleSheet.TechnologyTitle) }) { Text(technology.title) }

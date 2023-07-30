@@ -2,11 +2,15 @@ package com.alialbaali.app
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import com.alialbaali.app.nav.Navbar
 import com.alialbaali.app.section.*
 import com.alialbaali.app.style.*
-import com.alialbaali.app.util.isSystemInDarkMode
-import com.alialbaali.app.util.toggleDarkMode
+import com.alialbaali.app.util.StorageIds
+import com.alialbaali.app.util.initTheme
+import com.alialbaali.app.util.themeStatus
+import com.alialbaali.app.util.toThemeStatus
+import kotlinx.browser.localStorage
 import kotlinx.browser.window
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.dom.Main
@@ -33,8 +37,10 @@ private fun App() {
 
 @Composable
 private fun ThemeEffect() {
-    val isSystemInDarkMode = window.isSystemInDarkMode()
-    LaunchedEffect(isSystemInDarkMode) { window.toggleDarkMode(isSystemInDarkMode) }
+    val storageStatus = localStorage.getItem(StorageIds.Theme)?.toThemeStatus()
+    val windowStatus = window.themeStatus
+    val state = remember(windowStatus) { storageStatus ?: windowStatus }
+    LaunchedEffect(state) { window.initTheme(state) }
 }
 
 private val Styles = listOf(
