@@ -7,6 +7,8 @@ import com.alialbaali.app.style.NavStyleSheet
 import com.alialbaali.app.style.ThemeStyleSheet
 import com.alialbaali.app.theme.Dimensions
 import com.alialbaali.app.theme.Theme
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.dom.addClass
 import kotlinx.dom.hasClass
 import kotlinx.dom.removeClass
@@ -95,6 +97,12 @@ fun Window.toggleThemeStatus() {
             htmlElement.addClass(ThemeStyleSheet.LightTheme)
         }
     }
+}
+
+fun Window.themeStatusAsFlow(): Flow<Theme.Status> {
+    return document.getElementsByTagName("html")[0]!!
+        .hasClassAsFlow(ThemeStyleSheet.DarkTheme)
+        .map { it.toThemeStatus() }
 }
 
 @Composable

@@ -1,12 +1,15 @@
 package com.alialbaali.app.section
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.*
 import com.alialbaali.app.style.ComponentsStyleSheet
 import com.alialbaali.app.style.PortfolioStyleSheet
 import com.alialbaali.app.style.ThemeStyleSheet
+import com.alialbaali.app.theme.Theme
 import com.alialbaali.app.util.*
 import kotlinx.browser.window
 import org.jetbrains.compose.web.attributes.ATarget
@@ -112,7 +115,8 @@ private fun ProjectActions(project: Project) {
 private fun TechnologyItem(technology: Technology) {
     val lightColor = remember(technology) { technology.lightCSSColor }
     val darkColor = remember(technology) { technology.darkCSSColor }
-    val themeBasedColor = if (window.themeStatus.isDark) lightColor else darkColor
+    val themeStatus by window.themeStatusAsFlow().collectAsState(Theme.Status.Light)
+    val themeBasedColor = if (themeStatus.isDark) lightColor else darkColor
     Span(
         attrs = {
             classes(PortfolioStyleSheet.TechnologyItem)
