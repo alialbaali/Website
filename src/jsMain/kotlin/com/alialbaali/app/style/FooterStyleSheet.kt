@@ -18,6 +18,18 @@ object FooterStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         alignItems(AlignItems.Center)
+        justifyContent(JustifyContent.Center)
+        flexWrap(FlexWrap.Wrap)
+        width(100.percent)
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                gap(Dimensions.SmallItemGap)
+                child(self, universal) style {
+                    flex(1, 1, (100.percent / 3) - Dimensions.SmallItemGap)
+                }
+            }
+        }
     }
 
     val Text by style {
