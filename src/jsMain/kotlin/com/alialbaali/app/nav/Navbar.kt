@@ -2,8 +2,6 @@ package com.alialbaali.app.nav
 
 import androidx.compose.runtime.*
 import com.alialbaali.app.model.FAIcons
-import com.alialbaali.app.model.FAIcons.faIcon
-import com.alialbaali.app.model.Links
 import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.style.*
@@ -13,9 +11,7 @@ import com.alialbaali.app.theme.Variables
 import com.alialbaali.app.util.*
 import kotlinx.browser.localStorage
 import kotlinx.browser.window
-import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.InputType
-import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 import org.w3c.dom.get
@@ -74,32 +70,32 @@ fun Navbar() {
 
             Aside(attrs = { classes(NavStyleSheet.Aside) }) {
                 ThemeToggle()
-            }
 
-            Div(
-                attrs = {
-                    classes(
-                        ComponentsStyleSheet.IconButton,
-                        ComponentsStyleSheet.PrimaryButton,
-                        NavStyleSheet.MenuIconButton,
+                Div(
+                    attrs = {
+                        classes(
+                            ComponentsStyleSheet.IconButton,
+                            ComponentsStyleSheet.PrimaryButton,
+                            NavStyleSheet.MenuIconButton,
+                        )
+                    }
+                ) {
+                    I(
+                        attrs = {
+                            classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Menu)
+                            onClick { isMenuVisible = true }
+                            style { fontSize(if (isMenuVisible) 0.em else Dimensions.IconSize) }
+                        }
+                    )
+
+                    I(
+                        attrs = {
+                            classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Close)
+                            onClick { isMenuVisible = false }
+                            style { fontSize(if (isMenuVisible) Dimensions.IconSize else 0.em) }
+                        }
                     )
                 }
-            ) {
-                I(
-                    attrs = {
-                        classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Menu)
-                        onClick { isMenuVisible = true }
-                        style { fontSize(if (isMenuVisible) 0.em else Dimensions.IconSize) }
-                    }
-                )
-
-                I(
-                    attrs = {
-                        classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FAIcon, FAIcons.Close)
-                        onClick { isMenuVisible = false }
-                        style { fontSize(if (isMenuVisible) Dimensions.IconSize else 0.em) }
-                    }
-                )
             }
         }
 
@@ -133,19 +129,6 @@ fun Navbar() {
                     }) {
                         Text(section.name)
                     }
-                }
-            }
-
-            Aside(attrs = { classes(NavStyleSheet.SmallProfileLinks) }) {
-                Links.Profile.entries.forEach { profileLink ->
-                    A(
-                        href = profileLink.url,
-                        attrs = {
-                            title(profileLink.name)
-                            target(ATarget.Blank)
-                            classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
-                        },
-                    ) { I(attrs = { classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FABrand, profileLink.faIcon) }) }
                 }
             }
         }

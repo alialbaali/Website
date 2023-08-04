@@ -100,37 +100,12 @@ object NavStyleSheet : StyleSheet() {
         alignItems(AlignItems.Center)
         justifyContent(JustifyContent.FlexEnd)
         width(25.percent)
-
-        media(mediaMaxWidth(Breakpoints.Medium)) {
-            self style {
-                display(DisplayStyle.None)
-            }
-        }
-
-        media(mediaMaxWidth(Breakpoints.Small)) {
-            self style {
-                display(DisplayStyle.None)
-            }
-        }
     }
 
     val ThemeToggleContainer by style {}
 
     val ThemeToggleInput by style {
         display(DisplayStyle.None)
-    }
-
-    val SmallProfileLinks by style {
-        display(DisplayStyle.Flex)
-        flexDirection(FlexDirection.Row)
-        justifyContent(JustifyContent.Center)
-        width(100.percent)
-
-        media(mediaMinWidth(Breakpoints.Medium)) {
-            self style {
-                display(DisplayStyle.None)
-            }
-        }
     }
 
     val MenuIconButton by style {
@@ -145,7 +120,6 @@ object NavStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
         backgroundColor(Variables.Colors.Background.value())
-        gap(Dimensions.Small)
         width(100.percent)
         overflow("hidden")
 
