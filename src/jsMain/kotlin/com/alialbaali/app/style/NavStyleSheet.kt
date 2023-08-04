@@ -16,7 +16,6 @@ object NavStyleSheet : StyleSheet() {
     private val NavbarShadowBlurRadius = 16.px
     private val NavbarShadowSpreadRadius = 8.px
 
-    const val ThemeStorageId = "Theme"
     const val ThemeToggleId = "ThemeToggle"
 
     val Header by style {
@@ -99,7 +98,7 @@ object NavStyleSheet : StyleSheet() {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
         alignItems(AlignItems.Center)
-        justifyContent(JustifyContent.SpaceBetween)
+        justifyContent(JustifyContent.FlexEnd)
         width(25.percent)
 
         media(mediaMaxWidth(Breakpoints.Medium)) {
@@ -113,12 +112,6 @@ object NavStyleSheet : StyleSheet() {
                 display(DisplayStyle.None)
             }
         }
-    }
-
-    val ProfileLinks by style {
-        display(DisplayStyle.Flex)
-        flexDirection(FlexDirection.Row)
-        alignItems(AlignItems.Center)
     }
 
     val ThemeToggleContainer by style {}

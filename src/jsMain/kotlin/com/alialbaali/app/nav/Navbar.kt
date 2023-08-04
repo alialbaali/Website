@@ -73,29 +73,6 @@ fun Navbar() {
             }
 
             Aside(attrs = { classes(NavStyleSheet.Aside) }) {
-                Div(attrs = { classes(NavStyleSheet.ProfileLinks) }) {
-                    Links.Profile.entries.forEach { profileLink ->
-                        A(
-                            href = profileLink.url,
-                            attrs = {
-                                title(profileLink.name)
-                                target(ATarget.Blank)
-                                classes(ComponentsStyleSheet.IconButton, ComponentsStyleSheet.PrimaryButton)
-                            },
-                        ) {
-                            I(
-                                attrs = {
-                                    classes(
-                                        ComponentsStyleSheet.Icon,
-                                        ThemeStyleSheet.FABrand,
-                                        profileLink.faIcon
-                                    )
-                                }
-                            )
-                        }
-                    }
-                }
-
                 ThemeToggle()
             }
 
