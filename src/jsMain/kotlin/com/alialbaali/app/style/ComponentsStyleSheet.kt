@@ -222,7 +222,7 @@ object ComponentsStyleSheet : StyleSheet() {
         color(Variables.Colors.OnBackground.value())
         overflow("hidden")
         borderRadius(Dimensions.BorderRadius)
-        property("box-shadow", "0px 0px 16px 8px ${Variables.Colors.Surface.value()}")
+        border(2.px, LineStyle.Dotted, Variables.Colors.Primary.value())
     }
 
 }
