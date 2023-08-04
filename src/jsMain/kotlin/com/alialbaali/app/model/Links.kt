@@ -24,5 +24,6 @@ object Links {
         Dribbble("https://dribbble.com/alialbaali/"),
         LinkedIn("https://www.linkedin.com/in/alialbaali/"),
         GitHub("https://github.com/alialbaali/"),
+        Mastodon("https://mastodon.social/@alialbaali"),
     }
 }
