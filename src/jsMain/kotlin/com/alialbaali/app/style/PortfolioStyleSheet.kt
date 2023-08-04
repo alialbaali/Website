@@ -107,8 +107,8 @@ object PortfolioStyleSheet : StyleSheet() {
     }
 
     val HighlightedProjectImage by style {
-        height(auto)
         property("object-fit", "contain")
+        height(auto)
         width(50.percent)
 
         media(mediaMaxWidth(Breakpoints.Medium)) {

@@ -28,7 +28,7 @@ data class Project(
             githubLink = Links.GitHub.Noto,
             link = Links.Noto,
             year = Date().getFullYear().toUInt(),
-            imagePath = "images/Noto.svg",
+            imagePath = "images/Noto.png",
             imageBackgroundColor = "FFFFFF",
             features = Strings.Noto.Features,
         )
@@ -40,7 +40,7 @@ data class Project(
             technologies = listOf(Kotlin, Compose, Ktor, Maven),
             githubLink = Links.GitHub.Kamel,
             year = Date().getFullYear().toUInt(),
-            imagePath = "images/Kamel.svg",
+            imagePath = "images/Kamel.png",
             imageBackgroundColor = "263238"
         )
 
