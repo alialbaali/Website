@@ -175,6 +175,11 @@ object ComponentsStyleSheet : StyleSheet() {
                 duration(Dimensions.TransitionDuration)
             }
         }
+
+        self + before style {
+            display(DisplayStyle.InlineBlock)
+            textDecoration("none")
+        }
     }
 
     val HighlightedText by style {
