@@ -1,6 +1,8 @@
 package com.alialbaali.app.section
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import com.alialbaali.app.components.HighlightedText
 import com.alialbaali.app.components.SectionName
 import com.alialbaali.app.model.Links
@@ -8,14 +10,19 @@ import com.alialbaali.app.model.Section
 import com.alialbaali.app.model.Strings
 import com.alialbaali.app.style.AboutStyleSheet
 import com.alialbaali.app.style.ComponentsStyleSheet
+import com.alialbaali.app.theme.Theme
+import com.alialbaali.app.util.themeStatusAsFlow
+import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun About() {
+    val themeStatus by window.themeStatusAsFlow().collectAsState(Theme.Status.Light)
+    val imageUrl = if (themeStatus.isDark) "images/Coder-Light.svg" else "images/Coder-Dark.svg"
     Section(attrs = { classes(AboutStyleSheet.Section) }) {
         SectionName(Section.About)
         Div(attrs = { classes(ComponentsStyleSheet.Card, AboutStyleSheet.Container) }) {
-            Img(src = "images/Coder.svg", attrs = { classes(AboutStyleSheet.Image) })
+            Img(src = imageUrl, attrs = { classes(AboutStyleSheet.Image) })
             P(attrs = { classes(AboutStyleSheet.Text) }) {
                 Text(Strings.About[0])
                 Text(" ")

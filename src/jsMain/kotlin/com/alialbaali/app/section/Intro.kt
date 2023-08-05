@@ -1,6 +1,8 @@
 package com.alialbaali.app.section
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import com.alialbaali.app.model.FAIcons
 import com.alialbaali.app.model.Links
 import com.alialbaali.app.model.Section
@@ -8,12 +10,16 @@ import com.alialbaali.app.model.Strings
 import com.alialbaali.app.style.ComponentsStyleSheet
 import com.alialbaali.app.style.IntroStyleSheet
 import com.alialbaali.app.style.ThemeStyleSheet
+import com.alialbaali.app.theme.Theme
 import com.alialbaali.app.util.scrollToSection
+import com.alialbaali.app.util.themeStatusAsFlow
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun Intro() {
+    val themeStatus by window.themeStatusAsFlow().collectAsState(Theme.Status.Light)
+    val imageUrl = if (themeStatus.isDark) "images/Hello-Light.svg" else "images/Hello-Dark.svg"
     Section(attrs = { classes(IntroStyleSheet.Section) }) {
         Div(attrs = { classes(IntroStyleSheet.Container) }) {
             Div(attrs = { classes(IntroStyleSheet.TextContainer) }) {
@@ -44,6 +50,6 @@ fun Intro() {
                 }
             }
         }
-        Img(src = "images/Hello.svg", attrs = { classes(IntroStyleSheet.Image) })
+        Img(src = imageUrl, attrs = { classes(IntroStyleSheet.Image) })
     }
 }
