@@ -30,7 +30,7 @@ object Theme {
         val Primary = Color("#9FA8DA")
         val OnPrimary = Color.black
 
-        val Secondary = Color("#757575")
+        val Secondary = Color("#BDBDBD")
         val OnSecondary = Color.white
 
         val Surface = Color("#424242")
