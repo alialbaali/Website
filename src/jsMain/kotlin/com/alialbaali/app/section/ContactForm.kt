@@ -20,7 +20,12 @@ fun ContactForm() {
         Div(attrs = { classes(ContactFormStyleSheet.Container) }) {
             Div(attrs = { classes(ContactFormStyleSheet.Info) }) {
                 Span(attrs = { classes(ContactFormStyleSheet.InfoText) }) { Text(Strings.ContactInfoTitle) }
-                Span(attrs = { classes(ContactFormStyleSheet.InfoText) }) { Text(Strings.ContactInfoGetInTouch) }
+                Span(attrs = { classes(ContactFormStyleSheet.InfoText) }) {
+                    Text(Strings.ContactParagraph[0])
+                    Br()
+                    Br()
+                    Text(Strings.ContactParagraph[1])
+                }
             }
 
             Form(attrs = { classes(ComponentsStyleSheet.Card, ContactFormStyleSheet.Form) }, action = Links.Mail) {

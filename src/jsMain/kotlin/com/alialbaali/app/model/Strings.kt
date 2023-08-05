@@ -15,14 +15,18 @@ object Strings {
     const val SubjectPlaceholder = "Give it a title!"
     const val Message = "Message"
     const val MessagePlaceholder = "What's on your mind?"
-    const val ContactInfoTitle = "Love to hear from you,"
-    const val ContactInfoGetInTouch = "Get in touch 👋🏻"
     const val Current = "Current"
     const val LearnMore = "Learn more"
     const val Ktor = "Ktor"
     const val PersonalWebsite = "personal website"
     const val UdacityNanodegreeProgram = "Udacity nanodegree program"
     const val Certificate = "certificate"
+
+    const val ContactInfoTitle = "I'm always looking for new opportunities."
+    val ContactParagraph = listOf(
+        "So, feel free to contact me at anytime, whether you have a question, request a feature, or just want to collaborate.",
+        "Let's have some fun!"
+    )
 
     val About = listOf(
         "I began my journey in 2018, when I started learning Java and Android development through online courses. After a while, I made my way to Kotlin and started exploring backend programming with",

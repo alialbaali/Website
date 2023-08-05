@@ -19,14 +19,14 @@ fun Contact() {
         Div(attrs = { classes(ComponentsStyleSheet.Card, ContactStyleSheet.Container) }) {
             Div(attrs = { classes(ContactStyleSheet.Info) }) {
                 Span(attrs = { classes(ContactStyleSheet.Title) }) {
-                    Text(Strings.ContactInfoGetInTouch)
+                    Text(Strings.ContactInfoTitle)
                 }
 
                 Span(attrs = { classes(ContactStyleSheet.Description) }) {
-                    Text("I'm always looking for new opportunities.")
+                    Text(Strings.ContactParagraph[0])
                     Br()
                     Br()
-                    Text("So, feel free to contact me at anytime, whether you have a question, requesting a feature, or wanting to collaborate. And, I'll reply as fast as I can!")
+                    Text(Strings.ContactParagraph[1])
                 }
 
                 Button(
@@ -34,7 +34,7 @@ fun Contact() {
                         classes(
                             ComponentsStyleSheet.FilledButton,
                             ComponentsStyleSheet.PrimaryButton,
-                            ContactStyleSheet.Button
+                            ContactStyleSheet.Button,
                         )
                         onClick { window.open(Links.Mail) }
                     }

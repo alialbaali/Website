@@ -70,11 +70,11 @@ object ContactStyleSheet : StyleSheet() {
     }
 
     val Title by style {
-        fontSize(Dimensions.Medium)
+        fontSize(Dimensions.Small)
 
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
-                fontSize(Dimensions.Small)
+                fontSize(Dimensions.ExtraSmall)
             }
         }
     }
@@ -92,6 +92,7 @@ object ContactStyleSheet : StyleSheet() {
 
     val Button by style {
         property("width", "min-content")
+        property("margin-top", "auto")
     }
 
 }
