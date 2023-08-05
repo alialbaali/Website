@@ -11,5 +11,5 @@ object FAIcons {
     const val Moon = "$Prefix-moon"
     const val Sun = "$Prefix-sun"
 
-    val Links.Profile.faIcon get() = "$Prefix-$name".lowercase()
+    val Links.Profile.faIcon get() = "$Prefix-${iconName ?: name}".lowercase()
 }

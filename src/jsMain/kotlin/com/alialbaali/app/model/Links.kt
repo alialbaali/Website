@@ -18,8 +18,9 @@ object Links {
         const val Minigrep = "https://github.com/alialbaali/Minigrep"
     }
 
-    enum class Profile(val url: String) {
+    enum class Profile(val url: String, val iconName: String? = null) {
         Twitter("https://twitter.com/ali_albaali/"),
+        X("https://x.com/ali_albaali/", "x-twitter"),
         Instagram("https://instagram.com/ali.albaali"),
         Dribbble("https://dribbble.com/alialbaali/"),
         LinkedIn("https://www.linkedin.com/in/alialbaali/"),
