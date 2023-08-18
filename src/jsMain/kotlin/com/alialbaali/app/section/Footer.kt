@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import com.alialbaali.app.model.FAIcons.faIcon
 import com.alialbaali.app.model.Links
+import com.alialbaali.app.model.Strings
 import com.alialbaali.app.style.ComponentsStyleSheet
 import com.alialbaali.app.style.FooterStyleSheet
 import com.alialbaali.app.style.ThemeStyleSheet
@@ -29,5 +30,6 @@ fun Footer() {
                 ) { I(attrs = { classes(ComponentsStyleSheet.Icon, ThemeStyleSheet.FABrand, profileLink.faIcon) }) }
             }
         }
+        Span(attrs = { classes(FooterStyleSheet.Version) }) { Text(Strings.Version) }
     }
 }

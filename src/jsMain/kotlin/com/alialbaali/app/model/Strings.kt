@@ -2,6 +2,7 @@ package com.alialbaali.app.model
 
 object Strings {
 
+    const val Version = "v3.1"
     const val Hello = "Hi there,"
     const val WhoAmI = "I'm Ali. I'm a Software Engineer and UI/UX Designer."
     const val WhatDoIDo = "I like to build cool things that live on the internet using modern tools and technologies."
@@ -69,8 +70,10 @@ object Strings {
     object Rainbow {
         const val Title = "Rainbow for Reddit"
         const val Subtitle = "Unique Desktop Client for Browsing Reddit"
-        const val Description = "Rainbow is a multi-platform application that enables users to browse Reddit smoothly on desktop. It establishes many valuable features, such as:"
-        const val Note = "Due to the recent Reddit API changes, the app has been abandoned, and is only used for display purposes."
+        const val Description =
+            "Rainbow is a multi-platform application that enables users to browse Reddit smoothly on desktop. It establishes many valuable features, such as:"
+        const val Note =
+            "Due to the recent Reddit API changes, the app has been abandoned, and is only used for display purposes."
         val Features = listOf(
             "Ad-Free experience.",
             "Beautiful & polished UI.",
