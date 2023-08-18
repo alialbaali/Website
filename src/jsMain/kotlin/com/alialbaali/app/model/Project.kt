@@ -14,6 +14,7 @@ data class Project(
     val imagePath: String? = null,
     val imageBackgroundColor: String? = null,
     val features: List<String> = emptyList(),
+    val note: String? = null,
 ) {
 
     val isHighlighted get() = imagePath != null
@@ -41,7 +42,20 @@ data class Project(
             githubLink = Links.GitHub.Kamel,
             year = Date().getFullYear().toUInt(),
             imagePath = "images/Kamel.png",
-            imageBackgroundColor = "263238"
+            imageBackgroundColor = "263238",
+        )
+
+        val Rainbow = Project(
+            title = Strings.Rainbow.Title,
+            subtitle = Strings.Rainbow.Subtitle,
+            description = Strings.Rainbow.Description,
+            technologies = listOf(Kotlin, SQL, Compose, Ktor, Docker, Figma),
+            year = 0U,
+            githubLink = Links.GitHub.Rainbow,
+            imagePath = "images/Rainbow.png",
+            imageBackgroundColor = "FFFFFF",
+            features = Strings.Rainbow.Features,
+            note = Strings.Rainbow.Note,
         )
 
         val ChatyChaty = Project(
@@ -90,6 +104,6 @@ data class Project(
             year = 2021U,
         )
 
-        val All = listOf(Noto, Kamel, ChatyChaty, Shopally, Website, CastingAgency, Minigrep)
+        val All = listOf(Noto, Kamel, Rainbow, ChatyChaty, Shopally, Website, CastingAgency, Minigrep)
     }
 }

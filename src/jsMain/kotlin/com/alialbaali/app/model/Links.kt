@@ -11,6 +11,7 @@ object Links {
     object GitHub {
         const val Noto = "https://github.com/alialbaali/Noto"
         const val Kamel = "https://github.com/Kamel-Media/Kamel"
+        const val Rainbow = "https://github.com/alialbaali/Rainbow-for-Reddit"
         const val ChatyChaty = "https://github.com/alialbaali/ChatyChaty"
         const val CastingAgency = "https://github.com/alialbaali/FSND-Capstone"
         const val Shopally = "https://github.com/alialbaali/Shopally"

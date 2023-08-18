@@ -44,7 +44,7 @@ object PortfolioStyleSheet : StyleSheet() {
         flex(1, 1, 50.percent - ProjectSpacing)
         justifyContent(JustifyContent.SpaceBetween)
 
-        self + nthChild(Nth.Functional(1, 5)) style {
+        self + nthChild(Nth.Functional(1, 6)) style {
             flex(1, 1, (100.percent / 3) - ProjectSpacing)
         }
 
@@ -206,6 +206,17 @@ object PortfolioStyleSheet : StyleSheet() {
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 fontSize(Dimensions.Tiny)
+            }
+        }
+    }
+
+    val ProjectNote by style {
+        fontSize(Dimensions.Tiny)
+        color(Variables.Colors.Secondary.value())
+
+        media(mediaMaxWidth(Breakpoints.Small)) {
+            self style {
+                fontSize(Dimensions.Tiny - 0.4.cssRem)
             }
         }
     }

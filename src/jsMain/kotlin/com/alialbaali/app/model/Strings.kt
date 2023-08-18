@@ -21,6 +21,7 @@ object Strings {
     const val PersonalWebsite = "personal website"
     const val UdacityNanodegreeProgram = "Udacity nanodegree program"
     const val Certificate = "certificate"
+    const val RIP = "RIP"
 
     const val ContactInfoTitle = "I'm always looking for new opportunities."
     val ContactParagraph = listOf(
@@ -63,6 +64,21 @@ object Strings {
                 |
                 |By default, it utilizes Ktor client & an LRU caching algorithm under the hood to perform the requests. 
             """.trimMargin()
+    }
+
+    object Rainbow {
+        const val Title = "Rainbow for Reddit"
+        const val Subtitle = "Unique Desktop Client for Browsing Reddit"
+        const val Description = "Rainbow is a multi-platform application that enables users to browse Reddit smoothly on desktop. It establishes many valuable features, such as:"
+        const val Note = "Due to the recent Reddit API changes, the app has been abandoned, and is only used for display purposes."
+        val Features = listOf(
+            "Ad-Free experience.",
+            "Beautiful & polished UI.",
+            "Detailed view for subreddits & users.",
+            "Lazy loading & paging support.",
+            "Browser-like navigation system.",
+            "Ability to search subreddits, users, and posts.",
+        )
     }
 
     object ChatyChaty {

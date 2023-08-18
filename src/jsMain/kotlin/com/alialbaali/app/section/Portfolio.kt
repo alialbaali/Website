@@ -93,6 +93,9 @@ private fun ProjectDescription(project: Project) {
     Ul(attrs = { classes(PortfolioStyleSheet.ProjectFeatureContainer) }) {
         project.features.forEach { feature -> Li { Text(feature) } }
     }
+    if (project.note != null) {
+        P(attrs = { classes(PortfolioStyleSheet.ProjectNote) }) { Text("*${project.note}") }
+    }
 }
 
 @Composable
