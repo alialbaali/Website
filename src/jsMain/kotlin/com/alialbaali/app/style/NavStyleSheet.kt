@@ -22,13 +22,19 @@ object NavStyleSheet : StyleSheet() {
         width(100.percent)
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-        padding(Dimensions.Small, Dimensions.MainPadding)
+        padding(Dimensions.Small, Dimensions.DefaultMainPadding)
         position(Position.Sticky)
         top(0.px)
         backgroundColor(Variables.Colors.Background.value())
         transitions {
             properties("box-shadow", "gap") {
                 duration(Dimensions.TransitionDuration)
+            }
+        }
+
+        media(mediaMaxWidth(Breakpoints.Large)) {
+            self style {
+                padding(Dimensions.Small, Dimensions.LargeMainPadding)
             }
         }
 

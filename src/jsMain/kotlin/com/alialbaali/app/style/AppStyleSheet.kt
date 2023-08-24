@@ -34,10 +34,17 @@ object AppStyleSheet : StyleSheet() {
     val Main by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-        padding(Dimensions.MainPadding)
+        padding(Dimensions.DefaultMainPadding)
         alignItems(AlignItems.Center)
         width(100.percent)
-        gap(Dimensions.MainGap)
+        gap(Dimensions.DefaultMainGap)
+
+        media(mediaMaxWidth(Breakpoints.Large)) {
+            self style {
+                padding(Dimensions.LargeMainPadding)
+                gap(Dimensions.LargeMainGap)
+            }
+        }
 
         media(mediaMaxWidth(Breakpoints.Medium)) {
             self style {

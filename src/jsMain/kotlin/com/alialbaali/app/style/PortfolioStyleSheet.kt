@@ -26,6 +26,12 @@ object PortfolioStyleSheet : StyleSheet() {
         gap(Dimensions.ItemGap)
         width(100.percent)
 
+        media(mediaMaxWidth(Breakpoints.Large)) {
+            self style {
+                justifyContent(JustifyContent.Center)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 flexDirection(FlexDirection.Column)
@@ -46,6 +52,19 @@ object PortfolioStyleSheet : StyleSheet() {
 
         self + nthChild(Nth.Functional(1, 6)) style {
             flex(1, 1, (100.percent / 3) - ProjectSpacing)
+        }
+
+        media(mediaMaxWidth(Breakpoints.Large)) {
+            self style {
+                self + nthChild(Nth.Functional(1)) style {
+                    flex(1, 1, 50.percent - ProjectSpacing)
+                }
+            }
+
+            self + lastChild style {
+                // 4.px for border size.
+                flex(0, 1, 50.percent - (ProjectSpacing / 2) - 4.px)
+            }
         }
 
         media(mediaMaxWidth(Breakpoints.Medium)) {

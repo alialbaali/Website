@@ -14,6 +14,12 @@ object IntroStyleSheet : StyleSheet() {
         gap(Dimensions.ItemGap)
         alignItems(AlignItems.FlexEnd)
 
+        media(mediaMaxWidth(Breakpoints.Large)) {
+            self style {
+                alignItems(AlignItems.Center)
+            }
+        }
+
         media(mediaMaxWidth(Breakpoints.Medium)) {
             self style {
                 flexDirection(FlexDirection.ColumnReverse)
@@ -35,6 +41,12 @@ object IntroStyleSheet : StyleSheet() {
         flexDirection(FlexDirection.Column)
         gap(Dimensions.ItemGap * 2)
         width(50.percent)
+
+        media(mediaMaxWidth(Breakpoints.Large)) {
+            self style {
+                gap(Dimensions.ItemGap)
+            }
+        }
 
         media(mediaMaxWidth(Breakpoints.Medium)) {
             self style {
