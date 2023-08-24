@@ -2,7 +2,7 @@ package com.alialbaali.app.model
 
 object Strings {
 
-    const val Version = "v3.1.0"
+    const val Version = "v3.1.1"
     const val Hello = "Hi there,"
     const val WhoAmI = "I'm Ali. I'm a Software Engineer and UI/UX Designer."
     const val WhatDoIDo = "I like to build cool things that live on the internet using modern tools and technologies."
