@@ -109,9 +109,10 @@ object NavStyleSheet : StyleSheet() {
     }
 
     val MenuIconButton by style {
-        media(mediaMinWidth(Breakpoints.Medium)) {
+        display(DisplayStyle.None)
+        media(mediaMaxWidth(Breakpoints.Medium)) {
             self style {
-                display(DisplayStyle.None)
+                display(DisplayStyle.Block)
             }
         }
     }
