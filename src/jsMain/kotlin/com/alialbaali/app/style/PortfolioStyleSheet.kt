@@ -70,7 +70,7 @@ object PortfolioStyleSheet : StyleSheet() {
         media(mediaMaxWidth(Breakpoints.Medium)) {
             self style {
                 self + nthChild(Nth.Functional(1)) style {
-                    flex(1, 1, 50.percent - ProjectSpacing)
+                    flex(1, 1, 100.percent)
                 }
             }
         }
