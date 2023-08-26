@@ -42,7 +42,7 @@ data class Project(
             githubLink = Links.GitHub.Kamel,
             year = Date().getFullYear().toUInt(),
             imagePath = "images/Kamel.png",
-            imageBackgroundColor = "263238",
+            imageBackgroundColor = "FFFFFF",
         )
 
         val Rainbow = Project(
