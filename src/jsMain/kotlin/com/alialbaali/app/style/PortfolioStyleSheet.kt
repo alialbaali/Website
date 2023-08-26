@@ -55,10 +55,8 @@ object PortfolioStyleSheet : StyleSheet() {
         }
 
         media(mediaMaxWidth(Breakpoints.Large)) {
-            self style {
-                self + nthChild(Nth.Functional(1)) style {
-                    flex(1, 1, 50.percent - ProjectSpacing)
-                }
+            self + nthChild(Nth.Functional(1)) style {
+                flex(1, 1, 50.percent - ProjectSpacing)
             }
 
             self + lastChild style {
@@ -68,10 +66,8 @@ object PortfolioStyleSheet : StyleSheet() {
         }
 
         media(mediaMaxWidth(Breakpoints.Medium)) {
-            self style {
-                self + nthChild(Nth.Functional(1)) style {
-                    flex(1, 1, 100.percent)
-                }
+            self + nthChild(Nth.Functional(1)) style {
+                flex(1, 1, 100.percent)
             }
         }
 
