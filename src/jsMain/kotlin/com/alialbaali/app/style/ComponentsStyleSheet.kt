@@ -155,6 +155,8 @@ object ComponentsStyleSheet : StyleSheet() {
         cursor("pointer")
         textDecoration("none")
         fontSize(Dimensions.Small)
+        minWidth(Dimensions.MinIconButtonSize)
+        minHeight(Dimensions.MinIconButtonSize)
 
         child(self, universal) style {
             gridColumn("1")

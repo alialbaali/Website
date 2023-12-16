@@ -35,5 +35,6 @@ object Dimensions {
     val CardPadding = Small
     val SmallCardPadding = ExtraSmall
     val IconSize = 1.em
+    val MinIconButtonSize = IconSize * 2
 
 }

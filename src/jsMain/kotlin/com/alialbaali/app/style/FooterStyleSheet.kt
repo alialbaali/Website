@@ -58,9 +58,9 @@ object FooterStyleSheet : StyleSheet() {
         media(mediaMaxWidth(Breakpoints.Small)) {
             self style {
                 width(100.percent)
-                gap(Dimensions.SmallItemGap)
+                gap(0.px)
                 child(self, universal) style {
-                    flex(1, 1, (100.percent / 4) - Dimensions.SmallItemGap)
+                    flex(1, 1, (100.percent / 4))
                 }
             }
         }
