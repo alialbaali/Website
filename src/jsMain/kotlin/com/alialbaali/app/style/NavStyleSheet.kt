@@ -118,7 +118,7 @@ object NavStyleSheet : StyleSheet() {
         display(DisplayStyle.None)
         media(mediaMaxWidth(Breakpoints.Medium)) {
             self style {
-                display(DisplayStyle.Block)
+                display(DisplayStyle.Inherit)
             }
         }
     }
